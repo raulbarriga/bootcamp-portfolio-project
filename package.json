@@ -1,0 +1,29 @@
+{
+  "name": "bootcamp-portfolio-project",
+  "version": "1.0.0",
+  "description": "This is a Real Estate website for my bootcamp portfolio project.",
+  "main": "index.js",
+  "scripts": {
+    "lite": "lite-server",
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raulbarriga/bootcamp-portfolio-project.git"
+  },
+  "author": "Raul Barriga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raulbarriga/bootcamp-portfolio-project/issues"
+  },
+  "homepage": "https://github.com/raulbarriga/bootcamp-portfolio-project#readme",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}
