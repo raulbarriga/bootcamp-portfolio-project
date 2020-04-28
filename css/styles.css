@@ -1,3 +1,7 @@
+body, html{
+    padding: 0;
+    margin: 0;
+}
 header{
     background: #0C002B;
     color: white;
@@ -19,19 +23,59 @@ header{
 #register-btn:focus {
     outline:0;
 }
-#toggle-btn{
-    /* flex: auto; */
-}
 #nav-css {
     color: red;
     padding: 7px 20px;
     font-weight: 500;
     font-size: 1rem;
+    float: right;
+    align-items: flex-end;
 }
 .nav-item{
     padding: 0 20px;
 }
-/* @media (max-width: 650px){
+#nav-item-btn{
+    padding: 0 0 0 20px;
+}
+#container-fluid-nav{
+    padding-right: 0;
+}
+.navbar-toggler:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    /* padding: 7px 20px !important; */
+
+}
+.img-fluid{
+    width: 100%;
+height: 100vh; 
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+/* Not working thus far */
+}
+nav
+{
+overflow: auto;
+}
+@media (min-width: 657px){
+    .navbar-expand-custom{
+        /* flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start; */
+        /* padding: 7px 20px !important; */
+    }
     
-    
-} */
+    .navbar-expand-custom .navbar-nav{
+        flex-direction: row;
+        
+    }
+    .navbar-expand-custom .navbar-collapse{
+        display: contents !important;
+        
+    }
+    .navbar-expand-custom .navbar-toggler{
+        display: none;
+    }
+  }
+  
+ 
