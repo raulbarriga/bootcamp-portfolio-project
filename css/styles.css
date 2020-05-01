@@ -49,6 +49,11 @@ nav {
   width: 100%;
   height: calc(100vh - 82px);
 }
+footer.jumbotron.jumbotron-fluid{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 @media (min-width: 657px) {
   .navbar-expand-custom {
     /* flex-direction: row;
