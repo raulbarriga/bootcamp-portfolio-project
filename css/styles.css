@@ -1,69 +1,81 @@
-header {
-  background: #0c002b;
-  color: white;
-  overflow: auto;
-  padding: 5px 15px;
-  font-weight: 500;
-  font-size: 1rem;
+body, html{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background: #0C002B;
+    color: white;
+    overflow: auto;
+    padding: 5px 15px;
+    font-weight: 500;
+    font-size: 1rem;
 }
 #register-btn {
-  background: #ff718e;
-  text-align: center;
-  padding: 7px 25px;
-  color: white;
-  border-radius: 5px;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
+    background: #FF718E;
+    text-align: center;
+    padding: 7px 25px;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
 }
 #register-btn:focus {
-  outline: 0;
+    outline:0;
 }
 #nav-css {
-  color: red;
-  padding: 7px 20px;
-  font-weight: 500;
-  font-size: 1rem;
-  float: right;
-  align-items: flex-end;
+    color: red;
+    padding: 7px 20px;
+    font-weight: 500;
+    font-size: 1rem;
+    float: right;
+    align-items: flex-end;
 }
-.nav-item {
-  padding: 0 20px;
+.nav-item{
+    padding: 0 20px;
 }
-#nav-item-btn {
-  padding: 0 0 0 20px;
+#nav-item-btn{
+    padding: 0 0 0 20px;
 }
-#container-fluid-nav {
-  padding-right: 0;
+#container-fluid-nav{
+    padding-right: 0;
 }
 .navbar-toggler:not(:disabled):not(.disabled) {
-  cursor: pointer;
+    cursor: pointer;
+    /* padding: 7px 20px !important; */
+
 }
-nav {
-  overflow: auto;
+.img-fluid{
+    width: 100%;
+height: 100vh; 
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+/* Not working thus far */
 }
-#home-banner{
-    background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: calc(100vh - 82px);
+nav
+{
+overflow: auto;
 }
-@media (min-width: 657px) {
-  .navbar-expand-custom {
-    /* flex-direction: row;
+@media (min-width: 657px){
+    .navbar-expand-custom{
+        /* flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start; */
-    /* padding: 7px 20px !important; */
+        /* padding: 7px 20px !important; */
+    }
+    
+    .navbar-expand-custom .navbar-nav{
+        flex-direction: row;
+        
+    }
+    .navbar-expand-custom .navbar-collapse{
+        display: contents !important;
+        
+    }
+    .navbar-expand-custom .navbar-toggler{
+        display: none;
+    }
   }
-
-  .navbar-expand-custom .navbar-nav {
-    flex-direction: row;
-  }
-  .navbar-expand-custom .navbar-collapse {
-    display: contents !important;
-  }
-  .navbar-expand-custom .navbar-toggler {
-    display: none;
-  }
-}
+  
+ 
