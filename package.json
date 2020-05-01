@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kuntal-Kapadia/bootcamp-portfolio-project.git"
+    "url": "git+https://github.com/raulbarriga/bootcamp-portfolio-project.git"
   },
   "author": "Raul Barriga",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kuntal-Kapadia/bootcamp-portfolio-project/issues"
+    "url": "https://github.com/raulbarriga/bootcamp-portfolio-project/issues"
   },
-  "homepage": "https://github.com/Kuntal-Kapadia/bootcamp-portfolio-project#readme",
+  "homepage": "https://github.com/raulbarriga/bootcamp-portfolio-project#readme",
   "devDependencies": {
     "lite-server": "^2.3.0"
   },
