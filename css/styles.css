@@ -50,8 +50,7 @@ nav {
   height: calc(100vh - 82px);
 }
 footer.jumbotron.jumbotron-fluid{
-  position: absolute;
-  bottom: 0;
+  bottom: 0;//removed the jumbotron postion absolute to make footer stay at the bottom
   width: 100%;
 }
 @media (min-width: 657px) {

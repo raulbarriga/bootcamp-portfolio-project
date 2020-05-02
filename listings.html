@@ -1,92 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
 
-        <!-- Additional CSS must be placed after Bootstrap CSS -->
-        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
-        <!-- Add a custom font here -->
-        <link rel="stylesheet" href="css/styles.css" />
-        <title>Real Estate Website</title>
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-custom navbar-dark" role="navigation">
-                <div id="container-fluid-nav" class="container-fluid">
-                    <a href="#" class="navbar-brand">LOGO</a>
+    <!-- Additional CSS must be placed after Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <!-- Add a custom font here -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Real Estate Website</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-custom navbar-dark" role="navigation">
+        <div id="container-fluid-nav" class="container-fluid">
+          <a href="#" class="navbar-brand">LOGO</a>
 
-                    <!-- Collapse Button Toggler -->
-                    <button
-                    class="navbar-toggler ml-auto"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#toggle-btn"
-                    aria-expanded="false"
-                    aria-controls="toggle-btn"
-                    >
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div id="toggle-btn" class="collapse navbar-collapse ">
-                        <ul id="nav-css" class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Listings</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Log In</a>
-                            </li>
-                            <li id="nav-item-btn" class="nav-item">
-                                <button id="register-btn" class="text-white">Register</button>
-                            </li>
-                        </ul>
-                        
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 px-0">
-                </div>
-            </div>
+          <!-- Collapse Button Toggler -->
+          <button
+            class="navbar-toggler ml-auto"
+            type="button"
+            data-toggle="collapse"
+            data-target="#toggle-btn"
+            aria-expanded="false"
+            aria-controls="toggle-btn"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="toggle-btn" class="collapse navbar-collapse">
+            <ul id="nav-css" class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Listings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Log In</a>
+              </li>
+              <li id="nav-item-btn" class="nav-item">
+                <button id="register-btn" class="text-white">Register</button>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+    </header>
 
-
-        <footer class="jumbotron jumbotron-fluid my-0">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-4">
-                        android and apple phone images
+    <div class="container-fluid">
+        <!-- Filter row -->
+      <div class="row">
+        <div class="col-lg-3 bg-light">
+          <div>
+            <h3>Filter</h3>
+            <form action="#" class="search-property">
+              <div class="row">
+                <!-- Location search box -->
+                <div
+                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
+                >
+                  <div class="form-group">
+                    <label for="#">Location</label>
+                    <div class="form-field">
+                      <div class="icon"><span class="icon-pencil"></span></div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="City/Locality Name"
+                      />
                     </div>
-                    <div class="col-sm-4">
-                        <h3>Download the Real Estate App</h3>
-                        play store image and app store image
-                    </div>
-                    <div class="col-sm-4">
-                        <ul class="list-unstyled">
-                            <li class="text-white-50"><a href="#">Listings</a></li>
-                            <li class="text-white-50"><a href="#">About Us</a></li>
-                            <li class="text-white-50"><a href="#">Log In</a></li>
-                            <li id="nav-item-btn" class="text-white-50">
-                                <button id="register-btn" class="text-white">Register</button>
-                            </li>
-                          </ul>
-                    </div>
+                  </div>
                 </div>
-            </div>
-        </footer>
+                <!-- Property Type -->
+                <div class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated">
+                  <div class="form-group">
+                    <label for="#">Property Type</label>
+                    <div class="form-field">
+                      <button class="btn dropdown-toggle text-left w-100 bg-white"
+                        type="button"
+                        id="dropdownMenu1"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="true">
+                        Property Type
+                      </button>
+                      <div class="icon">
+                        <span class="ion-ios-arrow-down"></span>
+                      </div>
+                      <ul
+                        class="dropdown-menu checkbox-menu allow-focus w-100"
+                        aria-labelledby="dropdownMenu1"
+                      >
+                        <li class="ml-2">
+                          <label> <input type="checkbox" /> Houses </label>
+                        </li>
+                        <li class="ml-2">
+                          <label>
+                            <input type="checkbox" /> Manufactured
+                          </label>
+                        </li>
+                        <li class="ml-2">
+                          <label>
+                            <input type="checkbox" /> Condos&#47;co&#45;ops
+                          </label>
+                        </li>
+                        <li class="ml-2">
+                          <label>
+                            <input type="checkbox" /> Multi&#45;family
+                          </label>
+                        </li>
+                        <li class="ml-2">
+                          <label> <input type="checkbox" /> Apartments </label>
+                        </li>
+                        <li class="ml-2">
+                          <label>
+                            <input type="checkbox" /> Lots&#47;Land
+                          </label>
+                        </li>
+                        <li class="ml-2">
+                          <label> <input type="checkbox" /> Townhomes </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
 
-        <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
-        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    </body>
+                <!-- Property Status -->
+                <div class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
+                >
+                  <div class="form-group">
+                    <label for="#">Property Status</label>
+                    <div class="form-field">
+                      <div class="select-wrap">
+                        <div class="icon">
+                          <span class="ion-ios-arrow-down"></span>
+                        </div>
+                        <select name="" id="" class="form-control">
+                          <option value="">Type</option>
+                          <option value="">Rent</option>
+                          <option value="">Sale</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Bedrooms -->
+                <div
+                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
+                >
+                  <div class="form-group">
+                    <label for="#">Bedrooms</label>
+                    <div class="form-field">
+                      <div class="select-wrap">
+                        <div class="icon">
+                          <span class="ion-ios-arrow-down"></span>
+                        </div>
+                        <select name="" id="" class="form-control">
+                          <option value="">Any</option>
+                          <option value="">1&#43;</option>
+                          <option value="">2&#43;</option>
+                          <option value="">3&#43;</option>
+                          <option value="">4&#43;</option>
+                          <option value="">5&#43;</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Baths -->
+                <div
+                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
+                >
+                  <div class="form-group">
+                    <label for="#">Bathrooms</label>
+                    <div class="form-field">
+                      <div class="select-wrap">
+                        <div class="icon">
+                          <span class="ion-ios-arrow-down"></span>
+                        </div>
+                        <select name="" id="" class="form-control">
+                          <option value="">Any</option>
+                          <option value="">1&#43;</option>
+                          <option value="">1.5&#43;</option>
+                          <option value="">2&#43;</option>
+                          <option value="">3&#43;</option>
+                          <option value="">4&#43;</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Min Price -->
+                <div
+                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
+                >
+                  <div class="form-group">
+                    <label for="#">Min Price</label>
+                    <div class="form-field">
+                      <div class="select-wrap">
+                        <div class="icon">
+                          <span class="ion-ios-arrow-down"></span>
+                        </div>
+                        <select name="" id="" class="form-control">
+                          <option value="">Min Price</option>
+                          <option value="">&#36;0&#43;</option>
+                          <option value="">&#36;100&#44;000&#43;</option>
+                          <option value="">&#36;200&#44;000&#43;</option>
+                          <option value="">&#36;300&#44;000&#43;</option>
+                          <option value="">&#36;400&#44;000&#43;</option>
+                          <option value="">&#36;500&#44;000&#43;</option>
+                          <option value="">&#36;600&#44;000&#43;</option>
+                          <option value="">&#36;700&#44;000&#43;</option>
+                          <option value="">&#36;800&#44;000&#43;</option>
+                          <option value="">&#36;900&#44;000&#43;</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Max Price -->
+                <div
+                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
+                >
+                  <div class="form-group">
+                    <label for="#">Max Price</label>
+                    <div class="form-field">
+                      <div class="select-wrap">
+                        <div class="icon">
+                          <span class="ion-ios-arrow-down"></span>
+                        </div>
+                        <select name="" id="" class="form-control">
+                          <option value="">Max Price</option>
+                          <option value="">&#36;500&#44;000</option>
+                          <option value="">&#36;600&#44;000</option>
+                          <option value="">&#36;700&#44;000</option>
+                          <option value="">&#36;800&#44;000</option>
+                          <option value="">&#36;900&#44;000</option>
+                          <option value="">&#36;1M</option>
+                          <option value="">&#36;1&#46;25M</option>
+                          <option value="">&#36;1&#46;50M</option>
+                          <option value="">&#36;1&#46;75M</option>
+                          <option value="">Any Price</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Min Area -->
+                <div
+                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
+                >
+                  <div class="form-group">
+                    <label for="#">Min Area <span>(sq ft)</span></label>
+                    <div class="form-field">
+                      <div class="icon"><span class="icon-pencil"></span></div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Min Area"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- Max Area -->
+                <div
+                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
+                >
+                  <div class="form-group">
+                    <label for="#">Max Area <span>(sq ft)</span></label>
+                    <div class="form-field">
+                      <div class="icon"><span class="icon-pencil"></span></div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Max Area"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="col-md-12 align-self-end ftco-animate fadeInUp ftco-animated"
+                >
+                  <div class="form-group">
+                    <div class="form-field">
+                      <input
+                        type="submit"
+                        value="Search"
+                        class="form-control btn btn-primary"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-9"></div>
+      </div>
+    </div>
+
+    <footer class="jumbotron jumbotron-fluid my-0">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4">
+            android and apple phone images
+          </div>
+          <div class="col-sm-4">
+            <h3>Download the Real Estate App</h3>
+            play store image and app store image
+          </div>
+          <div class="col-sm-4">
+            <ul class="list-unstyled">
+              <li class="text-white-50"><a href="#">Listings</a></li>
+              <li class="text-white-50"><a href="#">About Us</a></li>
+              <li class="text-white-50"><a href="#">Log In</a></li>
+              <li id="nav-item-btn" class="text-white-50">
+                <button id="register-btn" class="text-white">Register</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
