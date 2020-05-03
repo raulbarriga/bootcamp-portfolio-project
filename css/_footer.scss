@@ -1,0 +1,8 @@
+footer{
+    .jumbotron{
+        .jumbotron-fluid{
+            bottom: 0;//removed the jumbotron postion absolute to make footer stay at the bottom
+            width: 100%;
+          }
+    }
+}

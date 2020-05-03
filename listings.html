@@ -92,41 +92,42 @@
                         aria-haspopup="true"
                         aria-expanded="true">
                         Property Type
+                        <div id="caret-icon" class="icon">
+                          <span class="ion-ios-arrow-down"></span>
+                        </div>
                       </button>
-                      <div class="icon">
-                        <span class="ion-ios-arrow-down"></span>
-                      </div>
+                      
                       <ul
                         class="dropdown-menu checkbox-menu allow-focus w-100"
                         aria-labelledby="dropdownMenu1"
                       >
-                        <li class="ml-2">
+                        <li id="property-type" class="ml-2">
                           <label> <input type="checkbox" /> Houses </label>
                         </li>
-                        <li class="ml-2">
+                        <li id="property-type" class="ml-2">
                           <label>
                             <input type="checkbox" /> Manufactured
                           </label>
                         </li>
-                        <li class="ml-2">
+                        <li id="property-type" class="ml-2">
                           <label>
                             <input type="checkbox" /> Condos&#47;co&#45;ops
                           </label>
                         </li>
-                        <li class="ml-2">
+                        <li id="property-type" class="ml-2">
                           <label>
                             <input type="checkbox" /> Multi&#45;family
                           </label>
                         </li>
-                        <li class="ml-2">
+                        <li id="property-type" class="ml-2">
                           <label> <input type="checkbox" /> Apartments </label>
                         </li>
-                        <li class="ml-2">
+                        <li id="property-type" class="ml-2">
                           <label>
                             <input type="checkbox" /> Lots&#47;Land
                           </label>
                         </li>
-                        <li class="ml-2">
+                        <li id="property-type" class="ml-2">
                           <label> <input type="checkbox" /> Townhomes </label>
                         </li>
                       </ul>
@@ -340,5 +341,10 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+      $(document).on('click', '.allow-focus', function (e) {
+        e.stopPropagation();
+      });
+    </script>
   </body>
 </html>

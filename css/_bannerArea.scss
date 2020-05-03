@@ -1,0 +1,36 @@
+#home-banner{
+    background-image: url("https://d29u17ylf1ylz9.cloudfront.net/haven-preview/haven/img/slider/3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 82px);
+
+    .overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .col-sm-6{
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      transform: translate(-42%, 10px);
+    }
+  }
+  @media(min-width: 500px){
+    #home-banner .search-box {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      transform: translate(0%, 40px);
+      padding-left: 22%;
+  }
+  }
+  
+  

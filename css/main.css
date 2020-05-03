@@ -1,0 +1,92 @@
+/* Listings CSS */
+#property-type {
+  padding-left: 5px; }
+
+#caret-icon {
+  display: inline-block; }
+
+#home-banner {
+  background-image: url("https://d29u17ylf1ylz9.cloudfront.net/haven-preview/haven/img/slider/3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 82px); }
+  #home-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.3); }
+  #home-banner .col-sm-6 {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translate(-42%, 10px); }
+
+@media (min-width: 500px) {
+  #home-banner .search-box {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translate(0%, 40px);
+    padding-left: 22%; } }
+
+header {
+  background: #0c002b;
+  color: white;
+  overflow: auto;
+  padding: 5px 15px;
+  font-weight: 500;
+  font-size: 1rem; }
+
+#register-btn {
+  background: #ff718e;
+  text-align: center;
+  padding: 7px 25px;
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer; }
+
+#register-btn:focus {
+  outline: 0; }
+
+#nav-css {
+  color: red;
+  padding: 7px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  float: right;
+  align-items: flex-end; }
+
+.nav-item {
+  padding: 0 20px; }
+
+#nav-item-btn {
+  padding: 0 0 0 20px; }
+
+#container-fluid-nav {
+  padding-right: 0; }
+
+.navbar-toggler:not(:disabled):not(.disabled) {
+  cursor: pointer; }
+
+nav {
+  overflow: auto; }
+
+@media (min-width: 657px) {
+  .navbar-expand-custom {
+    /* flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: flex-start; */
+    /* padding: 7px 20px !important; */ }
+  .navbar-expand-custom .navbar-nav {
+    flex-direction: row; }
+  .navbar-expand-custom .navbar-collapse {
+    display: contents !important; }
+  .navbar-expand-custom .navbar-toggler {
+    display: none; } }

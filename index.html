@@ -16,7 +16,7 @@
       href="node_modules/font-awesome/css/font-awesome.min.css"
     />
     <!-- Add a custom font here -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <title>Real Estate Website</title>
   </head>
   <body>
@@ -57,40 +57,40 @@
     </header>
 
     <div class="container-fluid">
+      <!-- Image Banner -->
       <div class="row">
-        <div class="col-12 px-0">
-          <img
+        <div id="home-banner" class="col-12 px-0">
+          <!-- <img
             id="home-banner"
             class="img-fluid"
             src="https://d29u17ylf1ylz9.cloudfront.net/haven-preview/haven/img/slider/3.jpg"
             alt="Home Page Image"
-          />
+          /> -->
+          <div class="overlay"></div>
+          <!-- Search form -->
+          <div class="row">
+            <div class="col search-box ml-auto">
+              <form class="form-inline ">
+                <input class="form-control form-control-sm mr-3 w-75" type="search" placeholder="Enter City or Zip Code"
+                  aria-label="Search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </form>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-md-6">
+            
+          </div> -->
         </div>
       </div>
 
       <!-- <div class="row text-center">
         <div class="col-md-6">
-          <form action="#" class="">
-            <!-- <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <i class="fas fa-search"></i>
-                        </div> -->
-            <div class="input-group">
-              <input
-                type="search"
-                class="form-control"
-                placeholder="City or Zip Code"
-                aria-label="Search"
-              />
-              <div class="input-group-append">
-                <i class="fas fa-search"></i>
-              </div>
-            </div>
-          </form>
+          
         </div>
       </div> -->
 
-      <form role="form" id="form-buscar">
+      <!-- <form role="form" id="form-buscar">
         <div class="form-group">
           <div class="input-group">
             <input
@@ -110,7 +110,9 @@
           </div>
         </div>
       </form>
+    </div> -->
     </div>
+    
 
     <footer class="jumbotron jumbotron-fluid my-0">
       <div class="container-fluid">
