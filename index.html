@@ -11,11 +11,7 @@
     />
 
     <!-- Additional CSS must be placed after Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="node_modules/font-awesome/css/font-awesome.min.css"
-    />
-    <!-- Add a custom font here -->
+    <script src="https://kit.fontawesome.com/d4fa70473e.js" crossorigin="anonymous"></script>    <!-- Add a custom font here -->
     <link rel="stylesheet" href="css/main.css" />
     <title>Real Estate Website</title>
   </head>
@@ -48,7 +44,7 @@
                 <a class="nav-link text-white" href="#">Log In</a>
               </li>
               <li id="nav-item-btn" class="nav-item">
-                <button id="register-btn" class="text-white">Register</button>
+                <button class="btn btn-primary text-white">Register</button>
               </li>
             </ul>
           </div>
@@ -70,10 +66,14 @@
           <!-- Search form -->
           <div class="row">
             <div class="col search-box ml-auto">
-              <form class="form-inline ">
-                <input class="form-control form-control-sm mr-3 w-75" type="search" placeholder="Enter City or Zip Code"
-                  aria-label="Search">
-                <i class="fas fa-search" aria-hidden="true"></i>
+              <form>
+                <div class="form-row">
+                  <div class="col-7">
+                    <input class="form-control mr-3" type="search" placeholder="Enter City or Zip Code"
+                    aria-label="Search">
+                  </div>
+                  <button class="btn bg-white"><i class="fas fa-search "></i></button>
+                </div>
               </form>
           </div>
         </div>
@@ -114,11 +114,11 @@
     </div>
     
 
-    <footer class="jumbotron jumbotron-fluid my-0">
+    <footer class="bg-color my-0">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4">
-            android and apple phone images
+            <img src="http://uilove.in/realestate/listo/preview/img/demo/mobile-app-hero.png" alt="">
           </div>
           <div class="col-sm-4">
             <h3>Download the Real Estate App</h3>
@@ -126,11 +126,11 @@
           </div>
           <div class="col-sm-4">
             <ul class="list-unstyled">
-              <li class="text-white-50"><a href="#">Listings</a></li>
-              <li class="text-white-50"><a href="#">About Us</a></li>
-              <li class="text-white-50"><a href="#">Log In</a></li>
-              <li id="nav-item-btn" class="text-white-50">
-                <button id="register-btn" class="text-white">Register</button>
+              <li><a href="#">Listings</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Log In</a></li>
+              <li>
+                <button class="btn btn-primary text-white">Register</button>
               </li>
             </ul>
           </div>

@@ -1,8 +1,38 @@
-footer{
-    .jumbotron{
-        .jumbotron-fluid{
-            bottom: 0;//removed the jumbotron postion absolute to make footer stay at the bottom
-            width: 100%;
-          }
+$btn-color: #ff718e;
+
+footer {
+  padding: 4rem 2rem;
+  background-color: #0c002b;
+  color: white;
+  a {
+    list-style: none;
+    color: white;
+    &:hover {
+      text-decoration: none;
+      color: white;
     }
+  }
+  li {
+    padding: 5px 0;
+  }
+  #nav-item-btn {
+    padding: 0;
+  }
+//   Override the .btn-primary class onclick effect
+  .btn-primary {
+    border-radius: 5px;
+    padding: 7px 25px;
+    background-color: $btn-color;
+    border-color: $btn-color;
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus:not(:disabled):not(.disabled) {
+      box-shadow: none !important;
+      outline: 0;
+      text-decoration: none;
+      background-color: $btn-color;
+      border-color: $btn-color;
+    }
+  }
 }

@@ -5,6 +5,32 @@
 #caret-icon {
   display: inline-block; }
 
+footer {
+  padding: 4rem 2rem;
+  background-color: #0c002b;
+  color: white; }
+  footer a {
+    list-style: none;
+    color: white; }
+    footer a:hover {
+      text-decoration: none;
+      color: white; }
+  footer li {
+    padding: 5px 0; }
+  footer #nav-item-btn {
+    padding: 0; }
+  footer .btn-primary {
+    border-radius: 5px;
+    padding: 7px 25px;
+    background-color: #ff718e;
+    border-color: #ff718e; }
+    footer .btn-primary:hover, footer .btn-primary:focus, footer .btn-primary:active, footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
+      box-shadow: none !important;
+      outline: 0;
+      text-decoration: none;
+      background-color: #ff718e;
+      border-color: #ff718e; }
+
 #home-banner {
   background-image: url("https://d29u17ylf1ylz9.cloudfront.net/haven-preview/haven/img/slider/3.jpg");
   background-position: center;
@@ -20,11 +46,8 @@
     bottom: 0;
     z-index: 1;
     background: rgba(0, 0, 0, 0.3); }
-  #home-banner .col-sm-6 {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    transform: translate(-42%, 10px); }
+  #home-banner .fa-search {
+    color: #0c002b; }
 
 @media (min-width: 500px) {
   #home-banner .search-box {
@@ -32,7 +55,7 @@
     z-index: 2;
     top: 50%;
     transform: translate(0%, 40px);
-    padding-left: 22%; } }
+    padding-left: 25%; } }
 
 header {
   background: #0c002b;
@@ -42,18 +65,17 @@ header {
   font-weight: 500;
   font-size: 1rem; }
 
-#register-btn {
-  background: #ff718e;
-  text-align: center;
-  padding: 7px 25px;
-  color: white;
+.btn-primary {
   border-radius: 5px;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer; }
-
-#register-btn:focus {
-  outline: 0; }
+  padding: 7px 25px;
+  background-color: #ff718e;
+  border-color: #ff718e; }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:focus:not(:disabled):not(.disabled) {
+    box-shadow: none !important;
+    outline: 0;
+    text-decoration: none;
+    background-color: #ff718e;
+    border-color: #ff718e; }
 
 #nav-css {
   color: red;
@@ -65,9 +87,6 @@ header {
 
 .nav-item {
   padding: 0 20px; }
-
-#nav-item-btn {
-  padding: 0 0 0 20px; }
 
 #container-fluid-nav {
   padding-right: 0; }

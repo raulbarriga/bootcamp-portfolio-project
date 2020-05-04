@@ -16,11 +16,14 @@
       background: rgba(0, 0, 0, 0.3);
     }
 
-    .col-sm-6{
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      transform: translate(-42%, 10px);
+    // .col-sm-6{
+    //   position: absolute;
+    //   z-index: 2;
+    //   top: 50%;
+    //   transform: translate(-42%, 10px);
+    // }
+    .fa-search{
+      color: #0c002b;
     }
   }
   @media(min-width: 500px){
@@ -29,7 +32,7 @@
       z-index: 2;
       top: 50%;
       transform: translate(0%, 40px);
-      padding-left: 22%;
+      padding-left: 25%;
   }
   }
   

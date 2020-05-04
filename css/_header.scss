@@ -6,18 +6,21 @@ header {
     font-weight: 500;
     font-size: 1rem;
   }
-  #register-btn {
-    background: #ff718e;
-    text-align: center;
-    padding: 7px 25px;
-    color: white;
+  .btn-primary {
     border-radius: 5px;
-    font-weight: 500;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  #register-btn:focus {
-    outline: 0;
+    padding: 7px 25px;
+    background-color: $btn-color;
+    border-color: $btn-color;
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus:not(:disabled):not(.disabled) {
+      box-shadow: none !important;
+      outline: 0;
+      text-decoration: none;
+      background-color: $btn-color;
+      border-color: $btn-color;
+    }
   }
   #nav-css {
     color: red;
@@ -29,9 +32,6 @@ header {
   }
   .nav-item {
     padding: 0 20px;
-  }
-  #nav-item-btn {
-    padding: 0 0 0 20px;
   }
   #container-fluid-nav {
     padding-right: 0;
