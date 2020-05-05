@@ -19,7 +19,7 @@
     <header>
       <nav class="navbar navbar-expand-custom navbar-dark" role="navigation">
         <div id="container-fluid-nav" class="container-fluid">
-          <a href="#" class="navbar-brand">LOGO</a>
+          <a href="index.html" class="navbar-brand">LOGO</a>
 
           <!-- Collapse Button Toggler -->
           <button
@@ -35,16 +35,16 @@
           <div id="toggle-btn" class="collapse navbar-collapse">
             <ul id="nav-css" class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Listings</a>
+                <a class="nav-link text-white" href="listings.html">Listings</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">About Us</a>
+                <a class="nav-link text-white" href="aboutus.html">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Log In</a>
+                <a class="nav-link text-white" href="login.html">Log In</a>
               </li>
               <li id="nav-item-btn" class="nav-item">
-                <button class="btn btn-primary text-white">Register</button>
+                <button class="btn btn-primary text-white" onclick="window.location.href='register.html'"><a href="register.html">Register</a></button>
               </li>
             </ul>
           </div>
@@ -56,12 +56,6 @@
       <!-- Image Banner -->
       <div class="row">
         <div id="home-banner" class="col-12 px-0">
-          <!-- <img
-            id="home-banner"
-            class="img-fluid"
-            src="https://d29u17ylf1ylz9.cloudfront.net/haven-preview/haven/img/slider/3.jpg"
-            alt="Home Page Image"
-          /> -->
           <div class="overlay"></div>
           <!-- Search form -->
           <div class="row">
@@ -72,65 +66,41 @@
                     <input class="form-control mr-3" type="search" placeholder="Enter City or Zip Code"
                     aria-label="Search">
                   </div>
-                  <button class="btn bg-white"><i class="fas fa-search "></i></button>
+                  <button class="btn bg-white"><a href="listings.html"><i class="fas fa-search "></i></a></button>
                 </div>
               </form>
+            </div>
           </div>
-        </div>
-        <!-- <div class="row">
-          <div class="col-md-6">
-            
-          </div> -->
         </div>
       </div>
-
-      <!-- <div class="row text-center">
-        <div class="col-md-6">
-          
-        </div>
-      </div> -->
-
-      <!-- <form role="form" id="form-buscar">
-        <div class="form-group">
-          <div class="input-group">
-            <input
-              id="1"
-              class="form-control"
-              type="text"
-              name="search"
-              placeholder="Search..."
-              required
-            />
-            <span class="input-group-btn">
-              <button class="btn btn-success" type="submit">
-                <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
-                
-              </button>
-            </span>
-          </div>
-        </div>
-      </form>
-    </div> -->
     </div>
-    
 
     <footer class="bg-color my-0">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4">
-            <img src="http://uilove.in/realestate/listo/preview/img/demo/mobile-app-hero.png" alt="">
+            <img class="phones-img" src="http://uilove.in/realestate/listo/preview/img/demo/mobile-app-hero.png" alt="">
           </div>
           <div class="col-sm-4">
             <h3>Download the Real Estate App</h3>
-            play store image and app store image
+            <span>
+              <a href="#">
+                <img class="play-store" src="google-play-badge.png" alt="">
+              </a>
+            </span>
+            <span>
+              <a href="#">
+                <img class="app-store" src="app-store-logo.png" alt="">
+              </a>
+            </span>
           </div>
           <div class="col-sm-4">
             <ul class="list-unstyled">
-              <li><a href="#">Listings</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Log In</a></li>
-              <li>
-                <button class="btn btn-primary text-white">Register</button>
+              <li><a href="listings.html">Listings</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="login.html">Log In</a></li>
+              <li id="nav-item-btn">
+                <button class="btn btn-primary text-white" onclick="window.location.href='register.html'"><a href="register.html">Register</a></button>
               </li>
             </ul>
           </div>

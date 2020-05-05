@@ -4,19 +4,52 @@ footer {
   padding: 4rem 2rem;
   background-color: #0c002b;
   color: white;
+
+    .phones-img{
+      height: 332px;
+      width: 100%;
+    }
+    .play-store{
+      width: 178px;
+      height: 24%;
+      margin-left: 14px
+    }
+    .app-store{
+      width: 177px;
+      height: 22%;
+    }
   a {
     list-style: none;
     color: white;
-    &:hover {
+    font-weight: 500;
+    font-size: 1rem;
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus:not(:disabled):not(.disabled) {
+      box-shadow: none !important;
+      outline: 0;
       text-decoration: none;
       color: white;
+      // background-color: $btn-color;
+      border-color: $btn-color;
     }
   }
   li {
-    padding: 5px 0;
+    padding: 16px 0;
   }
   #nav-item-btn {
-    padding: 0;
+    padding-top: 15px;
+    a{
+      font-weight: 500;
+    font-size: 1rem;
+      text-decoration: none;
+        color: white;
+      &:hover{
+        text-decoration: none;
+        color: white;
+      }
+    }
   }
 //   Override the .btn-primary class onclick effect
   .btn-primary {

@@ -9,16 +9,39 @@ footer {
   padding: 4rem 2rem;
   background-color: #0c002b;
   color: white; }
+  footer .phones-img {
+    height: 332px;
+    width: 100%; }
+  footer .play-store {
+    width: 178px;
+    height: 24%;
+    margin-left: 14px; }
+  footer .app-store {
+    width: 177px;
+    height: 22%; }
   footer a {
     list-style: none;
-    color: white; }
-    footer a:hover {
+    color: white;
+    font-weight: 500;
+    font-size: 1rem; }
+    footer a:hover, footer a:focus, footer a:active, footer a:active:focus:not(:disabled):not(.disabled) {
+      box-shadow: none !important;
+      outline: 0;
+      text-decoration: none;
+      color: white;
+      border-color: #ff718e; }
+  footer li {
+    padding: 16px 0; }
+  footer #nav-item-btn {
+    padding-top: 15px; }
+    footer #nav-item-btn a {
+      font-weight: 500;
+      font-size: 1rem;
       text-decoration: none;
       color: white; }
-  footer li {
-    padding: 5px 0; }
-  footer #nav-item-btn {
-    padding: 0; }
+      footer #nav-item-btn a:hover {
+        text-decoration: none;
+        color: white; }
   footer .btn-primary {
     border-radius: 5px;
     padding: 7px 25px;
@@ -65,20 +88,7 @@ header {
   font-weight: 500;
   font-size: 1rem; }
 
-.btn-primary {
-  border-radius: 5px;
-  padding: 7px 25px;
-  background-color: #ff718e;
-  border-color: #ff718e; }
-  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:focus:not(:disabled):not(.disabled) {
-    box-shadow: none !important;
-    outline: 0;
-    text-decoration: none;
-    background-color: #ff718e;
-    border-color: #ff718e; }
-
 #nav-css {
-  color: red;
   padding: 7px 20px;
   font-weight: 500;
   font-size: 1rem;
@@ -87,6 +97,27 @@ header {
 
 .nav-item {
   padding: 0 20px; }
+
+#nav-item-btn a {
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white; }
+  #nav-item-btn a:hover {
+    text-decoration: none;
+    color: white; }
+
+#nav-item-btn .btn-primary {
+  border-radius: 5px;
+  padding: 7px 25px;
+  background-color: #ff718e;
+  border-color: #ff718e; }
+  #nav-item-btn .btn-primary:hover, #nav-item-btn .btn-primary:focus, #nav-item-btn .btn-primary:active, #nav-item-btn .btn-primary:active:focus:not(:disabled):not(.disabled) {
+    box-shadow: none !important;
+    outline: 0;
+    text-decoration: none;
+    background-color: #ff718e;
+    border-color: #ff718e; }
 
 #container-fluid-nav {
   padding-right: 0; }
