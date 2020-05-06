@@ -5,19 +5,19 @@ footer {
   background-color: #0c002b;
   color: white;
 
-    .phones-img{
-      height: 332px;
-      width: 100%;
-    }
-    .play-store{
-      width: 178px;
-      height: 24%;
-      margin-left: 14px
-    }
-    .app-store{
-      width: 177px;
-      height: 22%;
-    }
+  .phones-img {
+    height: 332px;
+    width: 100%;
+  }
+  .play-store {
+    width: 178px;
+    height: 24%;
+    margin-left: 14px;
+  }
+  .app-store {
+    width: 177px;
+    height: 22%;
+  }
   a {
     list-style: none;
     color: white;
@@ -40,18 +40,18 @@ footer {
   }
   #nav-item-btn {
     padding-top: 15px;
-    a{
+    a {
       font-weight: 500;
-    font-size: 1rem;
+      font-size: 1rem;
       text-decoration: none;
-        color: white;
-      &:hover{
+      color: white;
+      &:hover {
         text-decoration: none;
         color: white;
       }
     }
   }
-//   Override the .btn-primary class onclick effect
+  //   Override the .btn-primary class onclick effect
   .btn-primary {
     border-radius: 5px;
     padding: 7px 25px;
@@ -69,3 +69,90 @@ footer {
     }
   }
 }
+
+
+// @media (min-width: 768px){
+//   footer{
+//     .play-store {
+//     margin-left: 0px;
+//     }
+//     .footer-links{
+//       max-width: 11%;
+//     }
+//   }
+// }
+
+/*Laptop Devices*/
+@media only screen and (min-width: 1200px) {
+  footer {
+    .col-sm-4 {
+      max-width: 45%;
+    }
+    .col-sm-4.footer-links {
+      max-width: 10%;
+    }
+    .col-sm-4.store-icons {
+      flex: 0 0 45.333333%;
+    }
+  }
+}
+/*Tablet Devices*/
+@media only screen and (max-width: 1199px) {
+  footer {
+    .col-sm-4.footer-links {
+      max-width: 10%;
+    }
+    .col-sm-4.store-icons {
+      flex: 0 0 45.333333%;
+      max-width: 45%;
+    }
+  }
+}
+/*Mobile devices*/
+@media only screen and (max-width: 767px) {
+  footer {
+    .col-sm-4 {
+      max-width: 29.333333%;
+      margin-left: 0;
+    }
+    .col-sm-4.footer-links {
+      max-width: 15%;
+    }
+
+    .col-sm-4.store-icons {
+      flex: 0 0 49.333333%;
+      max-width: 51%;
+
+      .h3,
+      h3 {
+        font-size: 1.31rem;
+      }
+      .play-store {
+        width: 157px;
+        height: 24%;
+        margin-left: -13px;
+      }
+      .app-store {
+        width: 160px;
+        height: 22%;
+      }
+    }
+  }
+}
+// @media (min-width: 500px) and (max-width: 575px) {
+//   footer {
+//     h3 {
+//       margin-top: 37px;
+//       margin-bottom: 20px;
+//     }
+//     .play-store {
+//       height: 50%;
+//     }
+//     .app-store {
+//       height: 50%;
+//     }
+//     ul {
+//       margin-top: 20px;
+//     }
+//   }
+// }

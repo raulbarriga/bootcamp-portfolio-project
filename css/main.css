@@ -54,6 +54,44 @@ footer {
       background-color: #ff718e;
       border-color: #ff718e; }
 
+/*Laptop Devices*/
+@media only screen and (min-width: 1200px) {
+  footer .col-sm-4 {
+    max-width: 45%; }
+  footer .col-sm-4.footer-links {
+    max-width: 10%; }
+  footer .col-sm-4.store-icons {
+    flex: 0 0 45.333333%; } }
+
+/*Tablet Devices*/
+@media only screen and (max-width: 1199px) {
+  footer .col-sm-4.footer-links {
+    max-width: 10%; }
+  footer .col-sm-4.store-icons {
+    flex: 0 0 45.333333%;
+    max-width: 45%; } }
+
+/*Mobile devices*/
+@media only screen and (max-width: 767px) {
+  footer .col-sm-4 {
+    max-width: 29.333333%;
+    margin-left: 0; }
+  footer .col-sm-4.footer-links {
+    max-width: 15%; }
+  footer .col-sm-4.store-icons {
+    flex: 0 0 49.333333%;
+    max-width: 51%; }
+    footer .col-sm-4.store-icons .h3,
+    footer .col-sm-4.store-icons h3 {
+      font-size: 1.31rem; }
+    footer .col-sm-4.store-icons .play-store {
+      width: 157px;
+      height: 24%;
+      margin-left: -13px; }
+    footer .col-sm-4.store-icons .app-store {
+      width: 160px;
+      height: 22%; } }
+
 #home-banner {
   background-image: url("https://d29u17ylf1ylz9.cloudfront.net/haven-preview/haven/img/slider/3.jpg");
   background-position: center;
