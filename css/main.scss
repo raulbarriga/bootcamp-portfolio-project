@@ -1,0 +1,17 @@
+@import "listings";
+@import "footer";
+@import "bannerArea";
+@import "header";
+
+
+@media (min-width: 657px) {
+    .navbar-expand-custom .navbar-nav {
+      flex-direction: row;
+    }
+    .navbar-expand-custom .navbar-collapse {
+      display: contents !important;
+    }
+    .navbar-expand-custom .navbar-toggler {
+      display: none;
+    }
+  }
