@@ -11,19 +11,15 @@
     />
 
     <!-- Additional CSS must be placed after Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="node_modules/font-awesome/css/font-awesome.min.css"
-    />
-    <!-- Add a custom font here -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://kit.fontawesome.com/d4fa70473e.js" crossorigin="anonymous"></script>    <!-- Add a custom font here -->
+    <link rel="stylesheet" href="css/main.css" />
     <title>Real Estate Website</title>
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-custom navbar-dark" role="navigation">
         <div id="container-fluid-nav" class="container-fluid">
-          <a href="#" class="navbar-brand">LOGO</a>
+          <a href="index.html" class="navbar-brand">LOGO</a>
 
           <!-- Collapse Button Toggler -->
           <button
@@ -39,16 +35,16 @@
           <div id="toggle-btn" class="collapse navbar-collapse">
             <ul id="nav-css" class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Listings</a>
+                <a class="nav-link text-white" href="listings.html">Listings</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">About Us</a>
+                <a class="nav-link text-white" href="aboutus.html">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Log In</a>
+                <a class="nav-link text-white" href="login.html">Log In</a>
               </li>
               <li id="nav-item-btn" class="nav-item">
-                <button id="register-btn" class="text-white">Register</button>
+                <button class="btn btn-primary text-white" onclick="window.location.href='register.html'"><a href="register.html">Register</a></button>
               </li>
             </ul>
           </div>
@@ -313,23 +309,32 @@
       </div>
     </div>
 
-    <footer class="jumbotron jumbotron-fluid my-0">
+    <footer class="bg-color my-0">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4">
-            android and apple phone images
+            <img class="phones-img" src="http://uilove.in/realestate/listo/preview/img/demo/mobile-app-hero.png" alt="">
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-4 store-icons">
             <h3>Download the Real Estate App</h3>
-            play store image and app store image
+            <span>
+              <a href="#">
+                <img class="play-store" src="google-play-badge.png" alt="">
+              </a>
+            </span>
+            <span>
+              <a href="#">
+                <img class="app-store" src="app-store-logo.png" alt="">
+              </a>
+            </span>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-4 footer-links">
             <ul class="list-unstyled">
-              <li class="text-white-50"><a href="#">Listings</a></li>
-              <li class="text-white-50"><a href="#">About Us</a></li>
-              <li class="text-white-50"><a href="#">Log In</a></li>
-              <li id="nav-item-btn" class="text-white-50">
-                <button id="register-btn" class="text-white">Register</button>
+              <li><a href="listings.html">Listings</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="login.html">Log In</a></li>
+              <li id="nav-item-btn">
+                <button class="btn btn-primary text-white" onclick="window.location.href='register.html'"><a href="register.html">Register</a></button>
               </li>
             </ul>
           </div>
