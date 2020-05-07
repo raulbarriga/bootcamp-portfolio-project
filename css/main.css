@@ -199,11 +199,6 @@ nav {
   overflow: auto; }
 
 @media (min-width: 657px) {
-  .navbar-expand-custom {
-    /* flex-direction: row;
-          flex-wrap: nowrap;
-          justify-content: flex-start; */
-    /* padding: 7px 20px !important; */ }
   .navbar-expand-custom .navbar-nav {
     flex-direction: row; }
   .navbar-expand-custom .navbar-collapse {
