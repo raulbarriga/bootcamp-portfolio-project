@@ -1,11 +1,10 @@
-function filterFunction() {
-    var F = document.getElementById("filter"),
-        displayValue = "";
-    if (F.style.display == "")
-        displayValue = "none";
 
-    F.style.display = displayValue;
-}
+
+$(function(){
+    $("#filter-btn").click(function(){
+      $("#filter").toggle();
+    });
+  });
 
 $('.dropdown-menu').click(function(e) {
     e.stopPropagation();

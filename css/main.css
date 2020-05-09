@@ -1,7 +1,11 @@
 /* Listings CSS */
 @media only screen and (max-width: 767px) {
-  .container-fluid .row .col-md-12.align-items-end {
+  .container-fluid .row .col-md-12.align-items-end:nth-child(1) {
     padding-top: 1rem; }
+  .container-fluid .row .col-md-12.align-items-end:nth-child(2) {
+    padding-top: 1rem; }
+  .container-fluid .row .col-md-12.align-items-end .form-group {
+    margin-bottom: 0; }
     .container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box {
       position: relative;
       display: inline-flex; }
@@ -13,40 +17,46 @@
         top: 11px;
         cursor: pointer; }
   .container-fluid #filter-and-sort-row {
-    padding-bottom: 1rem; }
-  .container-fluid #filter.row .col-lg-3.bg-light {
-    max-width: 483.11px;
-    border-radius: 5px;
-    border: 1px solid #ced4da; }
-    .container-fluid #filter.row .col-lg-3.bg-light #property-btn {
+    padding: 1rem 0; }
+  .container-fluid #filter.row {
+    position: absolute;
+    z-index: 1;
+    display: none; }
+    .container-fluid #filter.row .col-lg-3.bg-light {
+      max-width: 483.11px;
+      border-radius: 5px;
       border: 1px solid #ced4da; }
-    .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 {
-      max-width: 94%;
-      top: -1px; }
-      .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow {
-        top: -25px;
-        left: 50%;
-        width: 0;
-        height: 0;
-        position: relative; }
-        .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:before, .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:after {
-          content: "";
-          position: absolute;
-          display: block;
+      .container-fluid #filter.row .col-lg-3.bg-light #property-btn {
+        border: 1px solid #ced4da; }
+      .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 {
+        max-width: 94%;
+        top: -1px; }
+        .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow {
+          top: -25px;
+          left: 50%;
           width: 0;
           height: 0;
-          border-width: 7px 8px;
-          border-style: solid;
-          border-color: transparent;
-          z-index: 1001; }
-        .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:after {
-          bottom: -18px;
-          right: -8px;
-          border-bottom-color: #fff; }
-        .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:before {
-          bottom: -17px;
-          right: -8px;
-          border-bottom-color: rgba(0, 0, 0, 0.15); } }
+          position: relative; }
+          .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:before, .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            border-width: 7px 8px;
+            border-style: solid;
+            border-color: transparent;
+            z-index: 1001; }
+          .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:after {
+            bottom: -18px;
+            right: -8px;
+            border-bottom-color: #fff; }
+          .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:before {
+            bottom: -17px;
+            right: -8px;
+            border-bottom-color: rgba(0, 0, 0, 0.15); }
+  .container-fluid #property-cards-content {
+    position: relative; } }
 
 footer {
   padding: 4rem 2rem;

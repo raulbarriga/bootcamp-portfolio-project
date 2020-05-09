@@ -36,6 +36,9 @@
           <div id="toggle-btn" class="collapse navbar-collapse">
             <ul id="nav-css" class="navbar-nav ml-auto">
               <li class="nav-item">
+                <a class="nav-link text-white" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link text-white" href="listings.html">Listings</a>
               </li>
               <li class="nav-item">
@@ -70,15 +73,24 @@
         </div>
       </div>
 
-      <!-- Filter & Sort Toggle Buttons -->
+      <!-- Filter & Sort Toggle Buttons/Row -->
       <div id="filter-and-sort-row" class="row">
-        <div class="col-sm-12 d-flex flex-nowrap float-right justify-content-end">
-          <button class=" btn order-1 mr-2" onclick="filterFunction();">Filter</button>
-          <button class="btn order-2">Sort</button>
+        <div class="col-sm-12 d-flex flex-nowrap float-right justify-content-end dropdown">
+          <button id="filter-btn" class=" btn order-1 mr-2";" type="button">Filter</button>
+          <button id="sort-btn" class="btn order-2 dropdown-toggle" type="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</button>
+          <div class="dropdown-menu" aria-labelledby="sort-btn">
+            <a class="dropdown-item" href="#">Price (High to Low)</a>
+            <a class="dropdown-item" href="#">Price (Low to High)</a>
+            <a class="dropdown-item" href="#">Newest</a>
+            <a class="dropdown-item" href="#">Sqaure Feet</a>
+            <a class="dropdown-item" href="#">Bedrooms</a>
+            <a class="dropdown-item" href="#">Bathrooms</a>
+          </div>
         </div>
       </div>
 
-      <!-- Filter row/Toggle Menu-->
+      <!-- Filter row/Toggle Menu/Row -->
       <div id="filter" class="row">
         <div class="col-lg-3 bg-light">
           <div>
@@ -93,8 +105,8 @@
                       type="button"
                       data-toggle="dropdown"
                       aria-haspopup="true"
-                      aria-expanded="true">Property Type</button>
-                      <ul class="dropdown-menu checkbox-menu allow-focus w-100"
+                      aria-expanded="false">Property Type</button>
+                      <ul class="dropdown-menu checkbox-menu w-100"
                         aria-labelledby="property-btn">
                         <span class="dropdown-menu-arrow"></span>
                         <li id="property-type" class="ml-2">
@@ -294,9 +306,42 @@
       </div>
 
       <!-- Property Listings -->
-      <!-- <div class="row">
+      <div id="property-cards-content" class="row">
+        <div class="col col-sm">
+            <div class="card mb-3">
+            <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
         
-      </div> -->
+      </div>
     </div>
 
     <footer class="bg-color my-0">
@@ -320,6 +365,7 @@
           </div>
           <div class="col-sm-4 footer-links">
             <ul class="list-unstyled">
+              <li><a href="index.html">Home</a></li>
               <li><a href="listings.html">Listings</a></li>
               <li><a href="aboutus.html">About Us</a></li>
               <li><a href="login.html">Log In</a></li>
