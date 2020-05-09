@@ -11,7 +11,8 @@
     />
 
     <!-- Additional CSS must be placed after Bootstrap CSS -->
-    <script src="https://kit.fontawesome.com/d4fa70473e.js" crossorigin="anonymous"></script>    <!-- Add a custom font here -->
+    <script src="https://kit.fontawesome.com/d4fa70473e.js" crossorigin="anonymous"></script>
+    <!-- Add a custom font here -->
     <link rel="stylesheet" href="css/main.css" />
     <title>Real Estate Website</title>
   </head>
@@ -53,50 +54,49 @@
     </header>
 
     <div class="container-fluid">
-        <!-- Filter row -->
+
+      <!-- Location search box -->
       <div class="row">
+        <div class="col-md-12 align-items-end">
+          <div class="form-group">
+            <div class="form-field search-box">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Enter City or Zip Code"/>
+                <i class="fas fa-search"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter & Sort Toggle Buttons -->
+      <div id="filter-and-sort-row" class="row">
+        <div class="col-sm-12 d-flex flex-nowrap float-right justify-content-end">
+          <button class=" btn order-1 mr-2" onclick="filterFunction();">Filter</button>
+          <button class="btn order-2">Sort</button>
+        </div>
+      </div>
+
+      <!-- Filter row/Toggle Menu-->
+      <div id="filter" class="row">
         <div class="col-lg-3 bg-light">
           <div>
-            <h3>Filter</h3>
             <form action="#" class="search-property">
               <div class="row">
-                <!-- Location search box -->
-                <div
-                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
-                >
-                  <div class="form-group">
-                    <label for="#">Location</label>
-                    <div class="form-field">
-                      <div class="icon"><span class="icon-pencil"></span></div>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="City/Locality Name"
-                      />
-                    </div>
-                  </div>
-                </div>
                 <!-- Property Type -->
-                <div class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated">
+                <div class="col-md-12 align-items-end">
                   <div class="form-group">
-                    <label for="#">Property Type</label>
+                    <label id="property-label" for="#">Property Type</label>
                     <div class="form-field">
-                      <button class="btn dropdown-toggle text-left w-100 bg-white"
-                        type="button"
-                        id="dropdownMenu1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="true">
-                        Property Type
-                        <div id="caret-icon" class="icon">
-                          <span class="ion-ios-arrow-down"></span>
-                        </div>
-                      </button>
-                      
-                      <ul
-                        class="dropdown-menu checkbox-menu allow-focus w-100"
-                        aria-labelledby="dropdownMenu1"
-                      >
+                      <button id="property-btn" class="btn bg-white text-left w-100"
+                      type="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="true">Property Type</button>
+                      <ul class="dropdown-menu checkbox-menu allow-focus w-100"
+                        aria-labelledby="property-btn">
+                        <span class="dropdown-menu-arrow"></span>
                         <li id="property-type" class="ml-2">
                           <label> <input type="checkbox" /> Houses </label>
                         </li>
@@ -132,16 +132,13 @@
                 </div>
 
                 <!-- Property Status -->
-                <div class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
+                <div class="col-md-12 align-items-end"
                 >
                   <div class="form-group">
-                    <label for="#">Property Status</label>
+                    <label for="property-status">Property Status</label>
                     <div class="form-field">
                       <div class="select-wrap">
-                        <div class="icon">
-                          <span class="ion-ios-arrow-down"></span>
-                        </div>
-                        <select name="" id="" class="form-control">
+                        <select name="property-status" id="property-status" class="form-control">
                           <option value="">Type</option>
                           <option value="">Rent</option>
                           <option value="">Sale</option>
@@ -153,17 +150,15 @@
               </div>
               <div class="row">
                 <!-- Bedrooms -->
-                <div
-                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
-                >
+                <div class="col-md-12 align-items-end">
                   <div class="form-group">
-                    <label for="#">Bedrooms</label>
+                    <label for="bedrooms">Bedrooms</label>
                     <div class="form-field">
                       <div class="select-wrap">
                         <div class="icon">
                           <span class="ion-ios-arrow-down"></span>
                         </div>
-                        <select name="" id="" class="form-control">
+                        <select name="bedrooms" id="bedrooms" class="form-control">
                           <option value="">Any</option>
                           <option value="">1&#43;</option>
                           <option value="">2&#43;</option>
@@ -177,17 +172,15 @@
                 </div>
 
                 <!-- Baths -->
-                <div
-                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
-                >
+                <div class="col-md-12 align-items-end">
                   <div class="form-group">
-                    <label for="#">Bathrooms</label>
+                    <label for="baths">Bathrooms</label>
                     <div class="form-field">
                       <div class="select-wrap">
                         <div class="icon">
                           <span class="ion-ios-arrow-down"></span>
                         </div>
-                        <select name="" id="" class="form-control">
+                        <select name="baths" id="baths" class="form-control">
                           <option value="">Any</option>
                           <option value="">1&#43;</option>
                           <option value="">1.5&#43;</option>
@@ -200,17 +193,15 @@
                   </div>
                 </div>
                 <!-- Min Price -->
-                <div
-                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
-                >
+                <div class="col-md-12 align-items-end">
                   <div class="form-group">
-                    <label for="#">Min Price</label>
+                    <label for="min-price">Min Price</label>
                     <div class="form-field">
                       <div class="select-wrap">
                         <div class="icon">
                           <span class="ion-ios-arrow-down"></span>
                         </div>
-                        <select name="" id="" class="form-control">
+                        <select name="min-price" id="min-price" class="form-control">
                           <option value="">Min Price</option>
                           <option value="">&#36;0&#43;</option>
                           <option value="">&#36;100&#44;000&#43;</option>
@@ -228,17 +219,15 @@
                   </div>
                 </div>
                 <!-- Max Price -->
-                <div
-                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
-                >
+                <div class="col-md-12 align-items-end">
                   <div class="form-group">
-                    <label for="#">Max Price</label>
+                    <label for="max-price">Max Price</label>
                     <div class="form-field">
                       <div class="select-wrap">
                         <div class="icon">
                           <span class="ion-ios-arrow-down"></span>
                         </div>
-                        <select name="" id="" class="form-control">
+                        <select name="max-price" id="max-price" class="form-control">
                           <option value="">Max Price</option>
                           <option value="">&#36;500&#44;000</option>
                           <option value="">&#36;600&#44;000</option>
@@ -256,11 +245,9 @@
                   </div>
                 </div>
                 <!-- Min Area -->
-                <div
-                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
-                >
+                <div class="col-md-12 align-items-end">
                   <div class="form-group">
-                    <label for="#">Min Area <span>(sq ft)</span></label>
+                    <label for="min-area">Min Area <span>(sq ft)</span></label>
                     <div class="form-field">
                       <div class="icon"><span class="icon-pencil"></span></div>
                       <input
@@ -273,10 +260,10 @@
                 </div>
                 <!-- Max Area -->
                 <div
-                  class="col-md-12 align-items-end ftco-animate fadeInUp ftco-animated"
+                  class="col-md-12 align-items-end"
                 >
                   <div class="form-group">
-                    <label for="#">Max Area <span>(sq ft)</span></label>
+                    <label for="max-area">Max Area <span>(sq ft)</span></label>
                     <div class="form-field">
                       <div class="icon"><span class="icon-pencil"></span></div>
                       <input
@@ -287,10 +274,8 @@
                     </div>
                   </div>
                 </div>
-
-                <div
-                  class="col-md-12 align-self-end ftco-animate fadeInUp ftco-animated"
-                >
+                <!-- Search Button on the Filter Menu -->
+                <div class="col-md-12 align-self-end">
                   <div class="form-group">
                     <div class="form-field">
                       <input
@@ -307,6 +292,11 @@
         </div>
         <div class="col-lg-9"></div>
       </div>
+
+      <!-- Property Listings -->
+      <!-- <div class="row">
+        
+      </div> -->
     </div>
 
     <footer class="bg-color my-0">
@@ -341,15 +331,11 @@
         </div>
       </div>
     </footer>
-
+    
     <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-      $(document).on('click', '.allow-focus', function (e) {
-        e.stopPropagation();
-      });
-    </script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>

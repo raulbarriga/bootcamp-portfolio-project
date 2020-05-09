@@ -1,9 +1,52 @@
 /* Listings CSS */
-#property-type {
-  padding-left: 5px; }
-
-#caret-icon {
-  display: inline-block; }
+@media only screen and (max-width: 767px) {
+  .container-fluid .row .col-md-12.align-items-end {
+    padding-top: 1rem; }
+    .container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box {
+      position: relative;
+      display: inline-flex; }
+      .container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box input.form-control {
+        width: 28.2rem; }
+      .container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box i.fas {
+        position: absolute;
+        right: 11px;
+        top: 11px;
+        cursor: pointer; }
+  .container-fluid #filter-and-sort-row {
+    padding-bottom: 1rem; }
+  .container-fluid #filter.row .col-lg-3.bg-light {
+    max-width: 483.11px;
+    border-radius: 5px;
+    border: 1px solid #ced4da; }
+    .container-fluid #filter.row .col-lg-3.bg-light #property-btn {
+      border: 1px solid #ced4da; }
+    .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 {
+      max-width: 94%;
+      top: -1px; }
+      .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow {
+        top: -25px;
+        left: 50%;
+        width: 0;
+        height: 0;
+        position: relative; }
+        .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:before, .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 0;
+          border-width: 7px 8px;
+          border-style: solid;
+          border-color: transparent;
+          z-index: 1001; }
+        .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:after {
+          bottom: -18px;
+          right: -8px;
+          border-bottom-color: #fff; }
+        .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.allow-focus.w-100 .dropdown-menu-arrow:before {
+          bottom: -17px;
+          right: -8px;
+          border-bottom-color: rgba(0, 0, 0, 0.15); } }
 
 footer {
   padding: 4rem 2rem;
