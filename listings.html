@@ -93,214 +93,212 @@
       <!-- Filter row/Toggle Menu/Row -->
       <div id="filter" class="row">
         <div class="col-lg-3 bg-light">
-          <div>
-            <form action="#" class="search-property">
-              <div class="row">
-                <!-- Property Type -->
-                <div class="col-md-12 align-items-end">
-                  <div class="form-group">
-                    <label id="property-label" for="#">Property Type</label>
-                    <div class="form-field">
-                      <button id="property-btn" class="btn bg-white text-left w-100"
-                      type="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false">Property Type</button>
-                      <ul class="dropdown-menu checkbox-menu w-100"
-                        aria-labelledby="property-btn">
-                        <span class="dropdown-menu-arrow"></span>
-                        <li id="property-type" class="ml-2">
-                          <label> <input type="checkbox" /> Houses </label>
-                        </li>
-                        <li id="property-type" class="ml-2">
-                          <label>
-                            <input type="checkbox" /> Manufactured
-                          </label>
-                        </li>
-                        <li id="property-type" class="ml-2">
-                          <label>
-                            <input type="checkbox" /> Condos&#47;co&#45;ops
-                          </label>
-                        </li>
-                        <li id="property-type" class="ml-2">
-                          <label>
-                            <input type="checkbox" /> Multi&#45;family
-                          </label>
-                        </li>
-                        <li id="property-type" class="ml-2">
-                          <label> <input type="checkbox" /> Apartments </label>
-                        </li>
-                        <li id="property-type" class="ml-2">
-                          <label>
-                            <input type="checkbox" /> Lots&#47;Land
-                          </label>
-                        </li>
-                        <li id="property-type" class="ml-2">
-                          <label> <input type="checkbox" /> Townhomes </label>
-                        </li>
-                      </ul>
-                    </div>
+          <form action="#" class="search-property">
+            <div class="row">
+              <!-- Property Type -->
+              <div class="col-md-12 align-items-end">
+                <div class="form-group">
+                  <label id="property-label" for="#">Property Type</label>
+                  <div class="form-field">
+                    <button id="property-btn" class="btn bg-white text-left w-100"
+                    type="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">Property Type</button>
+                    <ul class="dropdown-menu checkbox-menu w-100"
+                      aria-labelledby="property-btn">
+                      <span class="dropdown-menu-arrow"></span>
+                      <li id="property-type" class="ml-2">
+                        <label> <input type="checkbox" /> Houses </label>
+                      </li>
+                      <li id="property-type" class="ml-2">
+                        <label>
+                          <input type="checkbox" /> Manufactured
+                        </label>
+                      </li>
+                      <li id="property-type" class="ml-2">
+                        <label>
+                          <input type="checkbox" /> Condos&#47;co&#45;ops
+                        </label>
+                      </li>
+                      <li id="property-type" class="ml-2">
+                        <label>
+                          <input type="checkbox" /> Multi&#45;family
+                        </label>
+                      </li>
+                      <li id="property-type" class="ml-2">
+                        <label> <input type="checkbox" /> Apartments </label>
+                      </li>
+                      <li id="property-type" class="ml-2">
+                        <label>
+                          <input type="checkbox" /> Lots&#47;Land
+                        </label>
+                      </li>
+                      <li id="property-type" class="ml-2">
+                        <label> <input type="checkbox" /> Townhomes </label>
+                      </li>
+                    </ul>
                   </div>
                 </div>
+              </div>
 
-                <!-- Property Status -->
-                <div class="col-md-12 align-items-end"
-                >
-                  <div class="form-group">
-                    <label for="property-status">Property Status</label>
-                    <div class="form-field">
-                      <div class="select-wrap">
-                        <select name="property-status" id="property-status" class="form-control">
-                          <option value="">Type</option>
-                          <option value="">Rent</option>
-                          <option value="">Sale</option>
-                        </select>
-                      </div>
+              <!-- Property Status -->
+              <div class="col-md-12 align-items-end"
+              >
+                <div class="form-group">
+                  <label for="property-status">Property Status</label>
+                  <div class="form-field">
+                    <div class="select-wrap">
+                      <select name="property-status" id="property-status" class="form-control">
+                        <option value="">Type</option>
+                        <option value="">Rent</option>
+                        <option value="">Sale</option>
+                      </select>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <!-- Bedrooms -->
-                <div class="col-md-12 align-items-end">
-                  <div class="form-group">
-                    <label for="bedrooms">Bedrooms</label>
-                    <div class="form-field">
-                      <div class="select-wrap">
-                        <div class="icon">
-                          <span class="ion-ios-arrow-down"></span>
-                        </div>
-                        <select name="bedrooms" id="bedrooms" class="form-control">
-                          <option value="">Any</option>
-                          <option value="">1&#43;</option>
-                          <option value="">2&#43;</option>
-                          <option value="">3&#43;</option>
-                          <option value="">4&#43;</option>
-                          <option value="">5&#43;</option>
-                        </select>
+            </div>
+            <div class="row">
+              <!-- Bedrooms -->
+              <div class="col-md-12 align-items-end">
+                <div class="form-group">
+                  <label for="bedrooms">Bedrooms</label>
+                  <div class="form-field">
+                    <div class="select-wrap">
+                      <div class="icon">
+                        <span class="ion-ios-arrow-down"></span>
                       </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Baths -->
-                <div class="col-md-12 align-items-end">
-                  <div class="form-group">
-                    <label for="baths">Bathrooms</label>
-                    <div class="form-field">
-                      <div class="select-wrap">
-                        <div class="icon">
-                          <span class="ion-ios-arrow-down"></span>
-                        </div>
-                        <select name="baths" id="baths" class="form-control">
-                          <option value="">Any</option>
-                          <option value="">1&#43;</option>
-                          <option value="">1.5&#43;</option>
-                          <option value="">2&#43;</option>
-                          <option value="">3&#43;</option>
-                          <option value="">4&#43;</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Min Price -->
-                <div class="col-md-12 align-items-end">
-                  <div class="form-group">
-                    <label for="min-price">Min Price</label>
-                    <div class="form-field">
-                      <div class="select-wrap">
-                        <div class="icon">
-                          <span class="ion-ios-arrow-down"></span>
-                        </div>
-                        <select name="min-price" id="min-price" class="form-control">
-                          <option value="">Min Price</option>
-                          <option value="">&#36;0&#43;</option>
-                          <option value="">&#36;100&#44;000&#43;</option>
-                          <option value="">&#36;200&#44;000&#43;</option>
-                          <option value="">&#36;300&#44;000&#43;</option>
-                          <option value="">&#36;400&#44;000&#43;</option>
-                          <option value="">&#36;500&#44;000&#43;</option>
-                          <option value="">&#36;600&#44;000&#43;</option>
-                          <option value="">&#36;700&#44;000&#43;</option>
-                          <option value="">&#36;800&#44;000&#43;</option>
-                          <option value="">&#36;900&#44;000&#43;</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Max Price -->
-                <div class="col-md-12 align-items-end">
-                  <div class="form-group">
-                    <label for="max-price">Max Price</label>
-                    <div class="form-field">
-                      <div class="select-wrap">
-                        <div class="icon">
-                          <span class="ion-ios-arrow-down"></span>
-                        </div>
-                        <select name="max-price" id="max-price" class="form-control">
-                          <option value="">Max Price</option>
-                          <option value="">&#36;500&#44;000</option>
-                          <option value="">&#36;600&#44;000</option>
-                          <option value="">&#36;700&#44;000</option>
-                          <option value="">&#36;800&#44;000</option>
-                          <option value="">&#36;900&#44;000</option>
-                          <option value="">&#36;1M</option>
-                          <option value="">&#36;1&#46;25M</option>
-                          <option value="">&#36;1&#46;50M</option>
-                          <option value="">&#36;1&#46;75M</option>
-                          <option value="">Any Price</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Min Area -->
-                <div class="col-md-12 align-items-end">
-                  <div class="form-group">
-                    <label for="min-area">Min Area <span>(sq ft)</span></label>
-                    <div class="form-field">
-                      <div class="icon"><span class="icon-pencil"></span></div>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Min Area"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <!-- Max Area -->
-                <div
-                  class="col-md-12 align-items-end"
-                >
-                  <div class="form-group">
-                    <label for="max-area">Max Area <span>(sq ft)</span></label>
-                    <div class="form-field">
-                      <div class="icon"><span class="icon-pencil"></span></div>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Max Area"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <!-- Search Button on the Filter Menu -->
-                <div class="col-md-12 align-self-end">
-                  <div class="form-group">
-                    <div class="form-field">
-                      <input
-                        type="submit"
-                        value="Search"
-                        class="form-control btn btn-primary"
-                      />
+                      <select name="bedrooms" id="bedrooms" class="form-control">
+                        <option value="">Any</option>
+                        <option value="">1&#43;</option>
+                        <option value="">2&#43;</option>
+                        <option value="">3&#43;</option>
+                        <option value="">4&#43;</option>
+                        <option value="">5&#43;</option>
+                      </select>
                     </div>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
+
+              <!-- Baths -->
+              <div class="col-md-12 align-items-end">
+                <div class="form-group">
+                  <label for="baths">Bathrooms</label>
+                  <div class="form-field">
+                    <div class="select-wrap">
+                      <div class="icon">
+                        <span class="ion-ios-arrow-down"></span>
+                      </div>
+                      <select name="baths" id="baths" class="form-control">
+                        <option value="">Any</option>
+                        <option value="">1&#43;</option>
+                        <option value="">1.5&#43;</option>
+                        <option value="">2&#43;</option>
+                        <option value="">3&#43;</option>
+                        <option value="">4&#43;</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Min Price -->
+              <div class="col-md-12 align-items-end">
+                <div class="form-group">
+                  <label for="min-price">Min Price</label>
+                  <div class="form-field">
+                    <div class="select-wrap">
+                      <div class="icon">
+                        <span class="ion-ios-arrow-down"></span>
+                      </div>
+                      <select name="min-price" id="min-price" class="form-control">
+                        <option value="">Min Price</option>
+                        <option value="">&#36;0&#43;</option>
+                        <option value="">&#36;100&#44;000&#43;</option>
+                        <option value="">&#36;200&#44;000&#43;</option>
+                        <option value="">&#36;300&#44;000&#43;</option>
+                        <option value="">&#36;400&#44;000&#43;</option>
+                        <option value="">&#36;500&#44;000&#43;</option>
+                        <option value="">&#36;600&#44;000&#43;</option>
+                        <option value="">&#36;700&#44;000&#43;</option>
+                        <option value="">&#36;800&#44;000&#43;</option>
+                        <option value="">&#36;900&#44;000&#43;</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Max Price -->
+              <div class="col-md-12 align-items-end">
+                <div class="form-group">
+                  <label for="max-price">Max Price</label>
+                  <div class="form-field">
+                    <div class="select-wrap">
+                      <div class="icon">
+                        <span class="ion-ios-arrow-down"></span>
+                      </div>
+                      <select name="max-price" id="max-price" class="form-control">
+                        <option value="">Max Price</option>
+                        <option value="">&#36;500&#44;000</option>
+                        <option value="">&#36;600&#44;000</option>
+                        <option value="">&#36;700&#44;000</option>
+                        <option value="">&#36;800&#44;000</option>
+                        <option value="">&#36;900&#44;000</option>
+                        <option value="">&#36;1M</option>
+                        <option value="">&#36;1&#46;25M</option>
+                        <option value="">&#36;1&#46;50M</option>
+                        <option value="">&#36;1&#46;75M</option>
+                        <option value="">Any Price</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Min Area -->
+              <div class="col-md-12 align-items-end">
+                <div class="form-group">
+                  <label for="min-area">Min Area <span>(sq ft)</span></label>
+                  <div class="form-field">
+                    <div class="icon"><span class="icon-pencil"></span></div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Min Area"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Max Area -->
+              <div
+                class="col-md-12 align-items-end"
+              >
+                <div class="form-group">
+                  <label for="max-area">Max Area <span>(sq ft)</span></label>
+                  <div class="form-field">
+                    <div class="icon"><span class="icon-pencil"></span></div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Max Area"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Search Button on the Filter Menu -->
+              <div class="col-md-12 align-self-end">
+                <div class="form-group">
+                  <div class="form-field">
+                    <input
+                      type="submit"
+                      value="Search"
+                      class="form-control btn btn-primary"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
         <div class="col-lg-9"></div>
       </div>
@@ -309,34 +307,66 @@
       <div id="property-cards-content" class="row">
         <div class="col col-sm">
             <div class="card mb-3">
-            <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
+              <a href="#">
+                <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
+              </a>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="card-title">$500,000</h5>
+                </div>
+                <div class="col-6">
+                  <h6 class="card-title float-right">2 bds | 2 ba | 1,120 sqft</h6>
+                </div>
+              </div>
+              <a href="#" class="text-decoration-none text-dark">
+                  <strong class="card-text text-decoration-none text-dark">250 Lassen Ct. Hollister, CA 95023</strong>
+              </a>
             </div>
           </div>
 
           <div class="card mb-3">
             <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="card-title">$500,000</h5>
+                </div>
+                <div class="col-6">
+                  <h6 class="card-title float-right">2 bds | 2 ba | 1,120 sqft</h6>
+                </div>
+              </div>
+              <strong class="card-text">250 Lassen Ct. Hollister, CA 95023</strong>
             </div>
           </div>
 
           <div class="card mb-3">
             <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="card-title">$500,000</h5>
+                </div>
+                <div class="col-6">
+                  <h6 class="card-title float-right">2 bds | 2 ba | 1,120 sqft</h6>
+                </div>
+              </div>
+              <strong class="card-text">250 Lassen Ct. Hollister, CA 95023</strong>
             </div>
           </div>
 
           <div class="card mb-3">
             <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="card-title">$500,000</h5>
+                </div>
+                <div class="col-6">
+                  <h6 class="card-title float-right">2 bds | 2 ba | 1,120 sqft</h6>
+                </div>
+              </div>
+              <strong class="card-text">250 Lassen Ct. Hollister, CA 95023</strong>
             </div>
           </div>
         </div>

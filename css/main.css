@@ -1,4 +1,4 @@
-/* Listings CSS */
+/* Listings SCSS */
 @media only screen and (max-width: 767px) {
   .container-fluid .row .col-md-12.align-items-end:nth-child(1) {
     padding-top: 1rem; }
@@ -8,9 +8,10 @@
     margin-bottom: 0; }
     .container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box {
       position: relative;
-      display: inline-flex; }
+      display: inline-flex;
+      width: 100%; }
       .container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box input.form-control {
-        width: 28.2rem; }
+        width: 100%; }
       .container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box i.fas {
         position: absolute;
         right: 11px;
@@ -251,7 +252,7 @@ header {
 nav {
   overflow: auto; }
 
-@media (min-width: 657px) {
+@media (min-width: 726px) {
   .navbar-expand-custom .navbar-nav {
     flex-direction: row; }
   .navbar-expand-custom .navbar-collapse {
