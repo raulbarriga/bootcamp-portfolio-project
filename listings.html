@@ -79,7 +79,7 @@
           <button id="filter-btn" class=" btn order-1 mr-2";" type="button">Filter</button>
           <button id="sort-btn" class="btn order-2 dropdown-toggle" type="button"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</button>
-          <div class="dropdown-menu" aria-labelledby="sort-btn">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sort-btn">
             <a class="dropdown-item" href="#">Price (High to Low)</a>
             <a class="dropdown-item" href="#">Price (Low to High)</a>
             <a class="dropdown-item" href="#">Newest</a>
@@ -258,7 +258,7 @@
               <!-- Min Area -->
               <div class="col-md-12 align-items-end">
                 <div class="form-group">
-                  <label for="min-area">Min Area <span>(sq ft)</span></label>
+                  <label for="min-area">Min Area <span>&#40;sq&#46; ft&#46;&#41;</span></label>
                   <div class="form-field">
                     <div class="icon"><span class="icon-pencil"></span></div>
                     <input
@@ -274,7 +274,7 @@
                 class="col-md-12 align-items-end"
               >
                 <div class="form-group">
-                  <label for="max-area">Max Area <span>(sq ft)</span></label>
+                  <label for="max-area">Max Area <span>&#40;sq&#46; ft&#46;&#41;</span></label>
                   <div class="form-field">
                     <div class="icon"><span class="icon-pencil"></span></div>
                     <input
@@ -305,72 +305,90 @@
 
       <!-- Property Listings -->
       <div id="property-cards-content" class="row">
-        <div class="col col-sm">
-            <div class="card mb-3">
-              <a href="#">
-                <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
-              </a>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-6">
-                  <h5 class="card-title">$500,000</h5>
+        <div class="col">
+          <div class="card">
+            <a href="#">
+              <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
+            </a>
+            <div id="card-body" class="card-body">
+              <div class="row d-flex justify-content-between">
+                <div class="col-sm-auto">
+                  <h5 class="card-title">&#36;500&#44;000</h5>
                 </div>
-                <div class="col-6">
-                  <h6 class="card-title float-right">2 bds | 2 ba | 1,120 sqft</h6>
+                <div class="col-sm-auto">
+                  <h6 class="card-title"><i class="fas fa-bed"></i> 2 bds &#124; <i class="fas fa-toilet"></i> 2 ba &#124; 1&#44;120 sqft</h6>
                 </div>
               </div>
               <a href="#" class="text-decoration-none text-dark">
-                  <strong class="card-text text-decoration-none text-dark">250 Lassen Ct. Hollister, CA 95023</strong>
+                  <strong class="card-text"><i class="fas fa-map-marker-alt"></i> 250 Lassen Ct&#46; Hollister&#44; CA 95023</strong>
               </a>
             </div>
           </div>
+        </div>
 
-          <div class="card mb-3">
-            <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-6">
-                  <h5 class="card-title">$500,000</h5>
+        <div class="col">
+          <div class="card">
+            <a href="#">
+              <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
+            </a>
+            <div id="card-body" class="card-body">
+              <div class="row d-flex justify-content-between">
+                <div class="col-sm-auto">
+                  <h5 class="card-title">&#36;500&#44;000</h5>
                 </div>
-                <div class="col-6">
-                  <h6 class="card-title float-right">2 bds | 2 ba | 1,120 sqft</h6>
+                <div class="col-sm-auto">
+                  <h6 class="card-title"><i class="fas fa-bed"></i> 2 bds &#124; <i class="fas fa-toilet"></i> 2 ba &#124; 1&#44;120 sqft</h6>
                 </div>
               </div>
-              <strong class="card-text">250 Lassen Ct. Hollister, CA 95023</strong>
-            </div>
-          </div>
-
-          <div class="card mb-3">
-            <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-6">
-                  <h5 class="card-title">$500,000</h5>
-                </div>
-                <div class="col-6">
-                  <h6 class="card-title float-right">2 bds | 2 ba | 1,120 sqft</h6>
-                </div>
-              </div>
-              <strong class="card-text">250 Lassen Ct. Hollister, CA 95023</strong>
-            </div>
-          </div>
-
-          <div class="card mb-3">
-            <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-6">
-                  <h5 class="card-title">$500,000</h5>
-                </div>
-                <div class="col-6">
-                  <h6 class="card-title float-right">2 bds | 2 ba | 1,120 sqft</h6>
-                </div>
-              </div>
-              <strong class="card-text">250 Lassen Ct. Hollister, CA 95023</strong>
+              <a href="#" class="text-decoration-none text-dark">
+                  <strong class="card-text"><i class="fas fa-map-marker-alt"></i> 250 Lassen Ct&#46; Hollister&#44; CA 95023</strong>
+              </a>
             </div>
           </div>
         </div>
-        
+
+        <div class="col">
+          <div class="card">
+            <a href="#">
+              <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
+            </a>
+            <div id="card-body" class="card-body">
+              <div class="row d-flex justify-content-between">
+                <div class="col-sm-auto">
+                  <h5 class="card-title">&#36;500&#44;000</h5>
+                </div>
+                <div class="col-sm-auto">
+                  <h6 class="card-title"><i class="fas fa-bed"></i> 2 bds &#124; <i class="fas fa-toilet"></i> 2 ba &#124; 1&#44;120 sqft</h6>
+                </div>
+              </div>
+              <a href="#" class="text-decoration-none text-dark">
+                  <strong class="card-text"><i class="fas fa-map-marker-alt"></i> 250 Lassen Ct&#46; Hollister&#44; CA 95023</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+           
+        <div class="col">
+          <div class="card">
+            <a href="#">
+              <img src="https://media.remax-dev.booj.io/33bc3bcd-2ab4-322f-af04-9120fbedfd46/01_NewListings.jpg" class="card-img-top" alt="...">
+            </a>
+            <div id="card-body" class="card-body">
+              <div class="row d-flex justify-content-between">
+                <div class="col-sm-auto">
+                  <h5 class="card-title">&#36;500&#44;000</h5>
+                </div>
+                <div class="col-sm-auto">
+                  <h6 class="card-title"><i class="fas fa-bed"></i> 2 bds &#124; <i class="fas fa-toilet"></i> 2 ba &#124; 1&#44;120 sqft</h6>
+                </div>
+              </div>
+              <a href="#" class="text-decoration-none text-dark">
+                  <strong class="card-text"><i class="fas fa-map-marker-alt"></i> 250 Lassen Ct&#46; Hollister&#44; CA 95023</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
