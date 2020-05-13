@@ -1,4 +1,75 @@
 /* Listings SCSS */
+.container-fluid .row .col-md-12.align-items-end:nth-child(1) {
+  padding-top: 1rem; }
+
+.container-fluid .row .col-md-12.align-items-end .form-group {
+  margin-bottom: 0; }
+  .container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box {
+    position: relative;
+    display: inline-flex;
+    width: 100%; }
+    .container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box input.form-control {
+      width: 100%; }
+    .container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box i.fas {
+      position: absolute;
+      right: 11px;
+      top: 11px;
+      cursor: pointer; }
+
+.container-fluid #filter-and-sort-row {
+  padding-top: 1rem; }
+  .container-fluid #filter-and-sort-row #filter-btn {
+    display: none; }
+
+.container-fluid #filter.row {
+  display: inline;
+  margin-top: 1rem; }
+  .container-fluid #filter.row .col-lg-3.bg-light {
+    max-width: 483.11px;
+    border-radius: 5px;
+    border: 1px solid #ced4da; }
+    .container-fluid #filter.row .col-lg-3.bg-light #property-btn {
+      border: 1px solid #ced4da; }
+    .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.w-100 {
+      max-width: 94%;
+      top: -1px; }
+      .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.w-100 .dropdown-menu-arrow {
+        top: -25px;
+        left: 50%;
+        width: 0;
+        height: 0;
+        position: relative; }
+        .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.w-100 .dropdown-menu-arrow:before, .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.w-100 .dropdown-menu-arrow:after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 0;
+          border-width: 7px 8px;
+          border-style: solid;
+          border-color: transparent;
+          z-index: 1001; }
+        .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.w-100 .dropdown-menu-arrow:after {
+          bottom: -18px;
+          right: -8px;
+          border-bottom-color: #fff; }
+        .container-fluid #filter.row .col-lg-3.bg-light ul.dropdown-menu.checkbox-menu.w-100 .dropdown-menu-arrow:before {
+          bottom: -17px;
+          right: -8px;
+          border-bottom-color: rgba(0, 0, 0, 0.15); }
+
+.container-fluid #property-cards-content #card-columns {
+  padding: 1rem; }
+  .container-fluid #property-cards-content #card-columns .card {
+    box-shadow: 0 9px 54px -4px #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    max-width: 307px; }
+    .container-fluid #property-cards-content #card-columns .card #card-body .row.d-flex.justify-content-between .col-sm-auto {
+      width: auto; }
+    .container-fluid #property-cards-content #card-columns .card #card-body a.text-decoration-none.text-dark:hover, .container-fluid #property-cards-content #card-columns .card #card-body a.text-decoration-none.text-dark:focus {
+      text-decoration: none; }
+
 @media only screen and (max-width: 767px) {
   .container-fluid .row .col-md-12.align-items-end:nth-child(1) {
     padding-top: 1rem; }
@@ -59,16 +130,16 @@
             border-bottom-color: rgba(0, 0, 0, 0.15); }
   .container-fluid #property-cards-content {
     position: relative; }
-    .container-fluid #property-cards-content .col {
-      padding: 1rem;
-      flex-basis: auto; }
-      .container-fluid #property-cards-content .col .card {
+    .container-fluid #property-cards-content #card-columns {
+      padding: 1rem; }
+      .container-fluid #property-cards-content #card-columns .card {
         box-shadow: 0 9px 54px -4px #e0e0e0;
         border: none;
-        border-radius: 5px; }
-        .container-fluid #property-cards-content .col .card #card-body .row.d-flex.justify-content-between .col-sm-auto {
+        border-radius: 5px;
+        max-width: 500.17px; }
+        .container-fluid #property-cards-content #card-columns .card #card-body .row.d-flex.justify-content-between .col-sm-auto {
           width: auto; }
-        .container-fluid #property-cards-content .col .card #card-body a.text-decoration-none.text-dark:hover, .container-fluid #property-cards-content .col .card #card-body a.text-decoration-none.text-dark:focus {
+        .container-fluid #property-cards-content #card-columns .card #card-body a.text-decoration-none.text-dark:hover, .container-fluid #property-cards-content #card-columns .card #card-body a.text-decoration-none.text-dark:focus {
           text-decoration: none; } }
 
 footer {
