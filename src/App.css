@@ -1,38 +1,349 @@
-.App {
-  text-align: center;
+/* Header Start*/
+header {
+  background: #0c002b;
+  color: white;
+  overflow: auto;
+  padding: 5px 15px;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#nav-css {
+  padding: 7px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  float: right;
+  align-items: flex-end;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-item {
+  padding: 0 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#nav-item-btn a {
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+}
+#nav-item-btn a:hover {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#nav-item-btn .btn-primary {
+  border-radius: 5px;
+  padding: 7px 25px;
+  background-color: #ff718e;
+  border-color: #ff718e;
+}
+#nav-item-btn .btn-primary:hover,
+#nav-item-btn .btn-primary:focus,
+#nav-item-btn .btn-primary:active,
+#nav-item-btn .btn-primary:active:focus:not(:disabled):not(.disabled) {
+  box-shadow: none !important;
+  outline: 0;
+  text-decoration: none;
+  background-color: #ff718e;
+  border-color: #ff718e;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#container-fluid-nav {
+  padding-right: 0;
+}
+
+.navbar-toggler:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+nav {
+  overflow: auto;
+}
+/* Header End*/
+
+/* For the toggle button on mobile view */
+@media (min-width: 726px) {
+  .navbar-expand-custom .navbar-nav {
+    flex-direction: row;
   }
-  to {
-    transform: rotate(360deg);
+  .navbar-expand-custom .navbar-collapse {
+    display: contents !important;
+  }
+  .navbar-expand-custom .navbar-toggler {
+    display: none;
   }
 }
+
+/* Footer Start*/
+footer {
+  /* position: absolute;
+  bottom: 0;
+  width: 100%; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 332px;
+  padding: 3rem 2rem;
+  background-color: #0c002b;
+  color: white;
+}
+footer .phones-img {
+  height: 332px;
+  width: 100%;
+}
+footer .play-store {
+  width: 178px;
+  height: 24%;
+  margin-left: 14px;
+}
+footer .app-store {
+  width: 177px;
+  height: 22%;
+}
+footer a {
+  list-style: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
+footer a:hover,
+footer a:focus,
+footer a:active,
+footer a:active:focus:not(:disabled):not(.disabled) {
+  box-shadow: none !important;
+  outline: 0;
+  text-decoration: none;
+  color: white;
+  border-color: #ff718e;
+}
+footer li {
+  padding: 16px 0;
+}
+footer #nav-item-btn {
+  padding-top: 15px;
+}
+footer #nav-item-btn a {
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+}
+footer #nav-item-btn a:hover {
+  text-decoration: none;
+  color: white;
+}
+footer .btn-primary {
+  border-radius: 5px;
+  padding: 7px 25px;
+  background-color: #ff718e;
+  border-color: #ff718e;
+}
+footer .btn-primary:hover,
+footer .btn-primary:focus,
+footer .btn-primary:active,
+footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
+  box-shadow: none !important;
+  outline: 0;
+  text-decoration: none;
+  background-color: #ff718e;
+  border-color: #ff718e;
+}
+/* Footer End*/
+
+/* Home Page Start */
+#home-banner {
+  background-image: url("https://d29u17ylf1ylz9.cloudfront.net/haven-preview/haven/img/slider/3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 82px);
+}
+#home-banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.3);
+}
+#home-banner .fa-search {
+  color: #0c002b;
+}
+
+#home-banner .search-box {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translate(0%, 40px);
+    padding-left: 25%;
+  }
+/* Home Page End */
+
+
+
+/* Listings SCSS Start*/
+.container-fluid .row .col-md-12.align-items-end:nth-child(1) {
+  padding-top: 1rem;
+}
+
+.container-fluid .row .col-md-12.align-items-end .form-group {
+  margin-bottom: 0;
+}
+.container-fluid .row .col-md-12.align-items-end
+  .form-group
+  .form-field.search-box {
+  position: relative;
+  display: inline-flex;
+  width: 50%;
+}
+.container-fluid .row .col-md-12.align-items-end
+  .form-group
+  .form-field.search-box
+  input.form-control {
+  width: 100%;
+}
+.container-fluid .row .col-md-12.align-items-end
+  .form-group
+  .form-field.search-box
+  svg.fas {
+  position: absolute;
+  right: 11px;
+  top: 11px;
+  cursor: pointer;
+}
+
+.container-fluid #filter-and-sort-row {
+  padding-top: 1rem;
+}
+.container-fluid #filter-and-sort-row #filter-btn {
+  display: none;
+}
+
+/* Filter & Listings Work Here */
+.container-fluid .row {
+  /* padding: 1rem 15px 1rem 15px; */
+}
+
+/* Filter CSS Start */
+.container-fluid .row .col-md.bg-light {
+  max-width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  max-height: 632px;
+  margin: 1rem 15px 1rem 15px;
+}
+.container-fluid .row .col-md.bg-light #property-btn {
+  border: 1px solid #ced4da;
+}
+.container-fluid .row .col-md.bg-light
+  ul.dropdown-menu.checkbox-menu.w-100 {
+  max-width: 94%;
+  top: -1px;
+}
+.container-fluid .row .col-md.bg-light
+  ul.dropdown-menu.checkbox-menu.w-100
+  .dropdown-menu-arrow {
+  top: -25px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  position: relative;
+}
+.container-fluid .row .col-md.bg-light
+  ul.dropdown-menu.checkbox-menu.w-100
+  .dropdown-menu-arrow:before,
+.container-fluid .row .col-md.bg-light
+  ul.dropdown-menu.checkbox-menu.w-100
+  .dropdown-menu-arrow:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 7px 8px;
+  border-style: solid;
+  border-color: transparent;
+  z-index: 1001;
+}
+.container-fluid .row .col-md.bg-light
+  ul.dropdown-menu.checkbox-menu.w-100
+  .dropdown-menu-arrow:after {
+  bottom: -18px;
+  right: -8px;
+  border-bottom-color: #fff;
+}
+.container-fluid .row .col-md.bg-light
+  ul.dropdown-menu.checkbox-menu.w-100
+  .dropdown-menu-arrow:before {
+  bottom: -17px;
+  right: -8px;
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+}
+/* Filter CSS End */
+
+
+/* Listing CSS */
+.container-fluid .row #card-columns {
+  
+}
+.container-fluid .row #card-columns .row .card {
+  box-shadow: 0 9px 54px -4px #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  max-width: 360px;
+  margin: 1rem;
+}
+.container-fluid .row #card-columns
+  .row
+  .card
+  #card-body
+  .row.d-flex.justify-content-between
+  .col-sm-auto {
+  width: auto;
+}
+.container-fluid .row #card-columns
+  .row
+  .card
+  #card-body
+  a.text-decoration-none.text-dark:hover,
+.container-fluid .row #card-columns
+  .row
+  .card
+  #card-body
+  a.text-decoration-none.text-dark:focus {
+  text-decoration: none;
+}
+
+.container-fluid .row #card-columns .row .card .card-img-top{
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.container-fluid .row #card-columns .row .card #card-body .card-title.price{
+  font-size: 24;
+}
+
+.container-fluid .row #card-columns .row .card #card-body .card-title.details,
+.container-fluid .row #card-columns .row .card #card-body .card-text{
+  font-size: 14px;
+}
+
+/* Listings CSS End */
+
+
+/*  */
+.main-container {
+  position: relative;
+  min-height: 100vh;
+}
+.content-wrap {
+  padding-bottom: 428px;
+}
+
+
+
+
+
