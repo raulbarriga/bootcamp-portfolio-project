@@ -39,9 +39,13 @@ class Listings extends Component{
         });
 
         // Property Type Button Dropdown Remains Open on Checkbox Selection
-        $('.dropdown-menu').click(function(e) {
+        $(".checkbox-menu").on("change", "input[type='checkbox']", function() {
+            $(this).closest("li").toggleClass("active", this.checked);
+         });
+
+         $(document).on('click', '.allow-focus', function (e) {
             e.stopPropagation();
-        });
+          });
 
         this.setState({
             listingsData
@@ -49,7 +53,7 @@ class Listings extends Component{
     }
 
     handleInputChange = (event) => {
-        console.log(event.target.value)
+        // console.log(event.target.value)
 
         const name = event.target.name;
         const value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value;
@@ -199,7 +203,7 @@ class Listings extends Component{
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
                                             >Property Type</button>
-                                            <ul className="dropdown-menu checkbox-menu w-100"
+                                            <ul className="dropdown-menu allow-focus checkbox-menu w-100"
                                                 aria-labelledby="property-btn"
                                                 onChange={this.handleInputChange}
                                                 >
@@ -447,6 +451,7 @@ class Listings extends Component{
                     <div id="card-columns" className="col-md">
                         <div className="row">
                             {this.loopListings()}
+                            {/* {() => this.filteredData()} */}
                         </div>
                     </div>
 
