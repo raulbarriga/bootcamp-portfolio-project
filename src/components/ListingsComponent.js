@@ -82,7 +82,7 @@ class Listings extends Component{
             return (
                 item.price >= this.state.minPrice && item.price <= this.state.maxPrice
                 && item.area >= this.state.minArea && item.area <= this.state.maxArea
-                && item.bedrooms >= this.state.bedrooms && item.bathrooms >= this.state.bathrooms
+                && item.rooms >= this.state.bedrooms && item.bathrooms >= this.state.bathrooms
                 )
         })
     
@@ -101,6 +101,8 @@ class Listings extends Component{
     
         this.setState({
             filteredData: newData
+        }, () => {
+            console.log(newData)
         })
     }
     
