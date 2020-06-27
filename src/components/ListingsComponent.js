@@ -98,6 +98,46 @@ class Listings extends Component{
                 return item.propertyStatus == this.state.propertyStatus;
             })
         }
+        if(this.state.houses != false){
+            newData = newData.filter((item) => {
+              return item.homeType == 'house'
+            })
+          } 
+        //   else{
+        //     newData.push(newData.filter((item) => {
+        //         return item.homeType == 'house'
+        //       }))
+        //   }
+          if(this.state.manufactured != false){
+            newData = newData.filter((item) => {
+              return item.homeType == 'manufactured'
+            })
+          }
+          if(this.state.condosCoOps != false){
+            newData = newData.filter((item) => {
+              return item.homeType == 'condo' || item.homeType == 'coOp'
+            })
+          }
+          if(this.state.multiFamily != false){
+            newData = newData.filter((item) => {
+              return item.homeType == 'multi-family'
+            })
+          }
+          if(this.state.apartments != false){
+            newData = newData.filter((item) => {
+              return item.homeType == 'apartment'
+            })
+          }
+          if(this.state.lotsLand != false){
+            newData = newData.filter((item) => {
+              return item.homeType == 'lot' || item.homeType == 'land'
+            })
+          }
+          if(this.state.townhomes != false){
+            newData = newData.filter((item) => {
+              return item.homeType == 'townhome'
+            })
+          }
     
         this.setState({
             filteredData: newData
@@ -108,13 +148,13 @@ class Listings extends Component{
     
     loopListings = () => {
 
-        const { listingsData } = this.state
+        const { filteredData } = this.state
 
-        if(listingsData === undefined || listingsData.length == 0){
+        if(filteredData === undefined || filteredData.length == 0){
             return "Sorry your filter did not match any listing."
         }
 
-        var initialView = listingsData.map((listing, index) => {
+        var initialView = filteredData.map((listing, index) => {
             return (
                 <div className="card" key={index}>
                     <Link to="/">
@@ -127,7 +167,7 @@ class Listings extends Component{
                             </div>
                             <div className="col-sm-auto">
                                 <h6 className="card-title details">
-                                    <FontAwesomeIcon className="fas" icon={faBed} /> {listing.rooms} bds &#124; <FontAwesomeIcon className="fas" icon={faToilet} /> {listing.bathrooms} ba &#124; {listing.floorSpace} sqft
+                                    <FontAwesomeIcon className="fas" icon={faBed} /> {listing.rooms} bds &#124; <FontAwesomeIcon className="fas" icon={faToilet} /> {listing.bathrooms} ba &#124; {listing.area.toLocaleString('en')} sqft
                                 </h6>
                             </div>
                         </div>
@@ -289,8 +329,8 @@ class Listings extends Component{
                                                     onChange={this.handleInputChange}
                                                     >
                                                     <option value="Type">Type</option>
-                                                    <option value="Rent">Rent</option>
-                                                    <option value="Sale">Sale</option>
+                                                    <option value="rent">Rent</option>
+                                                    <option value="sale">Sale</option>
                                                 </select>
                                             </div>
                                         </div>
