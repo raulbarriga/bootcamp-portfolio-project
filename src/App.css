@@ -317,9 +317,7 @@ footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
 
 
 /* Listing CSS */
-.container-fluid .row #card-columns {
-  
-}
+
 .container-fluid .row #card-columns .row .card {
   box-shadow: 0 9px 54px -4px #e0e0e0;
   border: none;
@@ -353,7 +351,9 @@ footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
   height: 15vw;
   object-fit: cover;
 }
-
+.container-fluid .row #card-columns .row .card #card-body{
+  padding: 1.25rem 1.25rem 0 1.25rem;
+}
 .container-fluid .row #card-columns .row .card #card-body .card-title.price{
   font-size: 24;
 }
@@ -361,6 +361,12 @@ footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
 .container-fluid .row #card-columns .row .card #card-body .card-title.details,
 .container-fluid .row #card-columns .row .card #card-body .card-text{
   font-size: 14px;
+}
+.container-fluid .row #card-columns .row .card .card-footer{
+  margin: 0 1.25rem;
+  background-color: white;
+  padding: 0;
+  border-top: none;
 }
 
 /* Listings CSS End */

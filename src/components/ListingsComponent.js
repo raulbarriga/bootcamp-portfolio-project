@@ -31,6 +31,11 @@ class Listings extends Component{
         }
     }
     UNSAFE_componentWillMount = () => {
+        //Initial render is by prices from high to low
+        var listingsData = this.state.listingsData.sort((a,b) => {
+            return b.price - a.price
+          })
+
         // Filter Toggle Button
             $(function(){
             $("#filter-btn").click(function(){
@@ -75,6 +80,10 @@ class Listings extends Component{
         // }
     }
 
+    handleClick = (event) => {
+        
+    }
+
     filteredData = () => {
         const { listingsData } = this.state
 
@@ -91,6 +100,7 @@ class Listings extends Component{
         //         return item.city == this.state.city;
         //     })
         // }
+
     
         // Rent or Sale
         if(this.state.propertyStatus !== 'Type'){
@@ -181,6 +191,9 @@ class Listings extends Component{
                             </strong>
                         </Link>
                     </div>
+                    <div className="card-footer text-muted">
+                        For {listing.propertyStatus}
+                    </div>
                 </div>
             )
         });
@@ -216,12 +229,12 @@ class Listings extends Component{
                                 Sort
                             </button>
                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="sort-btn">
-                                <a className="dropdown-item" href="#">Price (High to Low)</a>
-                                <a className="dropdown-item" href="#">Price (Low to High)</a>
-                                <a className="dropdown-item" href="#">Newest</a>
-                                <a className="dropdown-item" href="#">Sqaure Feet</a>
-                                <a className="dropdown-item" href="#">Bedrooms</a>
-                                <a className="dropdown-item" href="#">Bathrooms</a>
+                                <button className="dropdown-item" type="button" onClick={this.handleClick}>Price (High to Low)</button>
+                                <button className="dropdown-item" type="button" onClick={this.handleClick}>Price (Low to High)</button>
+                                {/* <button className="dropdown-item" type="button">Newest</button> */}
+                                <button className="dropdown-item" type="button">Sqaure Feet</button>
+                                <button className="dropdown-item" type="button">Bedrooms</button>
+                                <button className="dropdown-item" type="button">Bathrooms</button>
                             </div>
                         </div>
                     </div>
