@@ -80,16 +80,36 @@ class Listings extends Component{
         // }
     }
 
-    sortPrices = (sort) => {
+    sortDropdown = (sort) => {
         const { filteredData } = this.state;
+        //Low to high
         if(sort == 'price-dsc') {
             sort = filteredData.sort((a,b) => {
               return a.price - b.price
             })
           }
+          //High to low
           if(sort == 'price-asc') {
             sort = filteredData.sort((a,b) => {
               return b.price - a.price
+            })
+          }
+          //Square feet from high to low
+          if(sort == 'area-asc') {
+            sort = filteredData.sort((a,b) => {
+              return b.area - a.area
+            })
+          }
+          //Bedrooms from high to low
+          if(sort == 'beds-asc') {
+            sort = filteredData.sort((a,b) => {
+              return b.rooms - a.rooms
+            })
+          }
+          //Bathrooms from high to low
+          if(sort == 'bath-asc') {
+            sort = filteredData.sort((a,b) => {
+              return b.bathrooms - a.bathrooms
             })
           }
           this.setState({
@@ -242,12 +262,12 @@ class Listings extends Component{
                                 Sort
                             </button>
                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="sort-btn">
-                                <button className="dropdown-item" type="button" onClick={this.sortPrices.bind(null, 'price-asc')}>Price (High to Low)</button>
-                                <button className="dropdown-item" type="button" onClick={this.sortPrices.bind(null, 'price-dsc')}>Price (Low to High)</button>
+                                <button className="dropdown-item" type="button" onClick={this.sortDropdown.bind(null, 'price-asc')}>Price (High to Low)</button>
+                                <button className="dropdown-item" type="button" onClick={this.sortDropdown.bind(null, 'price-dsc')}>Price (Low to High)</button>
                                 {/* <button className="dropdown-item" type="button">Newest</button> */}
-                                <button className="dropdown-item" type="button">Sqaure Feet</button>
-                                <button className="dropdown-item" type="button">Bedrooms</button>
-                                <button className="dropdown-item" type="button">Bathrooms</button>
+                                <button className="dropdown-item" type="button" onClick={this.sortDropdown.bind(null, 'area-asc')}>Sqaure Feet</button>
+                                <button className="dropdown-item" type="button" onClick={this.sortDropdown.bind(null, 'beds-asc')}>Bedrooms</button>
+                                <button className="dropdown-item" type="button" onClick={this.sortDropdown.bind(null, 'bath-asc')}>Bathrooms</button>
                             </div>
                         </div>
                     </div>
