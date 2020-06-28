@@ -80,8 +80,21 @@ class Listings extends Component{
         // }
     }
 
-    handleClick = (event) => {
-        
+    sortPrices = (sort) => {
+        const { filteredData } = this.state;
+        if(sort == 'price-dsc') {
+            sort = filteredData.sort((a,b) => {
+              return a.price - b.price
+            })
+          }
+          if(sort == 'price-asc') {
+            sort = filteredData.sort((a,b) => {
+              return b.price - a.price
+            })
+          }
+          this.setState({
+              filteredData: sort
+          })
     }
 
     filteredData = () => {
@@ -229,8 +242,8 @@ class Listings extends Component{
                                 Sort
                             </button>
                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="sort-btn">
-                                <button className="dropdown-item" type="button" onClick={this.handleClick}>Price (High to Low)</button>
-                                <button className="dropdown-item" type="button" onClick={this.handleClick}>Price (Low to High)</button>
+                                <button className="dropdown-item" type="button" onClick={this.sortPrices.bind(null, 'price-asc')}>Price (High to Low)</button>
+                                <button className="dropdown-item" type="button" onClick={this.sortPrices.bind(null, 'price-dsc')}>Price (Low to High)</button>
                                 {/* <button className="dropdown-item" type="button">Newest</button> */}
                                 <button className="dropdown-item" type="button">Sqaure Feet</button>
                                 <button className="dropdown-item" type="button">Bedrooms</button>
