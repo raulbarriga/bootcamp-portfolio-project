@@ -66,7 +66,7 @@ class Listings extends Component{
         this.setState({
           [name]: value
         }, () => {
-            console.log(this.state)
+            //console.log(this.state)
             this.filteredData();
         })
 
@@ -83,31 +83,31 @@ class Listings extends Component{
     sortDropdown = (sort) => {
         const { filteredData } = this.state;
         //Low to high
-        if(sort == 'price-dsc') {
+        if(sort === 'price-dsc') {
             sort = filteredData.sort((a,b) => {
               return a.price - b.price
             })
           }
           //High to low
-          if(sort == 'price-asc') {
+          if(sort === 'price-asc') {
             sort = filteredData.sort((a,b) => {
               return b.price - a.price
             })
           }
           //Square feet from high to low
-          if(sort == 'area-asc') {
+          if(sort === 'area-asc') {
             sort = filteredData.sort((a,b) => {
               return b.area - a.area
             })
           }
           //Bedrooms from high to low
-          if(sort == 'beds-asc') {
+          if(sort === 'beds-asc') {
             sort = filteredData.sort((a,b) => {
               return b.rooms - a.rooms
             })
           }
           //Bathrooms from high to low
-          if(sort == 'bath-asc') {
+          if(sort === 'bath-asc') {
             sort = filteredData.sort((a,b) => {
               return b.bathrooms - a.bathrooms
             })
@@ -138,62 +138,62 @@ class Listings extends Component{
         // Rent or Sale
         if(this.state.propertyStatus !== 'Type'){
             newData = newData.filter((item) => {
-                return item.propertyStatus == this.state.propertyStatus;
+                return item.propertyStatus === this.state.propertyStatus;
             })
         }
-        if(this.state.houses != false){
+        if(this.state.houses !== false){
+            
             newData = newData.filter((item) => {
-              return item.homeType == 'house'
-            })
-          } 
-        //   else{
-        //     newData.push(newData.filter((item) => {
-        //         return item.homeType == 'house'
-        //       }))
-        //   }
-          if(this.state.manufactured != false){
-            newData = newData.filter((item) => {
-              return item.homeType == 'manufactured'
+                console.log('Houses checked')
+              return item.homeType === 'house'
             })
           }
-          if(this.state.condosCoOps != false){
+          if(this.state.manufactured !== false){
+            
             newData = newData.filter((item) => {
-              return item.homeType == 'condo' || item.homeType == 'coOp'
+               // 
+              return item.homeType === 'manufactured'
+            })
+          }else{
+              console.log('2nd checkbox checked but not rendering')
+          }
+          if(this.state.condosCoOps !== false){
+            newData = newData.filter((item) => {
+              return item.homeType === 'condo' || item.homeType === 'coOp'
             })
           }
-          if(this.state.multiFamily != false){
+          if(this.state.multiFamily !== false){
             newData = newData.filter((item) => {
-              return item.homeType == 'multi-family'
+              return item.homeType === 'multi-family'
             })
           }
-          if(this.state.apartments != false){
+          if(this.state.apartments !== false){
             newData = newData.filter((item) => {
-              return item.homeType == 'apartment'
+              return item.homeType === 'apartment'
             })
           }
-          if(this.state.lotsLand != false){
+          if(this.state.lotsLand !== false){
             newData = newData.filter((item) => {
-              return item.homeType == 'lot' || item.homeType == 'land'
+              return item.homeType === 'lot' || item.homeType === 'land'
             })
           }
-          if(this.state.townhomes != false){
+          if(this.state.townhomes !== false){
             newData = newData.filter((item) => {
-              return item.homeType == 'townhome'
+              return item.homeType === 'townhome'
             })
           }
     
         this.setState({
             filteredData: newData
         }, () => {
-            console.log(newData)
+            // console.log(newData)
         })
     }
     
     loopListings = () => {
-
         const { filteredData } = this.state
 
-        if(filteredData === undefined || filteredData.length == 0){
+        if(filteredData === undefined || filteredData.length === 0){
             return "Sorry your filter did not match any listing."
         }
 
@@ -262,12 +262,12 @@ class Listings extends Component{
                                 Sort
                             </button>
                             <div className="dropdown-menu dropdown-menu-right" aria-labelledby="sort-btn">
-                                <button className="dropdown-item" type="button" onClick={this.sortDropdown.bind(null, 'price-asc')}>Price (High to Low)</button>
-                                <button className="dropdown-item" type="button" onClick={this.sortDropdown.bind(null, 'price-dsc')}>Price (Low to High)</button>
+                                <button className="dropdown-item" type="button" onClick={() => this.sortDropdown('price-asc')}>Price (High to Low)</button>
+                                <button className="dropdown-item" type="button" onClick={() => this.sortDropdown('price-dsc')}>Price (Low to High)</button>
                                 {/* <button className="dropdown-item" type="button">Newest</button> */}
-                                <button className="dropdown-item" type="button" onClick={this.sortDropdown.bind(null, 'area-asc')}>Sqaure Feet</button>
-                                <button className="dropdown-item" type="button" onClick={this.sortDropdown.bind(null, 'beds-asc')}>Bedrooms</button>
-                                <button className="dropdown-item" type="button" onClick={this.sortDropdown.bind(null, 'bath-asc')}>Bathrooms</button>
+                                <button className="dropdown-item" type="button" onClick={() => this.sortDropdown('area-asc')}>Sqaure Feet</button>
+                                <button className="dropdown-item" type="button" onClick={() => this.sortDropdown('beds-asc')}>Bedrooms</button>
+                                <button className="dropdown-item" type="button" onClick={() => this.sortDropdown('bath-asc')}>Bathrooms</button>
                             </div>
                         </div>
                     </div>
@@ -539,15 +539,12 @@ class Listings extends Component{
                     <div id="card-columns" className="col-md">
                         <div className="row">
                             {this.loopListings()}
-                            {/* {() => this.filteredData()} */}
                         </div>
                     </div>
 
                 </div>
-                {/* property-cards-content */}
                 
                 
-
             </div>
         )
     };
