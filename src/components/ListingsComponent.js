@@ -441,7 +441,7 @@ class Listings extends Component{
                                                 className="form-control" value={this.state.minPrice} 
                                                 onChange={this.handleInputChange}
                                                 >
-                                                    <option value="MinPrice">Min Price</option>
+                                                    <option value="0">Min Price</option>
                                                     <option value="0">&#36;0&#43;</option>
                                                     <option value="100000">&#36;100&#44;000&#43;</option>
                                                     <option value="200000">&#36;200&#44;000&#43;</option>
@@ -477,9 +477,9 @@ class Listings extends Component{
                                                     <option value="800000">&#36;800&#44;000</option>
                                                     <option value="900000">&#36;900&#44;000</option>
                                                     <option value="1000000">&#36;1M</option>
-                                                    <option value="25000000">&#36;1&#46;25M</option>
-                                                    <option value="50000000">&#36;1&#46;50M</option>
-                                                    <option value="75000000">&#36;1&#46;75M</option>
+                                                    <option value="1250000">&#36;1&#46;25M</option>
+                                                    <option value="1500000">&#36;1&#46;50M</option>
+                                                    <option value="1750000">&#36;1&#46;75M</option>
                                                     <option value="75000000">Any Price</option>
                                                 </select>
                                             </div>
