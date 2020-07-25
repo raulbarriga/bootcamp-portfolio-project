@@ -1,5 +1,6 @@
 const listingsData = [
     {
+        id: 0,
         address: '20-34 Grand Ave',
         city: 'Redwood City',
         state: 'CA',
@@ -13,6 +14,7 @@ const listingsData = [
         propertyStatus: 'rent'
     },
     {
+        id: 1,
         address: '356 Alameda Ave',
         city: 'San jose',
         state: 'CA',
@@ -26,6 +28,7 @@ const listingsData = [
         propertyStatus: 'sale'
     },
     {
+        id: 2,
         address: '2034 West Brook Ave',
         city: 'Fremont',
         state: 'CA',
@@ -39,6 +42,7 @@ const listingsData = [
         propertyStatus: 'rent'
     },
     {
+        id: 3,
         address: '37 Van Ness Ave',
         city: 'San Francisco',
         state: 'CA',
@@ -52,6 +56,7 @@ const listingsData = [
         propertyStatus: 'sale'
     },
     {
+        id: 4,
         address: '555 Paraiso Ave',
         city: 'Milpitas',
         state: 'CA',
@@ -65,6 +70,7 @@ const listingsData = [
         propertyStatus: 'rent'
     },
     {
+        id: 5,
         address: '172 Rockford St.',
         city: 'Mountain View',
         state: 'CA',
