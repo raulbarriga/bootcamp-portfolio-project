@@ -5,7 +5,7 @@ import * as PhotoSwipe from "photoswipe";
 // UI JS file
 import * as PhotoSwipeUI_Default from "photoswipe/dist/photoswipe-ui-default";
 import "swiper/dist/css/swiper.min.css";
-//import "theia-sticky-sidebar/dist/theia-sticky-sidebar.min.js";
+//import * as theiaStickySidebar from "theia-sticky-sidebar";
 import Swiper from "swiper";
 
 const PropertyDetals = ({ match }) => {
@@ -80,6 +80,7 @@ const PropertyDetals = ({ match }) => {
                                             }}>
                                             <div>
                                                 <div className="item-gallery">
+                                                    {/* Carousel */}
                                                     <div
                                                         className="swiper-container gallery-top swiper-container-horizontal"
                                                         data-pswp-uid="1">
@@ -218,155 +219,7 @@ const PropertyDetals = ({ match }) => {
                                                         <div className="swiper-button-next"></div>
                                                         <div className="swiper-button-prev swiper-button-disabled"></div>
                                                     </div>
-                                                    {/* <Swiper
-                                                        className="swiper-container gallery-top swiper-container-horizontal"
-                                                        data-pswp-uid="1"
-                                                        spaceBetween={50}
-                                                        slidesPerView={1}
-                                                        navigation
-                                                        pagination={{
-                                                            clickable: true,
-                                                        }}
-                                                        scrollbar={{
-                                                            draggable: true,
-                                                        }}
-                                                        onSwiper={(swiper) =>
-                                                            console.log(swiper)
-                                                        }
-                                                        onSlideChange={() =>
-                                                            console.log(
-                                                                "slide change"
-                                                            )
-                                                        }>
-                                                        <span
-                                                            slot="wrapper-start"
-                                                            className="swiper-wrapper lazyload"
-                                                            style={{
-                                                                transitionDuration:
-                                                                    "0ms",
-                                                                transform:
-                                                                    "translate3d(0px, 0px, 0px)",
-                                                            }}></span>
-                                                        <SwiperSlide
-                                                            className="swiper-slide"
-                                                            style={{
-                                                                width: "510px",
-                                                                marginRight:
-                                                                    "10px",
-                                                            }}>
-                                                            <figure
-                                                                itemprop="associatedMedia"
-                                                                itemscope=""
-                                                                itemtype="http://schema.org/ImageObject">
-                                                                <a
-                                                                    href="http://uilove.in/realestate/listo/preview/img/demo/property/1.jpg"
-                                                                    itemprop="contentUrl"
-                                                                    data-size="2000x1414">
-                                                                    <img
-                                                                        src="http://uilove.in/realestate/listo/preview/img/demo/property/1.jpg"
-                                                                        className="img-fluid swiper-lazy swiper-lazy-loaded"
-                                                                        alt="Drawing Room"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                        </SwiperSlide>
-                                                        <SwiperSlide
-                                                            className="swiper-slide"
-                                                            style={{
-                                                                width: "510px",
-                                                                marginRight:
-                                                                    "10px",
-                                                            }}>
-                                                            <figure
-                                                                itemprop="associatedMedia"
-                                                                itemscope=""
-                                                                itemtype="http://schema.org/ImageObject">
-                                                                <a
-                                                                    href="http://uilove.in/realestate/listo/preview/img/demo/property/2.jpg"
-                                                                    itemprop="contentUrl"
-                                                                    data-size="2000x1414">
-                                                                    <img
-                                                                        src="http://uilove.in/realestate/listo/preview/img/demo/property/2.jpg"
-                                                                        className="img-fluid swiper-lazy swiper-lazy-loaded"
-                                                                        alt="Drawing Room"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                        </SwiperSlide>
-                                                        <SwiperSlide
-                                                            className="swiper-slide"
-                                                            style={{
-                                                                width: "510px",
-                                                                marginRight:
-                                                                    "10px",
-                                                            }}>
-                                                            <figure
-                                                                itemprop="associatedMedia"
-                                                                itemscope=""
-                                                                itemtype="http://schema.org/ImageObject">
-                                                                <a
-                                                                    href="http://uilove.in/realestate/listo/preview/img/demo/property/3.jpg"
-                                                                    itemprop="contentUrl"
-                                                                    data-size="2000x1414">
-                                                                    <img
-                                                                        data-src="http://uilove.in/realestate/listo/preview/img/demo/property/3.jpg"
-                                                                        src="http://uilove.in/realestate/listo/preview/img/demo/property/3.jpg"
-                                                                        className="img-fluid swiper-lazy"
-                                                                        alt="Drawing Room"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                        </SwiperSlide>
-                                                        <SwiperSlide
-                                                            className="swiper-slide"
-                                                            style={{
-                                                                width: "510px",
-                                                                marginRight:
-                                                                    "10px",
-                                                            }}>
-                                                            <figure
-                                                                itemprop="associatedMedia"
-                                                                itemscope=""
-                                                                itemtype="http://schema.org/ImageObject">
-                                                                <a
-                                                                    href="http://uilove.in/realestate/listo/preview/img/demo/property/4.jpg"
-                                                                    itemprop="contentUrl"
-                                                                    data-size="2000x1414">
-                                                                    <img
-                                                                        data-src="http://uilove.in/realestate/listo/preview/img/demo/property/4.jpg"
-                                                                        src="http://uilove.in/realestate/listo/preview/img/demo/property/4.jpg"
-                                                                        className="img-fluid swiper-lazy"
-                                                                        alt="Drawing Room"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                        </SwiperSlide>
-                                                        <SwiperSlide
-                                                            className="swiper-slide"
-                                                            style={{
-                                                                width: "510px",
-                                                                marginRight:
-                                                                    "10px",
-                                                            }}>
-                                                            <figure
-                                                                itemprop="associatedMedia"
-                                                                itemscope=""
-                                                                itemtype="http://schema.org/ImageObject">
-                                                                <a
-                                                                    href="http://uilove.in/realestate/listo/preview/img/demo/property/5.jpg"
-                                                                    itemprop="contentUrl"
-                                                                    data-size="2000x1414">
-                                                                    <img
-                                                                        data-src="http://uilove.in/realestate/listo/preview/img/demo/property/5.jpg"
-                                                                        src="http://uilove.in/realestate/listo/preview/img/demo/property/5.jpg"
-                                                                        className="img-fluid swiper-lazy"
-                                                                        alt="Drawing Room"
-                                                                    />
-                                                                </a>
-                                                            </figure>
-                                                        </SwiperSlide>
-                                                    </Swiper> */}
-
+                                                    {/* Gallery below the carousel */}
                                                     <div className="swiper-container gallery-thumbs swiper-container-horizontal">
                                                         <div
                                                             className="swiper-wrapper"
@@ -385,7 +238,7 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <img
-                                                                    src="img/demo/property/thumb/1.jpg"
+                                                                    src="https://ewscripps.brightspotcdn.com/dims4/default/f5211b0/2147483647/strip/true/crop/640x360+0+34/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.thedenverchannel.com%2Fphoto%2F2017%2F12%2F14%2F1155%20Canyon%20Boulevard%20406-print-004-111-Living%20Room-4200x2800-300dpi_1513279944338.jpg_74287286_ver1.0_640_480.jpg"
                                                                     className="img-fluid"
                                                                     alt=""
                                                                 />
@@ -399,7 +252,7 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <img
-                                                                    src="img/demo/property/thumb/2.jpg"
+                                                                    src="https://ewscripps.brightspotcdn.com/dims4/default/f5211b0/2147483647/strip/true/crop/640x360+0+34/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.thedenverchannel.com%2Fphoto%2F2017%2F12%2F14%2F1155%20Canyon%20Boulevard%20406-print-004-111-Living%20Room-4200x2800-300dpi_1513279944338.jpg_74287286_ver1.0_640_480.jpg"
                                                                     className="img-fluid"
                                                                     alt=""
                                                                 />
@@ -413,7 +266,7 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <img
-                                                                    src="img/demo/property/thumb/3.jpg"
+                                                                    src="https://ewscripps.brightspotcdn.com/dims4/default/f5211b0/2147483647/strip/true/crop/640x360+0+34/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.thedenverchannel.com%2Fphoto%2F2017%2F12%2F14%2F1155%20Canyon%20Boulevard%20406-print-004-111-Living%20Room-4200x2800-300dpi_1513279944338.jpg_74287286_ver1.0_640_480.jpg"
                                                                     className="img-fluid"
                                                                     alt=""
                                                                 />
@@ -427,7 +280,7 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <img
-                                                                    src="img/demo/property/thumb/4.jpg"
+                                                                    src="https://ewscripps.brightspotcdn.com/dims4/default/f5211b0/2147483647/strip/true/crop/640x360+0+34/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.thedenverchannel.com%2Fphoto%2F2017%2F12%2F14%2F1155%20Canyon%20Boulevard%20406-print-004-111-Living%20Room-4200x2800-300dpi_1513279944338.jpg_74287286_ver1.0_640_480.jpg"
                                                                     className="img-fluid"
                                                                     alt=""
                                                                 />
@@ -441,7 +294,7 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <img
-                                                                    src="img/demo/property/thumb/5.jpg"
+                                                                    src="https://ewscripps.brightspotcdn.com/dims4/default/f5211b0/2147483647/strip/true/crop/640x360+0+34/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.thedenverchannel.com%2Fphoto%2F2017%2F12%2F14%2F1155%20Canyon%20Boulevard%20406-print-004-111-Living%20Room-4200x2800-300dpi_1513279944338.jpg_74287286_ver1.0_640_480.jpg"
                                                                     className="img-fluid"
                                                                     alt=""
                                                                 />
@@ -455,7 +308,7 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <img
-                                                                    src="img/demo/property/thumb/6.jpg"
+                                                                    src="https://ewscripps.brightspotcdn.com/dims4/default/f5211b0/2147483647/strip/true/crop/640x360+0+34/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.thedenverchannel.com%2Fphoto%2F2017%2F12%2F14%2F1155%20Canyon%20Boulevard%20406-print-004-111-Living%20Room-4200x2800-300dpi_1513279944338.jpg_74287286_ver1.0_640_480.jpg"
                                                                     className="img-fluid"
                                                                     alt=""
                                                                 />
@@ -469,7 +322,7 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <img
-                                                                    src="img/demo/property/thumb/7.jpg"
+                                                                    src="https://ewscripps.brightspotcdn.com/dims4/default/f5211b0/2147483647/strip/true/crop/640x360+0+34/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.thedenverchannel.com%2Fphoto%2F2017%2F12%2F14%2F1155%20Canyon%20Boulevard%20406-print-004-111-Living%20Room-4200x2800-300dpi_1513279944338.jpg_74287286_ver1.0_640_480.jpg"
                                                                     className="img-fluid"
                                                                     alt=""
                                                                 />
@@ -483,7 +336,7 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <img
-                                                                    src="img/demo/property/thumb/8.jpg"
+                                                                    src="https://ewscripps.brightspotcdn.com/dims4/default/f5211b0/2147483647/strip/true/crop/640x360+0+34/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.thedenverchannel.com%2Fphoto%2F2017%2F12%2F14%2F1155%20Canyon%20Boulevard%20406-print-004-111-Living%20Room-4200x2800-300dpi_1513279944338.jpg_74287286_ver1.0_640_480.jpg"
                                                                     className="img-fluid"
                                                                     alt=""
                                                                 />
@@ -497,7 +350,7 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <img
-                                                                    src="img/demo/property/thumb/9.jpg"
+                                                                    src="https://ewscripps.brightspotcdn.com/dims4/default/f5211b0/2147483647/strip/true/crop/640x360+0+34/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.thedenverchannel.com%2Fphoto%2F2017%2F12%2F14%2F1155%20Canyon%20Boulevard%20406-print-004-111-Living%20Room-4200x2800-300dpi_1513279944338.jpg_74287286_ver1.0_640_480.jpg"
                                                                     className="img-fluid"
                                                                     alt=""
                                                                 />
@@ -1170,6 +1023,149 @@ const PropertyDetals = ({ match }) => {
                 style={{ visibility: "visible", opacity: "1" }}>
                 <i className="fa fa-angle-up"></i>
             </button>
+
+            {/* Root element of PhotoSwipe. Must have class pswp.  */}
+            <div className="pswp" tabindex="-1" role="dialog" ariaHidden="true">
+                {/* Background of PhotoSwipe. 
+                It's a separate element, as animating opacity is faster than rgba(). */}
+                <div className="pswp__bg"></div>
+
+                {/* Slides wrapper with overflow:hidden. */}
+                <div className="pswp__scroll-wrap">
+                    {/* Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory.
+                    don't modify these 3 pswp__item elements, data is added later on. */}
+                    <div
+                        className="pswp__container"
+                        style={{ transform: "translate3d(0px, 0px, 0px)" }}>
+                        <div
+                            className="pswp__item"
+                            style={{
+                                display: "block",
+                                transform: "translate3d(-1001px, 0px, 0px)",
+                            }}>
+                            <div
+                                className="pswp__zoom-wrap"
+                                style={{
+                                    transform:
+                                        "translate3d(0px, 35px, 0px) scale(1)",
+                                }}>
+                                <img
+                                    className="pswp__img"
+                                    src="img/demo/property/3.jpg"
+                                    style={{
+                                        opacity: "1",
+                                        width: "894px",
+                                        height: "632px",
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        <div
+                            className="pswp__item"
+                            style={{ transform: "translate3d(0px, 0px, 0px)" }}>
+                            <div
+                                className="pswp__zoom-wrap"
+                                style={{
+                                    transform:
+                                        "translate3d(101.8px, 304.2px, 0px) scale(0.436242)",
+                                }}>
+                                <img
+                                    className="pswp__img pswp__img--placeholder"
+                                    src="img/demo/property/4.jpg"
+                                    style={{
+                                        width: "894px",
+                                        height: "632px",
+                                        display: "none",
+                                    }}
+                                />
+                                <img
+                                    className="pswp__img"
+                                    src="img/demo/property/4.jpg"
+                                    style={{
+                                        display: "block",
+                                        width: "894px",
+                                        height: "632px",
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        <div
+                            className="pswp__item"
+                            style={{
+                                display: "block",
+                                transform: "translate3d(1001px, 0px, 0px)",
+                            }}>
+                            <div
+                                className="pswp__zoom-wrap"
+                                style={{
+                                    transform:
+                                        "translate3d(0px, 35px, 0px) scale(1)",
+                                }}>
+                                <img
+                                    className="pswp__img"
+                                    src="img/demo/property/5.jpg"
+                                    style={{
+                                        opacity: "1",
+                                        width: "894px",
+                                        height: "632px",
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. */}
+                    <div className="pswp__ui pswp__ui--fit pswp__ui--hidden">
+                        <div className="pswp__top-bar">
+                            {/* Controls are self-explanatory. Order can be changed. */}
+
+                            <div className="pswp__counter">4 / 5</div>
+
+                            <button
+                                className="pswp__button pswp__button--close"
+                                title="Close (Esc)"></button>
+
+                            <button
+                                className="pswp__button pswp__button--share"
+                                title="Share"></button>
+
+                            <button
+                                className="pswp__button pswp__button--fs"
+                                title="Toggle fullscreen"></button>
+
+                            <button
+                                className="pswp__button pswp__button--zoom"
+                                title="Zoom in/out"></button>
+
+                            {/* Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR */}
+                            {/* element will get class pswp__preloader--active when preloader is running */}
+                            <div className="pswp__preloader">
+                                <div className="pswp__preloader__icn">
+                                    <div className="pswp__preloader__cut">
+                                        <div className="pswp__preloader__donut"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                            <div className="pswp__share-tooltip"></div>
+                        </div>
+
+                        <button
+                            className="pswp__button pswp__button--arrow--left disabled"
+                            title="Previous (arrow left)"></button>
+
+                        <button
+                            className="pswp__button pswp__button--arrow--right disabled"
+                            title="Next (arrow right)"></button>
+
+                        <div className="pswp__caption">
+                            <div className="pswp__caption__center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };

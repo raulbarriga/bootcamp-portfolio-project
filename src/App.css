@@ -385,7 +385,6 @@ footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
 
 /* Property Details CSS Start */
 /*------------------------------------------------------------------
-Listo v1.0.0
 [Table of contents]
 
 1.	Typography
@@ -407,15 +406,11 @@ Listo v1.0.0
 */
 /*	1.	Typography
 -------------------------------------------------------------------*/
-html {
-  font-size: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
 
-body {
+#mainPropertyDetals {
   color: #626262;
   font-family: "Libre Franklin", sans-serif;
+  font-size: 100%;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 0.01em;

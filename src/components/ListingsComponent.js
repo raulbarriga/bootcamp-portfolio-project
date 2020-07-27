@@ -9,14 +9,13 @@ import {
 import { Link } from "react-router-dom";
 import $ from "jquery";
 // import Filter from './ListingsFilterComponent';
-import listingsData from "../Data/listingsData";
-import ListingDetails from "./ListingDetailsComponent";
+// import listingsData from "../Data/listingsData";
+// import ListingDetails from "./ListingDetailsComponent";
 
 class Listings extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            listingsData,
             propertyStatus: "Type",
             city: "",
             houses: false,
@@ -32,13 +31,13 @@ class Listings extends Component {
             maxPrice: 100000000,
             minArea: 0,
             maxArea: 50000,
-            filteredData: listingsData,
+            filteredData: this.props.listingsData,
             search: "",
         };
     }
     UNSAFE_componentWillMount = () => {
         //Initial render is by prices from high to low
-        var listingsData = this.state.listingsData.sort((a, b) => {
+        var listingsData = this.props.listingsData.sort((a, b) => {
             return b.price - a.price;
         });
 
@@ -121,7 +120,7 @@ class Listings extends Component {
     };
 
     filteredData = () => {
-        const { listingsData } = this.state;
+        const { listingsData } = this.props;
 
         var newData = listingsData.filter((item) => {
             return (
