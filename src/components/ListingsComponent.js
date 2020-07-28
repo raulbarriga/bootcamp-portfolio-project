@@ -16,6 +16,7 @@ class Listings extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            filteredData: this.props.listingsData,
             propertyStatus: "Type",
             city: "",
             houses: false,
@@ -28,10 +29,9 @@ class Listings extends Component {
             bedrooms: 0,
             bathrooms: 0,
             minPrice: 0,
-            maxPrice: 100000000,
+            maxPrice: 75000000,
             minArea: 0,
             maxArea: 50000,
-            filteredData: this.props.listingsData,
             search: "",
         };
     }
@@ -66,6 +66,7 @@ class Listings extends Component {
         // console.log(event.target.value)
 
         const name = event.target.name;
+
         const value =
             event.target.type === "checkbox"
                 ? event.target.checked
@@ -76,7 +77,7 @@ class Listings extends Component {
                 [name]: value,
             },
             () => {
-                //console.log(this.state)
+                console.log(this.state);
                 this.filteredData();
             }
         );
@@ -200,8 +201,7 @@ class Listings extends Component {
                 filteredData: newData,
             },
             () => {
-                console.log(this.state.search);
-                console.log(newData);
+                //console.log();
             }
         );
     };
@@ -725,7 +725,7 @@ class Listings extends Component {
                                                     onChange={
                                                         this.handleInputChange
                                                     }>
-                                                    <option value="MaxPrice">
+                                                    <option value="75000000">
                                                         Max Price
                                                     </option>
                                                     <option value="500000">

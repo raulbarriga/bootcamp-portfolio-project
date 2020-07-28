@@ -1681,10 +1681,10 @@ footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
   background: rgba(134, 158, 158, 0.3);
 }
 
-#mainPropertyDetals .btn-circle,
-#mainPropertyDetals .btn-circle:hover,
-#mainPropertyDetals .btn-circle:active,
-#mainPropertyDetals .btn-circle:focus {
+.btn-circle,
+.btn-circle:hover,
+.btn-circle:active,
+.btn-circle:focus {
   height: 34px;
   width: 34px;
   line-height: 34px;

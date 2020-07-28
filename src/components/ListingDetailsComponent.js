@@ -850,10 +850,10 @@ const PropertyDetals = ({ match }) => {
                                                         <div className="media">
                                                             <div className="media-left">
                                                                 {" "}
-                                                                <a href="agent.html">
+                                                                <a href="#">
                                                                     <img
                                                                         className="media-object rounded-circle"
-                                                                        src="img/demo/profile.jpg"
+                                                                        src="https://uifaces.co/our-content/donated/KtCFjlD4.jpg"
                                                                         width="64"
                                                                         height="64"
                                                                         alt=""
@@ -862,7 +862,7 @@ const PropertyDetals = ({ match }) => {
                                                             </div>
                                                             <div className="media-body">
                                                                 <h4 className="media-heading">
-                                                                    <a href="agent.html">
+                                                                    <a href="#">
                                                                         John Doe
                                                                     </a>
                                                                 </h4>
@@ -878,7 +878,7 @@ const PropertyDetals = ({ match }) => {
                                                                 </p>
                                                                 <p>
                                                                     <a
-                                                                        href="agent.html"
+                                                                        href="#"
                                                                         className="btn btn-sm btn-light">
                                                                         View
                                                                         Profile
@@ -1173,7 +1173,7 @@ const PropertyDetals = ({ match }) => {
 class ListingDetails extends Component {
     componentDidMount() {
         $(document).ready(function () {
-            var menuHeight = $("#menu").outerHeight();
+            // var menuHeight = $("#menu").outerHeight();
 
             // Fixed Sidebar
 
@@ -1209,91 +1209,8 @@ class ListingDetails extends Component {
             // AOS.init({
             //     offset: 50,
             // });
-
-            $("#menu-content").on("show.bs.collapse", function () {
-                var menu = $("#menu");
-                if (menu.hasClass("navbar-over")) {
-                    menu.removeClass("navbar-over");
-                    $(window).resize(function () {
-                        if ($(window).width() > 992) {
-                            menu.addClass("navbar-over");
-                        } else {
-                            if (
-                                menu.find(".navbar-collapse").hasClass("show")
-                            ) {
-                                menu.removeClass("navbar-over");
-                            }
-                        }
-                    });
-                    $("#menu-content").on("hide.bs.collapse", function () {
-                        $("#menu").addClass("navbar-over");
-                    });
-                }
-            });
         });
         $(window).ready(function (e) {
-            if ($("#content").length > 0) {
-                function menuAdjustments() {
-                    var menu = $("#menu"),
-                        menuHeight = menu.outerHeight() + 15;
-
-                    if ($(window).width() > 767) {
-                        var scrollTop = $(this).scrollTop(),
-                            topDistance = $("#content").offset().top;
-
-                        if (topDistance < scrollTop) {
-                            if (
-                                menu.hasClass("navbar-over") ||
-                                menu.hasClass("absolute-top")
-                            ) {
-                                menu.addClass(
-                                    "fixed-top animated fadeInDown"
-                                ).removeClass("absolute-top");
-                            } else {
-                                $("body")
-                                    .css({ "margin-top": menuHeight })
-                                    .find(menu)
-                                    .addClass("fixed-top animated fadeInDown");
-                            }
-                        } else if (scrollTop == 0) {
-                            if (menu.hasClass("navbar-over")) {
-                                menu.addClass("absolute-top").removeClass(
-                                    "fixed-top animated fadeInDown"
-                                );
-                            } else {
-                                $("body")
-                                    .css({ "margin-top": 0 })
-                                    .find(menu)
-                                    .removeClass(
-                                        "fixed-top animated fadeInDown"
-                                    );
-                            }
-                        }
-                    }
-                }
-                $(window).on("scroll", function () {
-                    menuAdjustments();
-                });
-                $(document).resize(function () {
-                    var menu = $("#menu");
-                    if ($(document).width() < 768) {
-                        if (
-                            menu.hasClass("navbar-over") ||
-                            menu.hasClass("absolute-top")
-                        ) {
-                            menu.addClass("absolute-top").removeClass(
-                                "fixed-top animated fadeInDown"
-                            );
-                        } else {
-                            $("body")
-                                .css({ "margin-top": 0 })
-                                .find(menu)
-                                .removeClass("fixed-top animated fadeInDown");
-                        }
-                    }
-                });
-            }
-
             $(document).scroll(function () {
                 var btnTop = $("#to-top");
                 if ($(document).scrollTop() >= 50) {
