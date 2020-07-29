@@ -201,7 +201,7 @@ class Listings extends Component {
                 filteredData: newData,
             },
             () => {
-                //console.log();
+                console.log(this.filteredData);
             }
         );
     };

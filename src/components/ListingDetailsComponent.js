@@ -9,6 +9,7 @@ import "swiper/dist/css/swiper.min.css";
 import Swiper from "swiper";
 
 const PropertyDetals = ({ match }) => {
+    console.log(match);
     return (
         <>
             <div id="mainPropertyDetals" style={{ transform: "none" }}>
@@ -27,7 +28,11 @@ const PropertyDetals = ({ match }) => {
                                         </a>
                                         <h1>
                                             2 bed semi-detached bungalow{" "}
-                                            <span className="label label-bordered">
+                                            <span
+                                                className="label label-bordered"
+                                                style={{
+                                                    transform: "capitalized",
+                                                }}>
                                                 For sale
                                             </span>{" "}
                                             <small>
