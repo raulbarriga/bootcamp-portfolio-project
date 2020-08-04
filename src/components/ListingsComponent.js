@@ -77,7 +77,7 @@ class Listings extends Component {
                 [name]: value,
             },
             () => {
-                console.log(this.state);
+                // console.log(this.state);
                 this.filteredData();
             }
         );
@@ -122,6 +122,19 @@ class Listings extends Component {
 
     filteredData = () => {
         const { listingsData } = this.props;
+        const {
+            houses,
+            manufactured,
+            condosCoOps,
+            multiFamily,
+            apartments,
+            lotsLand,
+            townhomes,
+        } = this.state;
+        // var newData = [];
+        // var newData = listingsData.map((item) => {
+        //     return item.homeType
+        //   })
 
         var newData = listingsData.filter((item) => {
             return (
@@ -159,49 +172,70 @@ class Listings extends Component {
                 return item.propertyStatus === this.state.propertyStatus;
             });
         }
+
         if (this.state.houses !== false) {
-            newData = newData.filter((item) => {
-                //console.log('Houses checked')
-                return item.homeType === "house";
-            });
+            newData = newData.concat(
+                newData.filter((item) => {
+                    return item.homeType === "houses";
+                })
+            );
         }
         if (this.state.manufactured !== false) {
-            newData = newData.filter((item) => {
-                return item.homeType === "manufactured";
-            });
+            newData = newData.concat(
+                newData.filter((item) => {
+                    return item.homeType === "manufactured";
+                })
+            );
         }
         if (this.state.condosCoOps !== false) {
-            newData = newData.filter((item) => {
-                return item.homeType === "condo" || item.homeType === "coOp";
-            });
+            newData = newData.concat(
+                newData.filter((item) => {
+                    return (
+                        item.homeType === "condo" || item.homeType === "coOp"
+                    );
+                })
+            );
         }
         if (this.state.multiFamily !== false) {
-            newData = newData.filter((item) => {
-                return item.homeType === "multi-family";
-            });
+            newData = newData.concat(
+                newData.filter((item) => {
+                    return item.homeType === "multi-family";
+                })
+            );
         }
         if (this.state.apartments !== false) {
-            newData = newData.filter((item) => {
-                return item.homeType === "apartment";
-            });
+            newData = newData.concat(
+                newData.filter((item) => {
+                    return item.homeType === "apartment";
+                })
+            );
         }
         if (this.state.lotsLand !== false) {
-            newData = newData.filter((item) => {
-                return item.homeType === "lot" || item.homeType === "land";
-            });
+            newData = newData.concat(
+                newData.filter((item) => {
+                    return item.homeType === "lot" || item.homeType === "land";
+                })
+            );
         }
         if (this.state.townhomes !== false) {
-            newData = newData.filter((item) => {
-                return item.homeType === "townhome";
-            });
+            newData = newData.concat(
+                newData.filter((item) => {
+                    return item.homeType === "townhome";
+                })
+            );
         }
+        // will remove all duplicate items automatically with set
+        //convert newData array to set
+        newData = new Set(newData);
+        // convert back to array now that all duplicates are removed
+        newData = [...newData];
 
         this.setState(
             {
                 filteredData: newData,
             },
             () => {
-                console.log(this.filteredData);
+                //console.log(newData);
             }
         );
     };
