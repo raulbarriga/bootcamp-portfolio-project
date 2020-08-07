@@ -1,3 +1,10 @@
+input[type="search"i]::-webkit-search-cancel-button {
+  right: 45px;
+  position: absolute;
+  cursor: pointer;
+}
+
+
 /* Header Start*/
 header {
   background: #0c002b;
@@ -191,12 +198,38 @@ footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
   color: #0c002b;
 }
 
-#home-banner .search-box {
+/* #home-banner .search-box {
   position: absolute;
   z-index: 2;
   top: 50%;
   transform: translate(0%, 40px);
   padding-left: 25%;
+} */
+#home-banner .row .col-md-12 {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  padding-left: 33%;
+}
+
+#home-banner .row .col-md-12.align-items-end .form-group .form-field.search-box form {
+  position: relative;
+  display: inline-flex;
+  width: 50%;
+}
+
+#home-banner .row .col-md-12.align-items-end .form-group .form-field.search-box form input.form-control {
+  width: 100%;
+}
+
+#home-banner .row .col-md-12.align-items-end .form-group .form-field.search-box form button {
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  border-top: 1px solid #ced4da;
+  border-bottom: 1px solid #ced4da;
+  border-right: 1px solid #ced4da;
+  border-radius: .25rem;
 }
 
 /* Home Page End */
@@ -210,21 +243,24 @@ footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
   margin-bottom: 0;
 }
 
-.container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box {
+.container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box form {
   position: relative;
   display: inline-flex;
   width: 50%;
 }
 
-.container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box input.form-control {
+.container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box form input.form-control {
   width: 100%;
 }
 
-.container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box svg.fas {
+.container-fluid .row .col-md-12.align-items-end .form-group .form-field.search-box form button {
   position: absolute;
-  right: 11px;
-  top: 11px;
+  right: 0px;
   cursor: pointer;
+  border-top: 1px solid #ced4da;
+  border-bottom: 1px solid #ced4da;
+  border-right: 1px solid #ced4da;
+  border-radius: .25rem;
 }
 
 .container-fluid #filter-and-sort-row {

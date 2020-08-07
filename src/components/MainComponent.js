@@ -6,12 +6,8 @@ import Home from "./HomeComponent";
 import Listings from "./ListingsComponent";
 import listingsData from "../Data/listingsData";
 import ListingDetails from "./ListingDetailsComponent";
-{
-    /* import Contact from './ContactComponent';*/
-}
-{
-    /* import About from './AboutComponent'; */
-}
+/* import Contact from './ContactComponent';*/
+/* import About from './AboutComponent'; */
 
 class Main extends Component {
     constructor(props) {

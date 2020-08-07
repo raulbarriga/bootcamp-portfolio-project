@@ -66,7 +66,6 @@ class Listings extends Component {
         // console.log(event.target.value)
 
         const name = event.target.name;
-
         const value =
             event.target.type === "checkbox"
                 ? event.target.checked
@@ -77,10 +76,30 @@ class Listings extends Component {
                 [name]: value,
             },
             () => {
-                // console.log(this.state);
+                console.log(this.state);
                 this.filteredData();
             }
         );
+    };
+
+    onSubmitHandler = (event) => {
+        event.preventDefault();
+        //Search
+        if (this.state.search !== "") {
+            var newData = this.state.listingsData.filter((item) => {
+                var city = item.city.toLowerCase();
+                var searchText = this.state.search.toLowerCase();
+                var n = city.match(searchText);
+
+                if (n !== null) {
+                    return true;
+                }
+            });
+        }
+
+        this.setState({
+            filteredData: newData,
+        });
     };
 
     sortDropdown = (sort) => {
@@ -122,19 +141,6 @@ class Listings extends Component {
 
     filteredData = () => {
         const { listingsData } = this.props;
-        const {
-            houses,
-            manufactured,
-            condosCoOps,
-            multiFamily,
-            apartments,
-            lotsLand,
-            townhomes,
-        } = this.state;
-        // var newData = [];
-        // var newData = listingsData.map((item) => {
-        //     return item.homeType
-        //   })
 
         var newData = listingsData.filter((item) => {
             return (
@@ -153,19 +159,6 @@ class Listings extends Component {
         //     })
         // }
 
-        //Search
-        if (this.state.search !== "") {
-            newData = listingsData.filter((item) => {
-                var city = item.city.toLowerCase();
-                var searchText = this.state.search.toLowerCase();
-                var n = city.match(searchText);
-
-                if (n !== null) {
-                    return true;
-                }
-            });
-        }
-
         // Rent or Sale
         if (this.state.propertyStatus !== "Type") {
             newData = newData.filter((item) => {
@@ -176,7 +169,7 @@ class Listings extends Component {
         if (this.state.houses !== false) {
             newData = newData.concat(
                 newData.filter((item) => {
-                    return item.homeType === "houses";
+                    return item.homeType === "house";
                 })
             );
         }
@@ -235,7 +228,8 @@ class Listings extends Component {
                 filteredData: newData,
             },
             () => {
-                //console.log(newData);
+                console.log(newData);
+                console.log(this.state.filteredData);
             }
         );
     };
@@ -313,19 +307,24 @@ class Listings extends Component {
                     <div className="col-md-12 align-items-end">
                         <div className="form-group">
                             <div className="form-field search-box">
-                                <input
-                                    type="search"
-                                    name="search"
-                                    className="form-control"
-                                    onChange={this.handleInputChange}
-                                    placeholder="Enter City or Zip Code"
-                                />
-                                <span>
-                                    <FontAwesomeIcon
-                                        className="fas"
-                                        icon={faSearch}
+                                <form onSubmit={this.onSubmitHandler}>
+                                    <input
+                                        type="search"
+                                        name="search"
+                                        value={this.state.search}
+                                        className="form-control"
+                                        placeholder="Enter City or Zip Code"
+                                        onChange={this.handleInputChange}
                                     />
-                                </span>
+                                    <button
+                                        type="submit"
+                                        className="btn bg-white">
+                                        <FontAwesomeIcon
+                                            className="fas"
+                                            icon={faSearch}
+                                        />
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

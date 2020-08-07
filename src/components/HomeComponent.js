@@ -1,7 +1,7 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { Link }from 'react-router-dom';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function Home() {
     return (
@@ -12,16 +12,28 @@ function Home() {
                     <div className="overlay"></div>
                     {/* Search form */}
                     <div className="row">
-                        <div className="col search-box ml-auto">
-                            <form>
-                                <div className="form-row">
-                                    <div className="col-7">
-                                        <input className="form-control mr-3" type="search" placeholder="Enter City or Zip Code"
-                                        aria-label="Search" />
-                                    </div>
-                                    <button className="btn bg-white"><Link to='/listings'><FontAwesomeIcon className="fas" icon={faSearch} /></Link></button>
+                        <div className="col-md-12 align-items-end">
+                            <div className="form-group">
+                                <div className="form-field search-box">
+                                    <form>
+                                        <input
+                                            className="form-control"
+                                            type="search"
+                                            placeholder="Enter City or Zip Code"
+                                            aria-label="Search"
+                                        />
+                                        <button
+                                            type="submit"
+                                            className="btn bg-white">
+                                            <FontAwesomeIcon
+                                                className="fas"
+                                                icon={faSearch}
+                                            />
+                                        </button>
+                                    </form>
+                                    {/* onClick={} */}
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,4 +42,4 @@ function Home() {
     );
 }
 
-export default Home;   
+export default Home;

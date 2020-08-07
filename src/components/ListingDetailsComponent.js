@@ -106,12 +106,12 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <figure
-                                                                    itemprop="associatedMedia"
-                                                                    itemscope=""
-                                                                    itemtype="http://schema.org/ImageObject">
+                                                                    itemProp="associatedMedia"
+                                                                    itemScope=""
+                                                                    itemType="http://schema.org/ImageObject">
                                                                     <a
                                                                         href="http://uilove.in/realestate/listo/preview/img/demo/property/1.jpg"
-                                                                        itemprop="contentUrl"
+                                                                        itemProp="contentUrl"
                                                                         data-size="2000x1414">
                                                                         <img
                                                                             src="http://uilove.in/realestate/listo/preview/img/demo/property/1.jpg"
@@ -130,12 +130,12 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <figure
-                                                                    itemprop="associatedMedia"
-                                                                    itemscope=""
-                                                                    itemtype="http://schema.org/ImageObject">
+                                                                    itemProp="associatedMedia"
+                                                                    itemScope=""
+                                                                    itemType="http://schema.org/ImageObject">
                                                                     <a
                                                                         href="http://uilove.in/realestate/listo/preview/img/demo/property/2.jpg"
-                                                                        itemprop="contentUrl"
+                                                                        itemProp="contentUrl"
                                                                         data-size="2000x1414">
                                                                         <img
                                                                             src="http://uilove.in/realestate/listo/preview/img/demo/property/2.jpg"
@@ -154,12 +154,12 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <figure
-                                                                    itemprop="associatedMedia"
-                                                                    itemscope=""
-                                                                    itemtype="http://schema.org/ImageObject">
+                                                                    itemProp="associatedMedia"
+                                                                    itemScope=""
+                                                                    itemType="http://schema.org/ImageObject">
                                                                     <a
                                                                         href="http://uilove.in/realestate/listo/preview/img/demo/property/3.jpg"
-                                                                        itemprop="contentUrl"
+                                                                        itemProp="contentUrl"
                                                                         data-size="2000x1414">
                                                                         <img
                                                                             data-src="http://uilove.in/realestate/listo/preview/img/demo/property/3.jpg"
@@ -179,12 +179,12 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <figure
-                                                                    itemprop="associatedMedia"
-                                                                    itemscope=""
-                                                                    itemtype="http://schema.org/ImageObject">
+                                                                    itemProp="associatedMedia"
+                                                                    itemScope=""
+                                                                    itemType="http://schema.org/ImageObject">
                                                                     <a
                                                                         href="http://uilove.in/realestate/listo/preview/img/demo/property/4.jpg"
-                                                                        itemprop="contentUrl"
+                                                                        itemProp="contentUrl"
                                                                         data-size="2000x1414">
                                                                         <img
                                                                             data-src="http://uilove.in/realestate/listo/preview/img/demo/property/4.jpg"
@@ -204,12 +204,12 @@ const PropertyDetals = ({ match }) => {
                                                                         "10px",
                                                                 }}>
                                                                 <figure
-                                                                    itemprop="associatedMedia"
-                                                                    itemscope=""
-                                                                    itemtype="http://schema.org/ImageObject">
+                                                                    itemProp="associatedMedia"
+                                                                    itemScope=""
+                                                                    itemType="http://schema.org/ImageObject">
                                                                     <a
                                                                         href="http://uilove.in/realestate/listo/preview/img/demo/property/5.jpg"
-                                                                        itemprop="contentUrl"
+                                                                        itemProp="contentUrl"
                                                                         data-size="2000x1414">
                                                                         <img
                                                                             data-src="http://uilove.in/realestate/listo/preview/img/demo/property/5.jpg"
@@ -723,7 +723,7 @@ const PropertyDetals = ({ match }) => {
                                                                         border:
                                                                             "0",
                                                                     }}
-                                                                    allowfullscreen=""></iframe>
+                                                                    allowFullScreen=""></iframe>
                                                             </div>
                                                             <div
                                                                 role="tabpanel"
@@ -737,7 +737,7 @@ const PropertyDetals = ({ match }) => {
                                                                         border:
                                                                             "0",
                                                                     }}
-                                                                    allowfullscreen=""></iframe>
+                                                                    allowFullScreen=""></iframe>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -875,7 +875,7 @@ const PropertyDetals = ({ match }) => {
                                                                     <a href="tel:01502392905">
                                                                         <i
                                                                             className="fa fa-phone"
-                                                                            ariaHidden="true"></i>{" "}
+                                                                            aria-hidden="true"></i>{" "}
                                                                         Call:
                                                                         01502
                                                                         392905
@@ -911,7 +911,7 @@ const PropertyDetals = ({ match }) => {
                                                             data-original-title="Save to favorites">
                                                             <i
                                                                 className="fa fa-star"
-                                                                ariaHidden="true"></i>
+                                                                aria-hidden="true"></i>
                                                         </a>{" "}
                                                         <a
                                                             href="#"
@@ -921,7 +921,7 @@ const PropertyDetals = ({ match }) => {
                                                             data-original-title="Print this page">
                                                             <i
                                                                 className="fa fa-print"
-                                                                ariaHidden="true"></i>
+                                                                aria-hidden="true"></i>
                                                         </a>{" "}
                                                         <a
                                                             href="#"
@@ -934,7 +934,7 @@ const PropertyDetals = ({ match }) => {
                                                                 data-original-title="Email to Friend">
                                                                 <i
                                                                     className="fa fa-envelope-o"
-                                                                    ariaHidden="true"></i>
+                                                                    aria-hidden="true"></i>
                                                             </span>
                                                         </a>{" "}
                                                         <a
@@ -948,7 +948,7 @@ const PropertyDetals = ({ match }) => {
                                                                 data-original-title="Report Listing">
                                                                 <i
                                                                     className="fa fa-exclamation-circle"
-                                                                    ariaHidden="true"></i>
+                                                                    aria-hidden="true"></i>
                                                             </span>
                                                         </a>{" "}
                                                     </div>
@@ -1030,7 +1030,11 @@ const PropertyDetals = ({ match }) => {
             </button>
 
             {/* Root element of PhotoSwipe. Must have class pswp.  */}
-            <div className="pswp" tabindex="-1" role="dialog" ariaHidden="true">
+            <div
+                className="pswp"
+                tabIndex="-1"
+                role="dialog"
+                aria-hidden="true">
                 {/* Background of PhotoSwipe. 
                 It's a separate element, as animating opacity is faster than rgba(). */}
                 <div className="pswp__bg"></div>
