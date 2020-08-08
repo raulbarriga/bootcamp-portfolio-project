@@ -9,7 +9,6 @@ import {
 import { Link } from "react-router-dom";
 import $ from "jquery";
 // import Filter from './ListingsFilterComponent';
-// import listingsData from "../Data/listingsData";
 // import ListingDetails from "./ListingDetailsComponent";
 
 class Listings extends Component {
@@ -76,7 +75,7 @@ class Listings extends Component {
                 [name]: value,
             },
             () => {
-                console.log(this.state);
+                //console.log(this.state);
                 this.filteredData();
             }
         );
@@ -138,85 +137,348 @@ class Listings extends Component {
             filteredData: sort,
         });
     };
+    componentDidUpdate = () => {
+        const { listingsData } = this.props;
+
+        //after initial page render, if filter options were used & went back to defaults,
+        //this'll get the default properties back to render
+        if (
+            this.state.filteredData === undefined ||
+            this.state.filteredData.length === 0
+        ) {
+            // console.log("here");
+            this.setState({
+                filteredData: listingsData,
+            });
+        }
+    };
 
     filteredData = () => {
         const { listingsData } = this.props;
+        const {
+            minPrice,
+            maxPrice,
+            minArea,
+            maxArea,
+            bedrooms,
+            bathrooms,
+            propertyStatus,
+        } = this.state;
+        var newData = [];
 
-        var newData = listingsData.filter((item) => {
-            return (
-                item.price >= this.state.minPrice &&
-                item.price <= this.state.maxPrice &&
-                item.area >= this.state.minArea &&
-                item.area <= this.state.maxArea &&
-                item.rooms >= this.state.bedrooms &&
-                item.bathrooms >= this.state.bathrooms
-            );
-        });
+        if (
+            minPrice !== 0 ||
+            maxPrice !== 75000000 ||
+            minArea !== 0 ||
+            maxArea !== 50000 ||
+            bedrooms !== 0 ||
+            bathrooms !== 0
+        ) {
+            var otherFilters = listingsData.filter((item) => {
+                return (
+                    item.price >= minPrice &&
+                    item.price <= maxPrice &&
+                    item.area >= minArea &&
+                    item.area <= maxArea &&
+                    item.rooms >= bedrooms &&
+                    item.bathrooms >= bathrooms
+                );
+            });
+            // console.log("priceFilter", priceFilter);
+            newData = newData.concat(otherFilters);
+        }
 
-        // if(this.state.city !== ''){
+        console.log("newData without using price filter", newData);
+        // if (this.state.city !== "") {
         //     newData = newData.filter((item) => {
-        //         return item.city == this.state.city;
-        //     })
+        //         return item.city === this.state.city;
+        //     });
         // }
 
+        // All the following check if newData is empty or not & works
         // Rent or Sale
-        if (this.state.propertyStatus !== "Type") {
-            newData = newData.filter((item) => {
-                return item.propertyStatus === this.state.propertyStatus;
-            });
+        if (propertyStatus !== "Type") {
+            //var propertyType = [];
+            console.log("in the property status if statement", propertyStatus);
+            if (newData === undefined || newData.length === 0) {
+                if (propertyStatus === "rent") {
+                    newData = listingsData.filter((item) => {
+                        return item.propertyStatus === "rent";
+                    });
+                } else {
+                    newData = listingsData.filter((item) => {
+                        return item.propertyStatus === "sale";
+                    });
+                }
+            }
+            if (this.state.propertyStatus === "sale") {
+                newData = newData.filter((item) => {
+                    return item.propertyStatus === "sale";
+                });
+            } else {
+                newData = newData.filter((item) => {
+                    return item.propertyStatus === "rent";
+                });
+            }
+            //console.log("before filtering", newData);
+
+            console.log("after property status filter", newData);
+
+            // newData = newData.concat(propertyType);
         }
 
+        //console.log("before if statements, before set", newData);
         if (this.state.houses !== false) {
-            newData = newData.concat(
-                newData.filter((item) => {
+            if (newData === undefined || newData.length === 0) {
+                var allHouses = listingsData.filter((item) => {
                     return item.homeType === "house";
-                })
-            );
+                });
+                newData = newData.concat(allHouses);
+            }
+            //if newData has something (it's not empty)
+            if (newData !== undefined || newData.length !== 0) {
+                //this is for when I use another filter first
+                if (
+                    minPrice !== 0 ||
+                    maxPrice !== 75000000 ||
+                    minArea !== 0 ||
+                    maxArea !== 50000 ||
+                    bedrooms !== 0 ||
+                    bathrooms !== 0
+                ) {
+                    newData = newData.filter((item) => {
+                        return item.homeType === "house";
+                    });
+                }
+                //if property type is the first filter used
+                allHouses = listingsData.filter((item) => {
+                    return item.homeType === "house";
+                });
+                newData = newData.concat(allHouses);
+            } else {
+                allHouses = listingsData.filter((item) => {
+                    return item.homeType === "house";
+                });
+                newData = newData.concat(allHouses);
+            }
+            //console.log("newData", newData);
         }
         if (this.state.manufactured !== false) {
-            newData = newData.concat(
-                newData.filter((item) => {
+            if (newData === undefined || newData.length === 0) {
+                var allManufactured = listingsData.filter((item) => {
                     return item.homeType === "manufactured";
-                })
-            );
+                });
+                newData = newData.concat(allManufactured);
+            }
+            //if newData has something (it's not empty)
+            if (newData !== undefined || newData.length !== 0) {
+                //this is for when I use another filter first
+                if (
+                    minPrice !== 0 ||
+                    maxPrice !== 75000000 ||
+                    minArea !== 0 ||
+                    maxArea !== 50000 ||
+                    bedrooms !== 0 ||
+                    bathrooms !== 0
+                ) {
+                    newData = newData.filter((item) => {
+                        return item.homeType === "manufactured";
+                    });
+                }
+                //if property type is the first filter used
+                allManufactured = listingsData.filter((item) => {
+                    return item.homeType === "manufactured";
+                });
+                newData = newData.concat(allManufactured);
+            } else {
+                allManufactured = listingsData.filter((item) => {
+                    return item.homeType === "manufactured";
+                });
+                newData = newData.concat(allManufactured);
+            }
+            //console.log("newdata with concat manufactured", newData);
         }
         if (this.state.condosCoOps !== false) {
-            newData = newData.concat(
-                newData.filter((item) => {
+            if (newData === undefined || newData.length === 0) {
+                var allCondosCoOps = listingsData.filter((item) => {
                     return (
                         item.homeType === "condo" || item.homeType === "coOp"
                     );
-                })
-            );
+                });
+                newData = newData.concat(allCondosCoOps);
+            }
+            //if newData has something (it's not empty)
+            if (newData !== undefined || newData.length !== 0) {
+                //this is for when I use another filter first
+                if (
+                    minPrice !== 0 ||
+                    maxPrice !== 75000000 ||
+                    minArea !== 0 ||
+                    maxArea !== 50000 ||
+                    bedrooms !== 0 ||
+                    bathrooms !== 0
+                ) {
+                    newData = newData.filter((item) => {
+                        return (
+                            item.homeType === "condo" ||
+                            item.homeType === "coOp"
+                        );
+                    });
+                }
+                allCondosCoOps = listingsData.filter((item) => {
+                    return (
+                        item.homeType === "condo" || item.homeType === "coOp"
+                    );
+                });
+                newData = newData.concat(allCondosCoOps);
+            } else {
+                allCondosCoOps = listingsData.filter((item) => {
+                    return (
+                        item.homeType === "condo" || item.homeType === "coOp"
+                    );
+                });
+                newData = newData.concat(allCondosCoOps);
+            }
         }
         if (this.state.multiFamily !== false) {
-            newData = newData.concat(
-                newData.filter((item) => {
+            if (newData === undefined || newData.length === 0) {
+                var allMultiFamily = listingsData.filter((item) => {
                     return item.homeType === "multi-family";
-                })
-            );
+                });
+                newData = newData.concat(allMultiFamily);
+            }
+
+            //if newData has something (it's not empty)
+            if (newData !== undefined || newData.length !== 0) {
+                //this is for when I use another filter first
+                if (
+                    minPrice !== 0 ||
+                    maxPrice !== 75000000 ||
+                    minArea !== 0 ||
+                    maxArea !== 50000 ||
+                    bedrooms !== 0 ||
+                    bathrooms !== 0
+                ) {
+                    newData = newData.filter((item) => {
+                        return item.homeType === "multi-family";
+                    });
+                }
+                allMultiFamily = listingsData.filter((item) => {
+                    return item.homeType === "multi-family";
+                });
+                newData = newData.concat(allMultiFamily);
+            } else {
+                allMultiFamily = listingsData.filter((item) => {
+                    return item.homeType === "multi-family";
+                });
+                newData = newData.concat(allMultiFamily);
+            }
         }
         if (this.state.apartments !== false) {
-            newData = newData.concat(
-                newData.filter((item) => {
+            if (newData === undefined || newData.length === 0) {
+                var allApartments = listingsData.filter((item) => {
                     return item.homeType === "apartment";
-                })
-            );
+                });
+                newData = newData.concat(allApartments);
+            }
+
+            //if newData has something (it's not empty)
+            if (newData !== undefined || newData.length !== 0) {
+                //this is for when I use another filter first
+                if (
+                    minPrice !== 0 ||
+                    maxPrice !== 75000000 ||
+                    minArea !== 0 ||
+                    maxArea !== 50000 ||
+                    bedrooms !== 0 ||
+                    bathrooms !== 0
+                ) {
+                    newData = newData.filter((item) => {
+                        return item.homeType === "apartment";
+                    });
+                }
+                allApartments = listingsData.filter((item) => {
+                    return item.homeType === "apartment";
+                });
+                newData = newData.concat(allApartments);
+            } else {
+                allApartments = listingsData.filter((item) => {
+                    return item.homeType === "apartment";
+                });
+                newData = newData.concat(allApartments);
+            }
         }
         if (this.state.lotsLand !== false) {
-            newData = newData.concat(
-                newData.filter((item) => {
+            if (newData === undefined || newData.length === 0) {
+                var allLotsLand = listingsData.filter((item) => {
                     return item.homeType === "lot" || item.homeType === "land";
-                })
-            );
+                });
+                newData = newData.concat(allLotsLand);
+            }
+
+            //if newData has something (it's not empty)
+            if (newData !== undefined || newData.length !== 0) {
+                //this is for when I use another filter first
+                if (
+                    minPrice !== 0 ||
+                    maxPrice !== 75000000 ||
+                    minArea !== 0 ||
+                    maxArea !== 50000 ||
+                    bedrooms !== 0 ||
+                    bathrooms !== 0
+                ) {
+                    newData = newData.filter((item) => {
+                        return (
+                            item.homeType === "lot" || item.homeType === "land"
+                        );
+                    });
+                }
+                allLotsLand = listingsData.filter((item) => {
+                    return item.homeType === "lot" || item.homeType === "land";
+                });
+                newData = newData.concat(allLotsLand);
+            } else {
+                allLotsLand = listingsData.filter((item) => {
+                    return item.homeType === "lot" || item.homeType === "land";
+                });
+                newData = newData.concat(allLotsLand);
+            }
         }
         if (this.state.townhomes !== false) {
-            newData = newData.concat(
-                newData.filter((item) => {
+            if (newData === undefined || newData.length === 0) {
+                var allTownhomes = listingsData.filter((item) => {
                     return item.homeType === "townhome";
-                })
-            );
+                });
+                newData = newData.concat(allTownhomes);
+            }
+
+            //if newData has something (it's not empty)
+            if (newData !== undefined || newData.length !== 0) {
+                //this is for when I use another filter first
+                if (
+                    minPrice !== 0 ||
+                    maxPrice !== 75000000 ||
+                    minArea !== 0 ||
+                    maxArea !== 50000 ||
+                    bedrooms !== 0 ||
+                    bathrooms !== 0
+                ) {
+                    newData = newData.filter((item) => {
+                        return item.homeType === "townhome";
+                    });
+                }
+                allTownhomes = listingsData.filter((item) => {
+                    return item.homeType === "townhome";
+                });
+                newData = newData.concat(allTownhomes);
+            } else {
+                allTownhomes = listingsData.filter((item) => {
+                    return item.homeType === "townhome";
+                });
+                newData = newData.concat(allTownhomes);
+            }
         }
+        //console.log("after concating, before set", newData);
         // will remove all duplicate items automatically with set
         //convert newData array to set
         newData = new Set(newData);
@@ -228,8 +490,8 @@ class Listings extends Component {
                 filteredData: newData,
             },
             () => {
+                //console.log(this.state.filteredData);
                 console.log(newData);
-                console.log(this.state.filteredData);
             }
         );
     };
@@ -848,18 +1110,6 @@ class Listings extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* Search Button on the Filter Menu */}
-                                {/* <div className="col-md-12 align-self-end">
-                                    <div className="form-group">
-                                        <div className="form-field">
-                                            <input
-                                            type="submit"
-                                            value="Search"
-                                            className="form-control btn btn-primary"
-                                            onClick={this.props.filteredData} />
-                                        </div>
-                                    </div>
-                                </div> */}
                             </div>
                         </form>
                     </div>
