@@ -184,11 +184,9 @@ class Listings extends Component {
                     item.bathrooms >= bathrooms
                 );
             });
-            // console.log("priceFilter", priceFilter);
             newData = newData.concat(otherFilters);
         }
 
-        console.log("newData without using price filter", newData);
         // if (this.state.city !== "") {
         //     newData = newData.filter((item) => {
         //         return item.city === this.state.city;
@@ -198,8 +196,6 @@ class Listings extends Component {
         // All the following check if newData is empty or not & works
         // Rent or Sale
         if (propertyStatus !== "Type") {
-            //var propertyType = [];
-            console.log("in the property status if statement", propertyStatus);
             if (newData === undefined || newData.length === 0) {
                 if (propertyStatus === "rent") {
                     newData = listingsData.filter((item) => {
@@ -220,14 +216,8 @@ class Listings extends Component {
                     return item.propertyStatus === "rent";
                 });
             }
-            //console.log("before filtering", newData);
-
-            console.log("after property status filter", newData);
-
-            // newData = newData.concat(propertyType);
         }
 
-        //console.log("before if statements, before set", newData);
         if (this.state.houses !== false) {
             if (newData === undefined || newData.length === 0) {
                 var allHouses = listingsData.filter((item) => {
