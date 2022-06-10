@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/bootcamp-portfolio-project/static/css/main.fce444b1.chunk.css",
+    "main.js": "/bootcamp-portfolio-project/static/js/main.cbc79c9e.chunk.js",
+    "main.js.map": "/bootcamp-portfolio-project/static/js/main.cbc79c9e.chunk.js.map",
+    "runtime-main.js": "/bootcamp-portfolio-project/static/js/runtime-main.48463009.js",
+    "runtime-main.js.map": "/bootcamp-portfolio-project/static/js/runtime-main.48463009.js.map",
+    "static/css/2.27d93faf.chunk.css": "/bootcamp-portfolio-project/static/css/2.27d93faf.chunk.css",
+    "static/js/2.d8704c3b.chunk.js": "/bootcamp-portfolio-project/static/js/2.d8704c3b.chunk.js",
+    "static/js/2.d8704c3b.chunk.js.map": "/bootcamp-portfolio-project/static/js/2.d8704c3b.chunk.js.map",
+    "index.html": "/bootcamp-portfolio-project/index.html",
+    "precache-manifest.9db783d9388e52e4255e7dd49dc44c73.js": "/bootcamp-portfolio-project/precache-manifest.9db783d9388e52e4255e7dd49dc44c73.js",
+    "service-worker.js": "/bootcamp-portfolio-project/service-worker.js",
+    "static/css/2.27d93faf.chunk.css.map": "/bootcamp-portfolio-project/static/css/2.27d93faf.chunk.css.map",
+    "static/css/main.fce444b1.chunk.css.map": "/bootcamp-portfolio-project/static/css/main.fce444b1.chunk.css.map",
+    "static/js/2.d8704c3b.chunk.js.LICENSE.txt": "/bootcamp-portfolio-project/static/js/2.d8704c3b.chunk.js.LICENSE.txt",
+    "static/media/app-store-logo.png": "/bootcamp-portfolio-project/static/media/app-store-logo.436fa48e.png",
+    "static/media/default-skin.css": "/bootcamp-portfolio-project/static/media/default-skin.b257fa9c.svg",
+    "static/media/font-awesome.css": "/bootcamp-portfolio-project/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/google-play-badge.png": "/bootcamp-portfolio-project/static/media/google-play-badge.db9b21a1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48463009.js",
+    "static/css/2.27d93faf.chunk.css",
+    "static/js/2.d8704c3b.chunk.js",
+    "static/css/main.fce444b1.chunk.css",
+    "static/js/main.cbc79c9e.chunk.js"
+  ]
+}
