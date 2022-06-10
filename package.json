@@ -2,6 +2,7 @@
   "name": "react-real-estate",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://raulbarriga.github.io/bootcamp-portfolio-project",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
@@ -10,6 +11,7 @@
     "bootstrap": "^4.0.0",
     "dom7": "^2.0.1",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^4.0.0",
     "i": "^0.3.6",
     "jquery": "^3.2.1",
     "photoswipe": "^4.1.2",
@@ -22,6 +24,8 @@
     "swiper": "^4.0.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

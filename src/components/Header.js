@@ -24,7 +24,7 @@ class Header extends Component{
                 <header>
                     <nav className="navbar navbar-expand-custom navbar-dark" role="navigation">
                         <div id="container-fluid-nav" className="container-fluid">
-                        <NavLink to='/home' className="navbar-brand">LOGO</NavLink>
+                        <NavLink to='/bootcamp-portfolio-project/home' className="navbar-brand">LOGO</NavLink>
                         
                         {/* Collapse Button Toggler */}
                         <button
@@ -40,16 +40,16 @@ class Header extends Component{
                         <div id="toggle-btn" className="collapse navbar-collapse">
                             <ul id="nav-css" className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <NavLink className="nav-link text-white" to='/home'>Home</NavLink>
+                                <NavLink className="nav-link text-white" to='/bootcamp-portfolio-project/home'>Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link text-white" to='/listings'>Listings</NavLink>
+                                <NavLink className="nav-link text-white" to='/bootcamp-portfolio-project/listings'>Listings</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link text-white" to='/aboutus'>About Us</NavLink>
+                                <NavLink className="nav-link text-white" to='/bootcamp-portfolio-project/aboutus'>About Us</NavLink>
                             </li>
                             {/* <li className="nav-item">
-                                <NavLink className="nav-link text-white" to='/login'>Log In</NavLink>
+                                <NavLink className="nav-link text-white" to='/bootcamp-portfolio-project/login'>Log In</NavLink>
                             </li> */}
                             {/* <li id="nav-item-btn" className="nav-item">
                                 <button className="btn btn-primary text-white" onclick="window.location.href='register.html'"><a href="register.html">Register</a></button>

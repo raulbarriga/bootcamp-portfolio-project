@@ -68,10 +68,10 @@ const Main = () => {
       <Header />
       <div className="content-wrap">
         <Switch>
-          <Route path="/home" component={Home} />
+          <Route path="/bootcamp-portfolio-project/home" component={Home} />
           <Route
             exact
-            path="/listings"
+            path="/bootcamp-portfolio-project/listings"
             render={() => (
               <Listings
                 // listingsData={listingsData}
@@ -91,7 +91,7 @@ const Main = () => {
                         <Route exact path='/contactus' component={Contact} />
                         <Route exact path='/aboutus' render={() => <About partners={this.state.partners} />} /> */}
           {/* <Route path="/listings/:listingId" component={SinglePropertyInfo} /> */}
-          <Redirect to="/home" />
+          <Redirect to="/bootcamp-portfolio-project/home" />
         </Switch>
       </div>
       <Footer />

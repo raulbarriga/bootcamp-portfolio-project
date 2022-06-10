@@ -11,7 +11,7 @@ const Card = ({ listing, id }) => {
   return (
     <>
       <div className="card" key={id}>
-        <Link to={`/listings/${listing.id}`} className="router-link">
+        <Link to={`/bootcamp-portfolio-project/listings/${listing.id}`} className="router-link">
           <img
             src={listing.photo}
             className="card-img-top img-fluid"

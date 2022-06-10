@@ -9,7 +9,7 @@ const ShowListingsCards = ({ currentProperties }) => {
 
   return (
     <div id="card-columns" className="col-md">
-      <div className="row">
+      <div className="row justify-content-center">
         {currentProperties.map((listing, id) => (
           <Card key={id} listing={listing} />
         ))}
