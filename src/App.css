@@ -2130,3 +2130,12 @@ footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
 .content-wrap {
   padding-bottom: 428px;
 }
+
+/* .parent-div{
+  display: flexbox;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+} */
+
+tbody.scrollContent {width:300px;height:300px;overflow-x:auto;overflow-y:hidden;}
