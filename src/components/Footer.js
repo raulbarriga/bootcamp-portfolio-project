@@ -12,14 +12,14 @@ function Footer() {
           <div className="col-sm-4">
             <img
               className="phones-img"
-              src="http://uilove.in/realestate/listo/preview/img/demo/mobile-app-hero.png"
+              src="https://mockupz.design/assets/images/image18.jpg?v=061d1db9"
               alt=""
             />
           </div>
           <div className="col-sm-4 store-icons">
             <h3>Download the Real Estate App</h3>
             <span>
-              <a href="#">
+              <a href="/">
                 <img
                   className="play-store"
                   src={PlayStore}
@@ -28,7 +28,7 @@ function Footer() {
               </a>
             </span>
             <span>
-              <a href="#">
+              <a href="/">
                 <img className="app-store" src={AppStore} alt="" />
               </a>
             </span>

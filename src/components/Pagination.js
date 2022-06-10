@@ -24,13 +24,12 @@ const Pagination = ({
             className={`page-item
             ${currentPage === pageNumber ? "active" : ""}`}
           >
-            <a
-              // href="!#"
+            <button
               onClick={() => paginate(pageNumber)}
               className="page-link"
             >
               {pageNumber}
-            </a>
+            </button>
           </li>
         ))}
       </ul>
