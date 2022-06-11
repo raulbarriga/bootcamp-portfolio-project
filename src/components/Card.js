@@ -11,7 +11,8 @@ const Card = ({ listing, id }) => {
   return (
     <>
       <div className="card" key={id}>
-        <Link to={`/bootcamp-portfolio-project/listings/${listing.id}`} className="router-link">
+        <Link 
+        to={`/bootcamp-portfolio-project/listings`} className="router-link">
           <img
             src={listing.photo}
             className="card-img-top img-fluid"
@@ -20,14 +21,14 @@ const Card = ({ listing, id }) => {
           <div id="card-body" className="card-body">
             <div className="row d-flex justify-content-between">
               <div className="col-sm-auto">
-                <h5 className="card-title price">$ {listing.price}</h5>
+                <h5 className="card-title price">{listing.price}</h5>
               </div>
               <div className="col-sm-auto">
                 <h6 className="card-title details">
                   <FontAwesomeIcon className="fas" icon={faBed} />{" "}
                   {listing.beds} bds &#124;{" "}
                   <FontAwesomeIcon className="fas" icon={faToilet} />{" "}
-                  {listing.baths} ba &#124; {listing.lot_size} sqft
+                  {listing.baths} ba &#124; {listing.lot_size}
                 </h6>
               </div>
             </div>

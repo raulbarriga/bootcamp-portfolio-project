@@ -1,24 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
 import Listings from "./Listings";
+import { withRouter, useLocation } from "react-router";
 // import listingsData from "../Data/listingsData";
 // import ListingDetails from "./ListingDetailsComponent";
 /* import Contact from './ContactComponent';*/
 /* import About from './AboutComponent'; */
 import { getForSale, inputAutoComplete } from "../api/index";
 
-const Main = () => {
-  // constructor(props) {
-  //     super(props);
-  //     this.state = {
-  //         listingsData,
-  //     };
-  // }
+const Main = ({history}) => {
+  let location = useLocation();
   const [listingsData, setListingsData] = useState([]);
-  //   const [propertiesForSale, setPropertiesForSale] = useState([]);
   const [dataLength, setDataLength] = useState(0);
   const [propertiesPerPage, setPropertiesPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,10 +25,16 @@ const Main = () => {
       .then((data) => {
         setListingsData(data.listings);
         setDataLength(data.listings.length);
+        if (location.pathname !== "/bootcamp-portfolio-project/listings") {
+          history.push("/bootcamp-portfolio-project/listings");
+        }
       })
       .catch((err) => console.log(err.message));
+      console.log("checking path: ", location)
   };
-  
+
+  const topOfCardsRef = useRef(null);
+
   // console.log("Inside listings view, is listingsData: ", listingsData);
 
   // get current properties
@@ -64,17 +65,27 @@ const Main = () => {
 */
 
   return (
-    <div className="main-container">
+    <div ref={topOfCardsRef} className="main-container">
       <Header />
       <div className="content-wrap">
         <Switch>
-          <Route path="/bootcamp-portfolio-project/home" component={Home} />
+          <Route
+            path="/bootcamp-portfolio-project/home"
+            render={() => (
+              <Home
+                setSearchText={setSearchText}
+                searchText={searchText}
+                setCurrentPage={setCurrentPage}
+                fetchForSale={fetchForSale}
+              />
+            )}
+          />
           <Route
             exact
             path="/bootcamp-portfolio-project/listings"
             render={() => (
               <Listings
-                // listingsData={listingsData}
+                topOfCardsRef={topOfCardsRef}
                 currentProperties={currentProperties}
                 propertiesPerPage={propertiesPerPage}
                 dataLength={dataLength}
@@ -99,4 +110,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default withRouter(Main);

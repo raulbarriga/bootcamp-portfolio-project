@@ -5,7 +5,7 @@ import React, { useState } from "react";
 //   faToilet,
 //   faMapMarkerAlt,
 // } from "@fortawesome/free-solid-svg-icons";
-// import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 // import $ from "jquery";
 // import Filter from './ListingsFilterComponent';
 // import ListingDetails from "./ListingDetailsComponent";
@@ -16,7 +16,7 @@ import SearchBox from "./SearchBox";
 import ShowListingsCards from "./ShowListingsCards";
 
 const Listings = ({
-  // listingsData,
+  topOfCardsRef,
   currentProperties,
   propertiesPerPage,
   dataLength,
@@ -533,7 +533,6 @@ const Listings = ({
       searchText={searchText}
       setCurrentPage={setCurrentPage}
       fetchForSale={fetchForSale}
-      // onSubmitHandler={onSubmitHandler}
       />
 
       {/* Filter & Sort Toggle Buttons/Row */}
@@ -546,11 +545,13 @@ const Listings = ({
         {/* Property Listings */}
         {/* <div id="card-columns" className="col-md"> */}
           {/* <div className="row"> */}
-            {currentProperties && <ShowListingsCards currentProperties={currentProperties} />}
+            {currentProperties && <ShowListingsCards
+             currentProperties={currentProperties} />}
           {/* </div> */}
         {/* </div> */}
       </div>
         <Pagination 
+        topOfCardsRef={topOfCardsRef}
         propertiesPerPage={propertiesPerPage}
         dataLength={dataLength}
         currentPage={currentPage}
@@ -559,4 +560,4 @@ const Listings = ({
   );
 };
 
-export default Listings;
+export default withRouter(Listings);

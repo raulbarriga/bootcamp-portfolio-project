@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
@@ -6,7 +7,8 @@ const SearchBox = ({
     setSearchText, 
     searchText, 
     setCurrentPage,
-    fetchForSale
+    fetchForSale,
+    // history
 }) => {
     // onSubmitHandler 
   const onSubmitHandler = (e) => {
@@ -22,6 +24,7 @@ const SearchBox = ({
     const state = str[1].replace(/\s/g, "");
     fetchForSale(city, state); //receive(city, state)
     setCurrentPage(1);
+    
     console.log(city);
     console.log(state);
   };
@@ -52,4 +55,4 @@ const SearchBox = ({
   );
 };
 
-export default SearchBox;
+export default withRouter(SearchBox);

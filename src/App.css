@@ -397,6 +397,7 @@ footer .btn-primary:active:focus:not(:disabled):not(.disabled) {
   width: 100%;
   height: 15vw;
   object-fit: cover;
+  min-height: 216px;
 }
 
 .container-fluid .row #card-columns .row .card #card-body {

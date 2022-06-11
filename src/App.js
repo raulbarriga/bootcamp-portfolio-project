@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
         <HashRouter>
-            <div className="App">
+            <div id="App" className="App">
                 <Main />
             </div>
         </HashRouter>
