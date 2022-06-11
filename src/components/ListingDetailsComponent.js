@@ -158,12 +158,12 @@ const PropertyDetals = ({ match }) => {
                                                                     itemScope=""
                                                                     itemType="http://schema.org/ImageObject">
                                                                     <a
-                                                                        href="http://uilove.in/realestate/listo/preview/img/demo/property/3.jpg"
+                                                                        href="/"
                                                                         itemProp="contentUrl"
                                                                         data-size="2000x1414">
                                                                         <img
-                                                                            data-src="http://uilove.in/realestate/listo/preview/img/demo/property/3.jpg"
-                                                                            src="http://uilove.in/realestate/listo/preview/img/demo/property/3.jpg"
+                                                                            data-src="/"
+                                                                            src="/"
                                                                             className="img-fluid swiper-lazy"
                                                                             alt="Drawing Room"
                                                                         />
@@ -1060,12 +1060,13 @@ const PropertyDetals = ({ match }) => {
                                 }}>
                                 <img
                                     className="pswp__img"
-                                    src="img/demo/property/3.jpg"
+                                    src="/"
                                     style={{
                                         opacity: "1",
                                         width: "894px",
                                         height: "632px",
                                     }}
+                                    alt=""
                                 />
                             </div>
                         </div>
