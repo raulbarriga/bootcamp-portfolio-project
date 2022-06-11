@@ -4,7 +4,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 
-const Home = ({ setSearchText, searchText, setCurrentPage, fetchForSale }) => {
+const Home = ({ setSearchText, searchText, fetchForSale }) => {
   return (
     <div className="container-fluid">
       {/* Image Banner */}
@@ -21,7 +21,6 @@ const Home = ({ setSearchText, searchText, setCurrentPage, fetchForSale }) => {
           <SearchBox
             setSearchText={setSearchText}
             searchText={searchText}
-            setCurrentPage={setCurrentPage}
             fetchForSale={fetchForSale}
           />
         </div>

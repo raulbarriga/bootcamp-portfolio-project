@@ -23,7 +23,6 @@ const Listings = ({
   currentPage,
   paginate,
   fetchForSale,
-  setCurrentPage,
   setSearchText,
   searchText
 }) => {
@@ -531,7 +530,6 @@ const Listings = ({
       <SearchBox 
       setSearchText={setSearchText}
       searchText={searchText}
-      setCurrentPage={setCurrentPage}
       fetchForSale={fetchForSale}
       />
 

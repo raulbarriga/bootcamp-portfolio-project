@@ -26,8 +26,9 @@ const Main = ({history}) => {
         setListingsData(data.listings);
         setDataLength(data.listings.length);
         if (location.pathname !== "/bootcamp-portfolio-project/listings") {
-          history.push("/bootcamp-portfolio-project/listings");
+          history.push("/listings");
         }
+        setCurrentPage(1);
       })
       .catch((err) => console.log(err.message));
       console.log("checking path: ", location)
@@ -75,7 +76,6 @@ const Main = ({history}) => {
               <Home
                 setSearchText={setSearchText}
                 searchText={searchText}
-                setCurrentPage={setCurrentPage}
                 fetchForSale={fetchForSale}
               />
             )}
@@ -92,7 +92,6 @@ const Main = ({history}) => {
                 currentPage={currentPage}
                 paginate={paginate}
                 fetchForSale={fetchForSale}
-                setCurrentPage={setCurrentPage}
                 searchText={searchText}
                 setSearchText={setSearchText}
               />
