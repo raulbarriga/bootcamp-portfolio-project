@@ -1,17 +1,13 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
 import Listings from "./Listings";
 import { withRouter, useLocation } from "react-router";
-// import listingsData from "../Data/listingsData";
-// import ListingDetails from "./ListingDetailsComponent";
-/* import Contact from './ContactComponent';*/
-/* import About from './AboutComponent'; */
 import { getForSale, inputAutoComplete } from "../api/index";
 
-const Main = ({history}) => {
+const Main = ({ history }) => {
   let location = useLocation();
   const [listingsData, setListingsData] = useState([]);
   const [dataLength, setDataLength] = useState(0);
@@ -19,24 +15,49 @@ const Main = ({history}) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const [searchText, setSearchText] = useState("");
+  // for autocomplete search data results
+  const [autocompResults, setAutocompResults] = useState([]);
+  const [autocompleteLimit, setAutocompleteLimit] = useState(10);
 
-  const fetchForSale = (city, state) => {
-    getForSale(city, state)
+  // click outside for autcomplete menu
+  const [showAutoCMenu, setShowAutoCMenu] = useState(false);
+  // for sort button fetch data (need current city & state)
+  const [currentCityNState, setCurrentCityNState] = useState([]);
+
+  const fetchForSale = async (city, state, sort) => {
+    try {
+      const data = await getForSale(city, state, sort);
+      setListingsData(data.listings);
+      setDataLength(data.listings.length);
+      setCurrentPage(1);
+      if (data) {
+        console.log("main file data: ", data.listings[5].address_new.city + ", " +  data.listings[5].address_new.state_code);
+        setCurrentCityNState([data.listings[5].address_new.city, data.listings[5].address_new.state_code])
+        
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+    if (location.pathname !== "/bootcamp-portfolio-project/listings") {
+      history.push("/bootcamp-portfolio-project/listings");
+    } else {
+      return;
+    }
+    
+  };
+  console.log("main file currentCityNState: ",currentCityNState);
+  
+
+  const fetchAutoCompleteSearch = useCallback((input) => {
+    inputAutoComplete(input)
       .then((data) => {
-        setListingsData(data.listings);
-        setDataLength(data.listings.length);
-        if (location.pathname !== "/bootcamp-portfolio-project/listings") {
-          history.push("/listings");
-        }
-        setCurrentPage(1);
+        setAutocompResults(data.autocomplete);
+        setShowAutoCMenu(true);
       })
       .catch((err) => console.log(err.message));
-      console.log("checking path: ", location)
-  };
+  }, []);
 
   const topOfCardsRef = useRef(null);
-
-  // console.log("Inside listings view, is listingsData: ", listingsData);
 
   // get current properties
   const indexOfLastProperty = currentPage * propertiesPerPage;
@@ -48,22 +69,6 @@ const Main = ({history}) => {
 
   // change pagination page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  /*
-  const SinglePropertyInfo = ({ match }) => {
-    console.log(match.params);
-
-    return (
-      <ListingDetails
-        data={
-          this.state.listingsData.filter(
-            (listing) => listing.id === +match.params.listingId
-          )[0]
-        }
-      />
-    );
-  };
-*/
 
   return (
     <div ref={topOfCardsRef} className="main-container">
@@ -77,6 +82,11 @@ const Main = ({history}) => {
                 setSearchText={setSearchText}
                 searchText={searchText}
                 fetchForSale={fetchForSale}
+                fetchAutoCompleteSearch={fetchAutoCompleteSearch}
+                autocompResults={autocompResults}
+                autocompleteLimit={autocompleteLimit}
+                showAutoCMenu={showAutoCMenu}
+                setShowAutoCMenu={setShowAutoCMenu}
               />
             )}
           />
@@ -85,6 +95,9 @@ const Main = ({history}) => {
             path="/bootcamp-portfolio-project/listings"
             render={() => (
               <Listings
+              currentCityNState={currentCityNState}
+                showAutoCMenu={showAutoCMenu}
+                setShowAutoCMenu={setShowAutoCMenu}
                 topOfCardsRef={topOfCardsRef}
                 currentProperties={currentProperties}
                 propertiesPerPage={propertiesPerPage}
@@ -94,13 +107,12 @@ const Main = ({history}) => {
                 fetchForSale={fetchForSale}
                 searchText={searchText}
                 setSearchText={setSearchText}
+                fetchAutoCompleteSearch={fetchAutoCompleteSearch}
+                autocompResults={autocompResults}
+                autocompleteLimit={autocompleteLimit}
               />
             )}
           />
-          {/* <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
-                        <Route exact path='/contactus' component={Contact} />
-                        <Route exact path='/aboutus' render={() => <About partners={this.state.partners} />} /> */}
-          {/* <Route path="/listings/:listingId" component={SinglePropertyInfo} /> */}
           <Redirect to="/bootcamp-portfolio-project/home" />
         </Switch>
       </div>

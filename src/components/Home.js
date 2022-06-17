@@ -1,10 +1,17 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 
-const Home = ({ setSearchText, searchText, fetchForSale }) => {
+const Home = ({
+  setSearchText,
+  searchText,
+  fetchForSale,
+  fetchAutoCompleteSearch,
+  autocompResults,
+  autocompleteLimit,
+  showAutoCMenu,
+  setShowAutoCMenu
+}) => {
   return (
     <div className="container-fluid">
       {/* Image Banner */}
@@ -19,9 +26,14 @@ const Home = ({ setSearchText, searchText, fetchForSale }) => {
           </div>
           {/* Search form */}
           <SearchBox
+          showAutoCMenu={showAutoCMenu}
+          setShowAutoCMenu={setShowAutoCMenu}
             setSearchText={setSearchText}
             searchText={searchText}
             fetchForSale={fetchForSale}
+            fetchAutoCompleteSearch={fetchAutoCompleteSearch}
+            autocompResults={autocompResults}
+            autocompleteLimit={autocompleteLimit}
           />
         </div>
       </div>

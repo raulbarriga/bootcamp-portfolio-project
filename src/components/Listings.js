@@ -24,7 +24,13 @@ const Listings = ({
   paginate,
   fetchForSale,
   setSearchText,
-  searchText
+  searchText,
+  fetchAutoCompleteSearch,
+  autocompResults,
+  autocompleteLimit,
+  showAutoCMenu,
+  setShowAutoCMenu,
+  currentCityNState
 }) => {
   /*
   constructor(props) {
@@ -50,7 +56,7 @@ const Listings = ({
       };
   }
   */
-  
+
   /*
     UNSAFE_componentWillMount = () => {
         //Initial render is by prices from high to low
@@ -80,8 +86,7 @@ const Listings = ({
     };
     */
 
-
-    /*
+  /*
   const handleInputChange = (event) => {
     // console.log(event.target.value)
 
@@ -102,7 +107,7 @@ const Listings = ({
     );
   };
   */
-/*
+  /*
   const onSubmitHandler = (event) => {
     event.preventDefault();
     //Search
@@ -124,7 +129,6 @@ const Listings = ({
     });
   };
 */
-  
 
   /*
     componentDidUpdate = () => {
@@ -144,7 +148,7 @@ const Listings = ({
     };
     */
 
-    /*
+  /*
   const filteredData = () => {
     const { listingsData } = this.props;
     const {
@@ -522,38 +526,44 @@ const Listings = ({
   };
   */
 
-  
-
   return (
     <div className="container-fluid">
       {/* Location search box */}
-      <SearchBox 
-      setSearchText={setSearchText}
-      searchText={searchText}
-      fetchForSale={fetchForSale}
+      <SearchBox
+      showAutoCMenu={showAutoCMenu}
+      setShowAutoCMenu={setShowAutoCMenu}
+        setSearchText={setSearchText}
+        searchText={searchText}
+        fetchForSale={fetchForSale}
+        fetchAutoCompleteSearch={fetchAutoCompleteSearch}
+        autocompResults={autocompResults}
+        autocompleteLimit={autocompleteLimit}
+        
       />
 
       {/* Filter & Sort Toggle Buttons/Row */}
-      <FilterSortBtns />
+      <FilterSortBtns
+      fetchForSale={fetchForSale}
+      currentCityNState={currentCityNState}
+      currentProperties={currentProperties}
+      />
 
       {/* Filter row/Toggle Menu/Row */}
       <div className="row">
         {/* todo: pass data here & replace data values */}
         {/* <ListingsFilter /> */}
         {/* Property Listings */}
-        {/* <div id="card-columns" className="col-md"> */}
-          {/* <div className="row"> */}
-            {currentProperties && <ShowListingsCards
-             currentProperties={currentProperties} />}
-          {/* </div> */}
-        {/* </div> */}
+        {currentProperties && (
+          <ShowListingsCards currentProperties={currentProperties} />
+        )}
       </div>
-        <Pagination 
+      <Pagination
         topOfCardsRef={topOfCardsRef}
         propertiesPerPage={propertiesPerPage}
         dataLength={dataLength}
         currentPage={currentPage}
-        paginate={paginate} />
+        paginate={paginate}
+      />
     </div>
   );
 };

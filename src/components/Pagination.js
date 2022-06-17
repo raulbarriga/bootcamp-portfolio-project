@@ -10,7 +10,6 @@ const Pagination = ({
 }) => {
   let pageNumbers = [];
   let totalPages = Math.ceil(dataLength / propertiesPerPage);
-  console.log("total pages: ", totalPages);
 
   for (let i = 1; i <= totalPages; i++) {
     // this'll give the correct amount of page #'s
