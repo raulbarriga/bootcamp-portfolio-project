@@ -1,15 +1,14 @@
 import React from "react";
 import Main from "./components/Main";
-import { HashRouter } from "react-router-dom";
-import "./App.css";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div id="App" className="App">
         <Main />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

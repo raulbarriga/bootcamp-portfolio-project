@@ -1,16 +1,17 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
 
 const Home = ({
   setSearchText,
   searchText,
-  fetchForSale,
+  fetchProperties,
   fetchAutoCompleteSearch,
   autocompResults,
   autocompleteLimit,
   showAutoCMenu,
-  setShowAutoCMenu
+  setShowAutoCMenu,
+  radioClicked,
+  setRadioClicked,
 }) => {
   return (
     <div className="container-fluid">
@@ -26,14 +27,16 @@ const Home = ({
           </div>
           {/* Search form */}
           <SearchBox
-          showAutoCMenu={showAutoCMenu}
-          setShowAutoCMenu={setShowAutoCMenu}
+            showAutoCMenu={showAutoCMenu}
+            setShowAutoCMenu={setShowAutoCMenu}
             setSearchText={setSearchText}
             searchText={searchText}
-            fetchForSale={fetchForSale}
+            fetchProperties={fetchProperties}
             fetchAutoCompleteSearch={fetchAutoCompleteSearch}
             autocompResults={autocompResults}
             autocompleteLimit={autocompleteLimit}
+            radioClicked={radioClicked}
+            setRadioClicked={setRadioClicked}
           />
         </div>
       </div>

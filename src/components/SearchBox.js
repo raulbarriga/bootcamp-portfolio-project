@@ -1,53 +1,54 @@
 import React, { useEffect } from "react";
-import { withRouter } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import AutoCompleteMenu from "./AutoCompleteMenu";
+import ForSaleRentDropdown from "./ForSaleRentDropdown";
+import { useLocation } from "react-router-dom";
 
 const SearchBox = ({
   setSearchText,
   searchText,
-  fetchForSale,
+  fetchProperties,
   fetchAutoCompleteSearch,
   autocompResults,
   autocompleteLimit,
   showAutoCMenu,
-  setShowAutoCMenu
+  setShowAutoCMenu,
+  radioClicked,
+  setRadioClicked,
 }) => {
+  let location = useLocation();
   // onSubmitHandler
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    // var lowerCase = e.target.value.toLowerCase();
-    // setSearchText(lowerCase)
-
-    // const str = "Redwood City, CA";
-    // fetchForSale(searchText);
-    /* */
-    // if (!e.target.value) return;
 
     const str = searchText.split(",");
     const city = str[0];
     const state = str[1].replace(/\s/g, "");
-    fetchForSale(city, state); //receive(city, state)
-
-    // console.log(city);
-    // console.log(state);
+    fetchProperties(city, state); //receive(city, state)
   };
 
   const resetSearchText = () => {
     setSearchText("");
   };
- 
+
   // from https://stackoverflow.com/a/62601621/13463953
   // it created an infinite loop when I passed a function to the dependency array, but useCallback resolved it where I implement fetchAutoCompleteSearch() in Main.js
   useEffect(() => {
-    const timeOutId = setTimeout(() => fetchAutoCompleteSearch(searchText), 500);
+    const timeOutId = setTimeout(
+      () => fetchAutoCompleteSearch(searchText),
+      500
+    );
     return () => clearTimeout(timeOutId);
-  }, [searchText, fetchAutoCompleteSearch])
+  }, [searchText, fetchAutoCompleteSearch]);
 
   return (
     <div id="searchBox" className="row">
-      <div className="col-md-12 align-items-end">
+      <div
+        className={`col-md-12 align-items-end d-flex ${
+          location.pathname === "/listings" ? "" : "justify-content-center"
+        }`}
+      >
         <div className="form-group">
           <div className="form-field search-box">
             <form onSubmit={onSubmitHandler}>
@@ -88,20 +89,26 @@ const SearchBox = ({
                 </div>
               </div>
             </form>
-            {showAutoCMenu && searchText && autocompResults && (
+            {/* removed && searchText to maybe stop menu from showing when on home page clicking a autocomplete link and routing to the listings page */}
+            {/* this works, just commented it out for now since it's fetching while I type in the searchBox */}
+            {/* { showAutoCMenu && autocompResults && (
               <AutoCompleteMenu
                 autocompResults={autocompResults}
                 autocompleteLimit={autocompleteLimit}
                 searchText={searchText}
-                fetchForSale={fetchForSale}
+                fetchProperties={fetchProperties}
                 setShowAutoCMenu={setShowAutoCMenu}
               />
-            )}
+            )} */}
           </div>
         </div>
+        <ForSaleRentDropdown
+          radioClicked={radioClicked}
+          setRadioClicked={setRadioClicked}
+        />
       </div>
     </div>
   );
 };
 
-export default withRouter(SearchBox);
+export default SearchBox;

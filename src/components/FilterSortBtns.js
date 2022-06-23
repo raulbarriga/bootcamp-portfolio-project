@@ -1,9 +1,10 @@
 import React from "react";
 
 const FilterSortBtns = ({
-  fetchForSale,
+  // fetchProperties,
   currentCityNState,
   currentProperties,
+  setSelectedSort
 }) => {
   return (
     <div id="filter-and-sort-row" className="row">
@@ -40,7 +41,7 @@ const FilterSortBtns = ({
                 ) {
                   return;
                 } else {
-                  fetchForSale(
+                  fetchProperties(
                     currentCityNState[0],
                     currentCityNState[1],
                     "relevance"
@@ -60,7 +61,7 @@ const FilterSortBtns = ({
                 ) {
                   return;
                 } else {
-                  fetchForSale(
+                  fetchProperties(
                     currentCityNState[0],
                     currentCityNState[1],
                     "price_high"
@@ -80,7 +81,7 @@ const FilterSortBtns = ({
                 ) {
                   return;
                 } else {
-                  fetchForSale(
+                  fetchProperties(
                     currentCityNState[0],
                     currentCityNState[1],
                     "price_low"

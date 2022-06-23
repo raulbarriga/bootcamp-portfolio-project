@@ -36,16 +36,16 @@ function Footer() {
           <div className="col-sm-4 footer-links">
             <ul className="list-unstyled">
               <li>
-                <Link to="/bootcamp-portfolio-project/home">Home</Link>
+                <Link to="/home">Home</Link>
               </li>
               <li>
-                <Link to="/bootcamp-portfolio-project/listings">Listings</Link>
-              </li>
-              <li>
-                <Link to="/bootcamp-portfolio-project/aboutus">About Us</Link>
+                <Link to="/listings">Listings</Link>
               </li>
               {/* <li>
-                <Link to="/bootcamp-portfolio-project/login">Log In</Link>
+                <Link to="/aboutus">About Us</Link>
+              </li> */}
+              {/* <li>
+                <Link to="/login">Log In</Link>
               </li> */}
               {/* <li id="nav-item-btn">
                 <button

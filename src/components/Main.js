@@ -1,15 +1,26 @@
-import React, { useState, useRef, useCallback } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React, { useState, useRef, useCallback, useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
 import Listings from "./Listings";
-import { withRouter, useLocation } from "react-router";
-import { getForSale, inputAutoComplete } from "../api/index";
+import ListingDetails from "./ListingDetails";
+import {
+  getProperties,
+  inputAutoComplete,
+  getPropertyDetails,
+} from "../api/index";
+import useLocalStorage from "../hooks/useLocalStorage";
 
-const Main = ({ history }) => {
+const Main = () => {
   let location = useLocation();
-  const [listingsData, setListingsData] = useState([]);
+  // use useNavigate instead of history to do the same thing (https://stackoverflow.com/a/71477420/13463953)
+  let navigate = useNavigate();
+  const [listingsData, setListingsData] = useLocalStorage(
+    "localAllProperties",
+    JSON.stringify([])
+  );
+  const [radioClicked, setRadioClicked] = useLocalStorage("forSaleORent", JSON.stringify("For Sale"));
   const [dataLength, setDataLength] = useState(0);
   const [propertiesPerPage, setPropertiesPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,39 +34,90 @@ const Main = ({ history }) => {
   const [showAutoCMenu, setShowAutoCMenu] = useState(false);
   // for sort button fetch data (need current city & state)
   const [currentCityNState, setCurrentCityNState] = useState([]);
+  // to pass to fetchProperties
+  // options: price_low, price_high, relevant
+  const [selectedSort, setSelectedSort] = useState("relevant");
+  // state per single property
+  const [selectedProp, setSelectedProp] = useLocalStorage(
+    "localSelectedProperty",
+    JSON.stringify([])
+  );
 
-  const fetchForSale = async (city, state, sort) => {
-    try {
-      const data = await getForSale(city, state, sort);
-      setListingsData(data.listings);
-      setDataLength(data.listings.length);
-      setCurrentPage(1);
-      if (data) {
-        console.log("main file data: ", data.listings[5].address_new.city + ", " +  data.listings[5].address_new.state_code);
-        setCurrentCityNState([data.listings[5].address_new.city, data.listings[5].address_new.state_code])
-        
+  useEffect(() => {
+    const allProperties = JSON.parse(
+      localStorage.getItem("localAllProperties")
+    );
+    if (allProperties) {
+      setListingsData(allProperties);
+      setDataLength(allProperties.length);
+    }
+    const oneProperty = JSON.parse(
+      localStorage.getItem("localSelectedProperty")
+    );
+    if (oneProperty) {
+      setSelectedProp(oneProperty);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const fetchProperties = async (city, state, selectedSort, radioClicked) => {
+      // todo: add functionality to change endpoint based on radio selected(for sale/rent)
+      // change names to all affected files (fetchForSale function & also the one in the api index file)
+      // change the function's parameters too
+      try {
+        // city, state, sort, radioClicked
+        const data = await getProperties(currentCityNState[0], currentCityNState[1], );
+  
+        setListingsData(data.listings);
+        setDataLength(data.listings.length);
+        setCurrentPage(1);
+        if (data) {
+          setCurrentCityNState([
+            data.listings[5].address_new.city,
+            data.listings[5].address_new.state_code,
+          ]);
+          console.log("currentCityNState: ", currentCityNState);
+        }
+      } catch (error) {
+        console.log(error.message);
       }
+      if (location.pathname !== "/listings") {
+        navigate("/listings");
+      }
+    };
+    fetchProperties();
+  }, [currentCityNState, location.pathname, navigate, setListingsData, selectedSort])
+
+  const fetchAutoCompleteSearch = useCallback(async (input) => {
+    // inputAutoComplete(input)
+    //   .then((data) => {
+    //     setAutocompResults(data.autocomplete);
+    //     setShowAutoCMenu(true);
+    //   })
+    //   .catch((err) => console.log(err.message));
+    try {
+      const data = await inputAutoComplete(input);
+      setAutocompResults(data.autocomplete);
+      setShowAutoCMenu(true);
     } catch (error) {
       console.log(error.message);
     }
-    if (location.pathname !== "/bootcamp-portfolio-project/listings") {
-      history.push("/bootcamp-portfolio-project/listings");
-    } else {
-      return;
-    }
-    
-  };
-  console.log("main file currentCityNState: ",currentCityNState);
-  
-
-  const fetchAutoCompleteSearch = useCallback((input) => {
-    inputAutoComplete(input)
-      .then((data) => {
-        setAutocompResults(data.autocomplete);
-        setShowAutoCMenu(true);
-      })
-      .catch((err) => console.log(err.message));
   }, []);
+
+  const fetchPropDetails = async (listing_id, property_id, prop_status) => {
+    try {
+      const data = await getPropertyDetails(
+        listing_id,
+        property_id,
+        prop_status
+      );
+      console.log("single property details: ", data.listing);
+      setSelectedProp(data.listing);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   const topOfCardsRef = useRef(null);
 
@@ -74,28 +136,30 @@ const Main = ({ history }) => {
     <div ref={topOfCardsRef} className="main-container">
       <Header />
       <div className="content-wrap">
-        <Switch>
+        <Routes>
           <Route
-            path="/bootcamp-portfolio-project/home"
-            render={() => (
+            path="/home"
+            element={
               <Home
                 setSearchText={setSearchText}
                 searchText={searchText}
-                fetchForSale={fetchForSale}
+                fetchProperties={fetchProperties}
                 fetchAutoCompleteSearch={fetchAutoCompleteSearch}
                 autocompResults={autocompResults}
                 autocompleteLimit={autocompleteLimit}
                 showAutoCMenu={showAutoCMenu}
                 setShowAutoCMenu={setShowAutoCMenu}
+                radioClicked={radioClicked}
+                setRadioClicked={setRadioClicked}
               />
-            )}
+            }
           />
           <Route
-            exact
-            path="/bootcamp-portfolio-project/listings"
-            render={() => (
+            path="listings"
+            element={
               <Listings
-              currentCityNState={currentCityNState}
+                fetchPropDetails={fetchPropDetails}
+                currentCityNState={currentCityNState}
                 showAutoCMenu={showAutoCMenu}
                 setShowAutoCMenu={setShowAutoCMenu}
                 topOfCardsRef={topOfCardsRef}
@@ -104,21 +168,28 @@ const Main = ({ history }) => {
                 dataLength={dataLength}
                 currentPage={currentPage}
                 paginate={paginate}
-                fetchForSale={fetchForSale}
+                fetchProperties={fetchProperties}
                 searchText={searchText}
                 setSearchText={setSearchText}
                 fetchAutoCompleteSearch={fetchAutoCompleteSearch}
                 autocompResults={autocompResults}
                 autocompleteLimit={autocompleteLimit}
+                radioClicked={radioClicked}
+                setRadioClicked={setRadioClicked}
               />
-            )}
+            }
           />
-          <Redirect to="/bootcamp-portfolio-project/home" />
-        </Switch>
+          <Route path="listings">
+            <Route
+              path=":listing_id/:property_id/:prop_status"
+              element={<ListingDetails selectedProp={selectedProp} />}
+            />
+          </Route>
+        </Routes>
       </div>
       <Footer />
     </div>
   );
 };
 
-export default withRouter(Main);
+export default Main;
