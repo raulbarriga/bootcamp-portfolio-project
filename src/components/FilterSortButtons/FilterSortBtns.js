@@ -1,17 +1,26 @@
 import React from "react";
 
+import "./FilterSortBtns.css"
+
 const FilterSortBtns = ({
-  // fetchProperties,
-  currentCityNState,
-  currentProperties,
-  setSelectedSort
+  fetchProperties,
+  // currentCityNState,
+  // currentProperties,
+  setSelectedSort,
 }) => {
+  // as per the api parameters https://rapidapi.com/apidojo/api/realty-in-us/
+  const sortOptions = [
+    "Relevance",
+    "Price (High to Low)",
+    "Price (Low to High)",
+  ];
+
   return (
     <div id="filter-and-sort-row" className="row">
       <div className="col-sm-12 d-flex flex-nowrap float-right justify-content-end dropdown">
-        <button id="filter-btn" className="btn order-1 mr-2" type="button">
+        {/* <button id="filter-btn" className="btn order-1 mr-2" type="button">
           Filter
-        </button>
+        </button> */}
         <div className="btn-group">
           <button
             type="button"
@@ -31,66 +40,26 @@ const FilterSortBtns = ({
             className="dropdown-menu dropdown-menu-right"
             aria-labelledby="sort-btn"
           >
-            <button
-              className="dropdown-item"
-              type="button"
-              onClick={() => {
-                if (
-                  currentProperties === undefined ||
-                  currentProperties.length === 0
-                ) {
-                  return;
-                } else {
-                  fetchProperties(
-                    currentCityNState[0],
-                    currentCityNState[1],
-                    "relevance"
-                  );
-                }
-              }}
-            >
-              Relevance
-            </button>
-            <button
-              className="dropdown-item"
-              type="button"
-              onClick={() => {
-                if (
-                  currentProperties === undefined ||
-                  currentProperties.length === 0
-                ) {
-                  return;
-                } else {
-                  fetchProperties(
-                    currentCityNState[0],
-                    currentCityNState[1],
-                    "price_high"
-                  );
-                }
-              }}
-            >
-              Price (High to Low)
-            </button>
-            <button
-              className="dropdown-item"
-              type="button"
-              onClick={() => {
-                if (
-                  currentProperties === undefined ||
-                  currentProperties.length === 0
-                ) {
-                  return;
-                } else {
-                  fetchProperties(
-                    currentCityNState[0],
-                    currentCityNState[1],
-                    "price_low"
-                  );
-                }
-              }}
-            >
-              Price (Low to High)
-            </button>
+            {sortOptions.map((option, index) => (
+              <button
+                key={index}
+                className="dropdown-item"
+                type="button"
+                value={option}
+                onClick={(e) => {
+                  let selection = e.target.value;
+                  if (selection === "Relevance") {
+                    setSelectedSort("relevance");
+                  } else if (selection === "Price (High to Low)") {
+                    setSelectedSort("price_high");
+                  } else {
+                    setSelectedSort("price_low");
+                  }
+                }}
+              >
+                {option}
+              </button>
+            ))}
           </div>
         </div>
       </div>
@@ -99,3 +68,39 @@ const FilterSortBtns = ({
 };
 
 export default FilterSortBtns;
+
+/*
+<button
+              className="dropdown-item"
+              type="button"
+              onClick={() => {
+                if (
+                  currentProperties === undefined ||
+                  currentProperties.length === 0
+                ) {
+                  return;
+                } else {
+                  setSelectedSort("relevance");
+                }
+              }}
+            >
+              Relevance
+            </button>
+            
+            <button
+              className="dropdown-item"
+              type="button"
+              onClick={() => {
+                if (
+                  currentProperties === undefined ||
+                  currentProperties.length === 0
+                ) {
+                  return;
+                } else {
+                  setSelectedSort("price_low");
+                }
+              }}
+            >
+              Price (Low to High)
+            </button>
+*/

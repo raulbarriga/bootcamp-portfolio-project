@@ -1,6 +1,8 @@
 import React from "react";
-import useClickOutside from "../hooks/useClickOutside";
 import { Link } from "react-router-dom";
+
+import useClickOutside from "../../../hooks/useClickOutside";
+import "./AutoCompleteMenu.css"
 
 const AutoCompleteMenu = ({
   autocompResults,

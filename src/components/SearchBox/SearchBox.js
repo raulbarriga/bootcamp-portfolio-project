@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import AutoCompleteMenu from "./AutoCompleteMenu";
-import ForSaleRentDropdown from "./ForSaleRentDropdown";
+import ForSaleRentDropdown from "./ForSaleRentDropdown/ForSaleRentDropdown";
 import { useLocation } from "react-router-dom";
 
-const SearchBox = ({
-  setSearchText,
-  searchText,
-  fetchProperties,
+/*
+// previous props:
+
+
+  
   fetchAutoCompleteSearch,
   autocompResults,
   autocompleteLimit,
@@ -16,7 +17,8 @@ const SearchBox = ({
   setShowAutoCMenu,
   radioClicked,
   setRadioClicked,
-}) => {
+*/
+const SearchBox = ({ searchText, fetchProperties, setSearchText }) => {
   let location = useLocation();
   // onSubmitHandler
   const onSubmitHandler = (e) => {
@@ -34,13 +36,13 @@ const SearchBox = ({
 
   // from https://stackoverflow.com/a/62601621/13463953
   // it created an infinite loop when I passed a function to the dependency array, but useCallback resolved it where I implement fetchAutoCompleteSearch() in Main.js
-  useEffect(() => {
-    const timeOutId = setTimeout(
-      () => fetchAutoCompleteSearch(searchText),
-      500
-    );
-    return () => clearTimeout(timeOutId);
-  }, [searchText, fetchAutoCompleteSearch]);
+  // useEffect(() => {
+  //   const timeOutId = setTimeout(
+  //     () => fetchAutoCompleteSearch(searchText),
+  //     500
+  //   );
+  //   return () => clearTimeout(timeOutId);
+  // }, [searchText, fetchAutoCompleteSearch]);
 
   return (
     <div id="searchBox" className="row">
@@ -103,8 +105,8 @@ const SearchBox = ({
           </div>
         </div>
         <ForSaleRentDropdown
-          radioClicked={radioClicked}
-          setRadioClicked={setRadioClicked}
+        // radioClicked={radioClicked}
+        // setRadioClicked={setRadioClicked}
         />
       </div>
     </div>

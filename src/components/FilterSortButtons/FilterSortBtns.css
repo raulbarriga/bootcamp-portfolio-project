@@ -1,0 +1,23 @@
+#filter-and-sort-row {
+  padding-top: 1rem;
+}
+
+#filter-and-sort-row #filter-btn {
+  display: none;
+}
+
+#filter-and-sort-row .dropdown-menu.dropdown-menu-right button:hover:focus {
+  background-color: inherit;
+  color: inherit;
+  outline: none;
+}
+
+#filter-and-sort-row .dropdown-menu.dropdown-menu-right button.dropdown-item {
+  cursor: pointer;
+}
+
+#filter-and-sort-row button:focus,
+#filter-and-sort-row button:active {
+  outline: none !important;
+  box-shadow: none;
+}

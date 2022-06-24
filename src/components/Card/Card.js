@@ -7,16 +7,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import "./Card.css"
+
 const Card = ({ listing, fetchPropDetails, handleClick }) => {
-  // console.log("listing.listing_id: ", listing.listing_id)
-  // console.log("listing.property_id: ", listing.property_id)
-  // console.log("listing.prop_status: ", listing.prop_status)
   // onClick={() => fetchPropDetails(listing.listing_id, listing.property_id, listing.prop_status)}
   // /bootcamp-portfolio-project
   // key={index}
   return (
     <>
-      <div className="card" onClick={handleClick}>
+      <div id="card" className="card" onClick={handleClick}>
         <Link
           to={`:${listing.listing_id}/:${listing.property_id}/:${listing.prop_status}`}
           className="router-link"

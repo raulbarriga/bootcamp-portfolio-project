@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Pagination = ({
-  propertiesPerPage,
+import "./Pagination.css";
+
+const Paginate = ({
   dataLength,
+  propertiesPerPage,
   currentPage,
-  paginate,
-  topOfCardsRef
+  topOfCardsRef,
+  paginate
 }) => {
   let pageNumbers = [];
   let totalPages = Math.ceil(dataLength / propertiesPerPage);
@@ -28,7 +30,7 @@ const Pagination = ({
   };
 
   return (
-    <nav>
+    <nav id="pagination">
       <ul className="pagination justify-content-center">
         {pageNumbers.map((pageNumber) => (
           <li
@@ -53,4 +55,4 @@ const Pagination = ({
   );
 };
 
-export default Pagination;
+export default Paginate;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "./Card";
+import Card from "./Card/Card";
 
 const ShowListingsCards = ({ currentProperties, fetchPropDetails }) => {
   // if (currentProperties === undefined || currentProperties.length === 0) {

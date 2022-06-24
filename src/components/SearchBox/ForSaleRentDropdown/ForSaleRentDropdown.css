@@ -1,0 +1,10 @@
+#radioDropdown.dropdown {
+  padding-left: 12px;
+}
+#radioDropdown.dropdown .dropdown-toggle {
+  height: 2.5rem;
+}
+#radioDropdown.dropdown ul.dropdown-menu button input,
+#radioDropdown.dropdown ul.dropdown-menu button label {
+  cursor: pointer;
+}

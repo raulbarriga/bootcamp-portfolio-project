@@ -2,6 +2,8 @@ import React from "react";
 // import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
 import { NavLink } from "react-router-dom";
 
+import "./Header.css";
+
 const Header = () => {
   // constructor(props) {
   //     super(props);

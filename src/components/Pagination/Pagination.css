@@ -1,0 +1,30 @@
+#pagination .pagination {
+  margin-top: 30px;
+}
+
+#pagination .pagination > .page-item .page-link {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0 3px;
+  padding: 0;
+  border-radius: 50% !important;
+  border-color: transparent;
+  margin-top: 5px;
+  color: #869e9e;
+}
+
+#pagination .pagination > .page-item.active .page-link,
+#pagination .pagination > .page-item.active .page-link:focus,
+#pagination .pagination > .page-item.active .page-link:hover {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #869e9e;
+  border-color: #869e9e;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 0;
+}

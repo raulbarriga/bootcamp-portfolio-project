@@ -1,18 +1,19 @@
 import React from "react";
 // import Filter from './ListingsFilterComponent';
 // import ListingsFilter from "./ListingsFilter";
-import Pagination from "./Pagination";
-import FilterSortBtns from "./FilterSortBtns";
+import Pagination from "./Pagination/Paginate";
+import FilterSortBtns from "./FilterSortButtons/FilterSortBtns";
 import SearchBox from "./SearchBox";
 import ShowListingsCards from "./ShowListingsCards";
 
-const Listings = ({
-  topOfCardsRef,
-  currentProperties,
-  propertiesPerPage,
-  dataLength,
-  currentPage,
-  paginate,
+/*
+// previous props:
+
+  
+  
+  
+  
+  
   fetchProperties,
   setSearchText,
   searchText,
@@ -25,12 +26,20 @@ const Listings = ({
   fetchPropDetails,
   radioClicked,
   setRadioClicked,
+  setSelectedSort
+*/
+
+const Listings = ({
+  currentProperties,
+  topOfCardsRef,
+  paginate
 }) => {
   return (
     <div className="container-fluid">
       {/* Location search box */}
-      <SearchBox
-        showAutoCMenu={showAutoCMenu}
+      {/* 
+      // previous props for SearchBox
+showAutoCMenu={showAutoCMenu}
         setShowAutoCMenu={setShowAutoCMenu}
         setSearchText={setSearchText}
         searchText={searchText}
@@ -40,13 +49,21 @@ const Listings = ({
         autocompleteLimit={autocompleteLimit}
         radioClicked={radioClicked}
         setRadioClicked={setRadioClicked}
+
+      */}
+      <SearchBox
+        
       />
 
       {/* Filter & Sort Toggle Buttons/Row */}
+      {/* 
+       // fetchProperties={fetchProperties}
+        // currentCityNState={currentCityNState}
+        // setSelectedSort={setSelectedSort}
+        // currentProperties={currentProperties}
+      */}
       <FilterSortBtns
-        fetchProperties={fetchProperties}
-        currentCityNState={currentCityNState}
-        currentProperties={currentProperties}
+       
       />
 
       {/* Filter row/Toggle Menu/Row */}
@@ -57,15 +74,12 @@ const Listings = ({
         {currentProperties && (
           <ShowListingsCards
             currentProperties={currentProperties}
-            fetchPropDetails={fetchPropDetails}
+            // fetchPropDetails={fetchPropDetails}
           />
         )}
       </div>
       <Pagination
         topOfCardsRef={topOfCardsRef}
-        propertiesPerPage={propertiesPerPage}
-        dataLength={dataLength}
-        currentPage={currentPage}
         paginate={paginate}
       />
     </div>

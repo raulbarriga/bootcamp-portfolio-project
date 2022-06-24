@@ -1,0 +1,55 @@
+#searchBox.row .col-md-12.align-items-end:nth-child(1) {
+  padding-top: 1rem;
+}
+
+#searchBox.row .col-md-12.align-items-end .form-group {
+  margin-bottom: 0;
+  width: 50%;
+}
+
+#searchBox.row .form-field.search-box {
+  position: relative;
+}
+
+#searchBox.row form {
+  position: relative;
+  display: inline-flex;
+  /* width: 50%; */
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+#searchBox.row form input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#searchBox.row form input:-webkit-autofill,
+#searchBox.row form input:-webkit-autofill:hover,
+#searchBox.row form input:-webkit-autofill:focus,
+#searchBox.row form input:-webkit-autofill:active,
+#searchBox.row form input:-internal-autofill-selected,
+#searchBox.row form input:-internal-autofill-previewed {
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+#searchBox.row form input:-internal-autofill-selected {
+  background-color: rgb(232, 240, 254) !important;
+  background-image: none !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+#searchBox.row form button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#searchBox.row form input:focus,
+#searchBox.row form input:active,
+#searchBox.row form .btn:focus,
+#searchBox.row form .btn:active {
+  outline: none !important;
+  box-shadow: none;
+}

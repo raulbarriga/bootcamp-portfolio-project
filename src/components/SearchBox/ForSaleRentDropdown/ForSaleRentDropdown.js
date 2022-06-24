@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./ForSaleRentDropdown.css";
+
 const ForSaleRentDropdown = ({radioClicked, setRadioClicked}) => {
   
   return (

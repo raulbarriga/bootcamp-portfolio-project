@@ -5,7 +5,7 @@ const BASE_URL = "https://realty-in-us.p.rapidapi.com/";
 export const getProperties = async (
   city,
   state,
-  sort = "relevance",
+  sort,
   radioClicked
 ) => {
   console.log("api index file, radioClicked: ", radioClicked);
