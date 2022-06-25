@@ -1,18 +1,7 @@
 import React from "react";
-import SearchBox from "./SearchBox";
+import SearchBox from "./SearchBox/SearchBox";
 
-const Home = ({
-  setSearchText,
-  searchText,
-  fetchProperties,
-  fetchAutoCompleteSearch,
-  autocompResults,
-  autocompleteLimit,
-  showAutoCMenu,
-  setShowAutoCMenu,
-  radioClicked,
-  setRadioClicked,
-}) => {
+const Home = () => {
   return (
     <div className="container-fluid">
       {/* Image Banner */}
@@ -26,18 +15,7 @@ const Home = ({
             />
           </div>
           {/* Search form */}
-          <SearchBox
-            showAutoCMenu={showAutoCMenu}
-            setShowAutoCMenu={setShowAutoCMenu}
-            setSearchText={setSearchText}
-            searchText={searchText}
-            fetchProperties={fetchProperties}
-            fetchAutoCompleteSearch={fetchAutoCompleteSearch}
-            autocompResults={autocompResults}
-            autocompleteLimit={autocompleteLimit}
-            radioClicked={radioClicked}
-            setRadioClicked={setRadioClicked}
-          />
+          <SearchBox />
         </div>
       </div>
     </div>

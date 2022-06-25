@@ -1,33 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
-import AutoCompleteMenu from "./AutoCompleteMenu";
-import ForSaleRentDropdown from "./ForSaleRentDropdown/ForSaleRentDropdown";
 import { useLocation } from "react-router-dom";
 
-/*
-// previous props:
+// import AutoCompleteMenu from "./AutoCompleteMenu/AutoCompleteMenu";
+import ForSaleRentDropdown from "./ForSaleRentDropdown/ForSaleRentDropdown";
+import PropertiesDataContext from "../contexts/propertiesData";
 
-
-  
-  fetchAutoCompleteSearch,
-  autocompResults,
-  autocompleteLimit,
-  showAutoCMenu,
-  setShowAutoCMenu,
-  radioClicked,
-  setRadioClicked,
-*/
-const SearchBox = ({ searchText, fetchProperties, setSearchText }) => {
+const SearchBox = () => {
+  const {
+    searchText,
+    setSearchText,
+    fetchProperties,
+    selectedSort,
+    saleRentRadio,
+    // showAutoCMenu,
+    // autocompResults
+    // fetchAutoCompleteSearch
+  } = useContext(PropertiesDataContext);
   let location = useLocation();
-  // onSubmitHandler
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
     const str = searchText.split(",");
     const city = str[0];
     const state = str[1].replace(/\s/g, "");
-    fetchProperties(city, state); //receive(city, state)
+    fetchProperties(city, state, selectedSort, saleRentRadio);
   };
 
   const resetSearchText = () => {
@@ -94,20 +93,11 @@ const SearchBox = ({ searchText, fetchProperties, setSearchText }) => {
             {/* removed && searchText to maybe stop menu from showing when on home page clicking a autocomplete link and routing to the listings page */}
             {/* this works, just commented it out for now since it's fetching while I type in the searchBox */}
             {/* { showAutoCMenu && autocompResults && (
-              <AutoCompleteMenu
-                autocompResults={autocompResults}
-                autocompleteLimit={autocompleteLimit}
-                searchText={searchText}
-                fetchProperties={fetchProperties}
-                setShowAutoCMenu={setShowAutoCMenu}
-              />
+              <AutoCompleteMenu />
             )} */}
           </div>
         </div>
-        <ForSaleRentDropdown
-        // radioClicked={radioClicked}
-        // setRadioClicked={setRadioClicked}
-        />
+        <ForSaleRentDropdown />
       </div>
     </div>
   );

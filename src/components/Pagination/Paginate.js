@@ -1,15 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import PropertiesDataContext from "../../contexts/propertiesData";
 
 import "./Pagination.css";
 
-const Paginate = ({
-  dataLength,
-  propertiesPerPage,
-  currentPage,
-  topOfCardsRef,
-  paginate
-}) => {
+const Paginate = () => {
+  const { dataLength, currentPage, paginate, propertiesPerPage, topOfCardsRef } = useContext(
+    PropertiesDataContext
+  );
   let pageNumbers = [];
   let totalPages = Math.ceil(dataLength / propertiesPerPage);
 

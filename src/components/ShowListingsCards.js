@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import PropertiesDataContext from "../contexts/propertiesData";
 
 import Card from "./Card/Card";
 
-const ShowListingsCards = ({ currentProperties, fetchPropDetails }) => {
+const ShowListingsCards = () => {
+  const { currentProperties, fetchPropDetails } = useContext(
+    PropertiesDataContext
+  );
   // if (currentProperties === undefined || currentProperties.length === 0) {
   //   return "Sorry did not match any listing.";
   // }
-  // const handleClick = (e, listing_id, property_id, prop_status) => {
-    // e.stopPropagation();
-    // console.log("on Click pressed");
-    // fetchPropDetails(listing_id, property_id, prop_status)
-  // };
-
-  // fetchPropDetails(listing.listing_id, listing.property_id, listing.prop_status)
   return (
     <div id="card-columns" className="col-md">
       <div className="row justify-content-center">
@@ -20,7 +17,6 @@ const ShowListingsCards = ({ currentProperties, fetchPropDetails }) => {
           return (
             <Card
               key={index}
-              fetchPropDetails={fetchPropDetails}
               handleClick={() =>
                 fetchPropDetails(
                   listing.listing_id,

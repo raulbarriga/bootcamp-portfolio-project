@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import PropertiesDataContext from "../../contexts/propertiesData";
 
-import "./FilterSortBtns.css"
+import "./FilterSortBtns.css";
 
-const FilterSortBtns = ({
-  fetchProperties,
-  // currentCityNState,
-  // currentProperties,
-  setSelectedSort,
-}) => {
+const FilterSortBtns = () => {
+  const { setSelectedSort } = useContext(PropertiesDataContext);
   // as per the api parameters https://rapidapi.com/apidojo/api/realty-in-us/
   const sortOptions = [
     "Relevance",

@@ -9,10 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./Card.css"
 
-const Card = ({ listing, fetchPropDetails, handleClick }) => {
-  // onClick={() => fetchPropDetails(listing.listing_id, listing.property_id, listing.prop_status)}
-  // /bootcamp-portfolio-project
-  // key={index}
+const Card = ({ listing, handleClick }) => {
   return (
     <>
       <div id="card" className="card" onClick={handleClick}>

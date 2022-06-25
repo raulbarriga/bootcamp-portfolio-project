@@ -1780,7 +1780,6 @@ body {
 
 /* Property Details CSS End */
 
-/*  */
 .main-container {
   position: relative;
   min-height: 100vh;
@@ -1789,13 +1788,6 @@ body {
 .content-wrap {
   padding-bottom: 428px;
 }
-
-/* .parent-div{
-  display: flexbox;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-} */
 
 tbody.scrollContent {
   width: 300px;

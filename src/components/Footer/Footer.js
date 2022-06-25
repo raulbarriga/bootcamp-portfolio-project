@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import PlayStore from '../assets/images/google-play-badge.png';
-import AppStore from '../assets/images/app-store-logo.png';
+import PlayStore from '../../assets/images/google-play-badge.png';
+import AppStore from '../../assets/images/app-store-logo.png';
 import "./Footer.css";
 
 

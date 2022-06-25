@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import PropertiesDataContext from "../../../contexts/propertiesData";
 
 import useClickOutside from "../../../hooks/useClickOutside";
-import "./AutoCompleteMenu.css"
+import "./AutoCompleteMenu.css";
 
-const AutoCompleteMenu = ({
-  autocompResults,
-  autocompleteLimit,
-  searchText,
-  fetchProperties,
-  setShowAutoCMenu,
-}) => {
+const AutoCompleteMenu = () => {
+  const {
+    searchText,
+    setShowAutoCMenu,
+    fetchProperties,
+    autocompResults,
+    autocompleteLimit,
+    selectedSort,
+    saleRentRadio,
+    // fetchAutoCompleteSearch
+  } = useContext(PropertiesDataContext);
   const autoComArr = [
     {
       line: "3609 Florida Rd",
@@ -85,7 +90,12 @@ const AutoCompleteMenu = ({
             key={key}
             onClick={(e) => {
               e.preventDefault();
-              fetchProperties(obj.city, obj.state_code);
+              fetchProperties(
+                obj.city,
+                obj.state_code,
+                selectedSort,
+                saleRentRadio
+              );
               // this'll be true since we're on it
               setShowAutoCMenu(false);
             }}

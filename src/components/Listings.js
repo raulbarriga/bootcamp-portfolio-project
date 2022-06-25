@@ -1,87 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 // import Filter from './ListingsFilterComponent';
 // import ListingsFilter from "./ListingsFilter";
 import Pagination from "./Pagination/Paginate";
 import FilterSortBtns from "./FilterSortButtons/FilterSortBtns";
-import SearchBox from "./SearchBox";
+import SearchBox from "./SearchBox/SearchBox";
 import ShowListingsCards from "./ShowListingsCards";
+import PropertiesDataContext from "../contexts/propertiesData";
 
-/*
-// previous props:
+const Listings = () => {
+  const { currentProperties } = useContext(PropertiesDataContext);
 
-  
-  
-  
-  
-  
-  fetchProperties,
-  setSearchText,
-  searchText,
-  fetchAutoCompleteSearch,
-  autocompResults,
-  autocompleteLimit,
-  showAutoCMenu,
-  setShowAutoCMenu,
-  currentCityNState,
-  fetchPropDetails,
-  radioClicked,
-  setRadioClicked,
-  setSelectedSort
-*/
-
-const Listings = ({
-  currentProperties,
-  topOfCardsRef,
-  paginate
-}) => {
   return (
     <div className="container-fluid">
       {/* Location search box */}
-      {/* 
-      // previous props for SearchBox
-showAutoCMenu={showAutoCMenu}
-        setShowAutoCMenu={setShowAutoCMenu}
-        setSearchText={setSearchText}
-        searchText={searchText}
-        fetchProperties={fetchProperties}
-        fetchAutoCompleteSearch={fetchAutoCompleteSearch}
-        autocompResults={autocompResults}
-        autocompleteLimit={autocompleteLimit}
-        radioClicked={radioClicked}
-        setRadioClicked={setRadioClicked}
-
-      */}
-      <SearchBox
-        
-      />
+      <SearchBox />
 
       {/* Filter & Sort Toggle Buttons/Row */}
-      {/* 
-       // fetchProperties={fetchProperties}
-        // currentCityNState={currentCityNState}
-        // setSelectedSort={setSelectedSort}
-        // currentProperties={currentProperties}
-      */}
-      <FilterSortBtns
-       
-      />
+      <FilterSortBtns />
 
       {/* Filter row/Toggle Menu/Row */}
       <div className="row">
-        {/* todo: pass data here & replace data values */}
         {/* <ListingsFilter /> */}
         {/* Property Listings */}
-        {currentProperties && (
-          <ShowListingsCards
-            currentProperties={currentProperties}
-            // fetchPropDetails={fetchPropDetails}
-          />
-        )}
+        {currentProperties && <ShowListingsCards />}
       </div>
-      <Pagination
-        topOfCardsRef={topOfCardsRef}
-        paginate={paginate}
-      />
+      <Pagination />
     </div>
   );
 };

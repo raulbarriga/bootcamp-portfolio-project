@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import PropertiesDataContext from "../../../contexts/propertiesData";
 
 import "./ForSaleRentDropdown.css";
 
-const ForSaleRentDropdown = ({radioClicked, setRadioClicked}) => {
-  
+const ForSaleRentDropdown = () => {
+  const { setSaleRentRadio, saleRentRadio } = useContext(PropertiesDataContext);
+
   return (
     // inspired from https://stackoverflow.com/questions/34666973/radio-button-inside-dropdown-bootstrap
     <div id="radioDropdown" className="dropdown">
@@ -15,19 +17,18 @@ const ForSaleRentDropdown = ({radioClicked, setRadioClicked}) => {
         aria-haspopup="true"
         aria-expanded="false"
       >
-        {radioClicked === "For Sale" ? "For Sale" : "For Rent"}
+        {saleRentRadio === "For Sale" ? "For Sale" : "For Rent"}
       </button>
       <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <li>
           <button className="btn dropdown-item">
             <input
-              value={radioClicked}
+              value={saleRentRadio}
               id="radioSale"
-              name="radioClicked"
+              name="saleRentRadio"
               type="radio"
-              className="todos"
-              onChange={() => setRadioClicked("For Sale") }
-              checked={radioClicked === "For Sale" ? true : false}
+              onChange={() => setSaleRentRadio("For Sale")}
+              checked={saleRentRadio === "For Sale" ? true : false}
             />{" "}
             <label htmlFor="radioSale">For Sale</label>
           </button>
@@ -35,13 +36,12 @@ const ForSaleRentDropdown = ({radioClicked, setRadioClicked}) => {
         <li>
           <button className="btn dropdown-item">
             <input
-              value={radioClicked}
+              value={saleRentRadio}
               id="radioRent"
-              name="radioClicked"
+              name="saleRentRadio"
               type="radio"
-              className="todos"
-              onChange={() => setRadioClicked("For Rent") }
-              checked={radioClicked === "For Rent" ? true : false}
+              onChange={() => setSaleRentRadio("For Rent")}
+              checked={saleRentRadio === "For Rent" ? true : false}
             />{" "}
             <label htmlFor="radioRent">For Rent</label>
           </button>
@@ -52,47 +52,3 @@ const ForSaleRentDropdown = ({radioClicked, setRadioClicked}) => {
 };
 
 export default ForSaleRentDropdown;
-/*
-
-<div className="dropdown">
-      <button
-        type="button"
-        className="btn btn-primary dropdown-toggle"
-        data-toggle="dropdown"
-        id="dropdownMenuLink"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        {radioClicked === "For Sale" ? "For Sale" : "For Rent"}
-      </button>
-      <div classNaxme="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <input
-          className="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios1"
-          value="option1"
-          checked
-        />
-        <label className="form-check-label" htmlFor="exampleRadios1">
-          For Sale
-        </label>
-        <input
-          className="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios2"
-          value="option1"
-        />
-        <label className="form-check-label" htmlFor="exampleRadios2">
-          For Rent
-        </label>
-        </div>
-        </div>
-        */
-{
-  /* <div className="form-group">
-          <div className="form-check"></div>
-          <div className="form-check"></div>
-        </div> */
-}
