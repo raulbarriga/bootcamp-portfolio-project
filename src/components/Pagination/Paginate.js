@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
 import PropertiesDataContext from "../../contexts/propertiesData";
 
 import "./Pagination.css";
 
 const Paginate = () => {
-  const { dataLength, currentPage, paginate, propertiesPerPage, topOfCardsRef } = useContext(
+  const { dataLength, currentPage, paginate, propertiesPerPage } = useContext(
     PropertiesDataContext
   );
   let pageNumbers = [];
@@ -16,16 +15,10 @@ const Paginate = () => {
     pageNumbers.push(i);
   }
 
-  const handleScroll = (ref, e) => {
-    // scroll to an element guide:
-    // https://lo-victoria.com/a-look-at-react-hooks-useref-to-scroll-to-an-element#heading-step-4-add-useref-in-app
-    e.preventDefault();
-    window.scrollTo({
-      top: ref.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
+  useEffect(() => {
+    // idea from https://v5.reactrouter.com/web/guides/scroll-restoration/scroll-to-top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   return (
     <nav id="pagination">
@@ -36,16 +29,9 @@ const Paginate = () => {
             className={`page-item
             ${currentPage === pageNumber ? "active" : ""}`}
           >
-            <Link
-              to={"/#App"}
-              onClick={(e) => {
-                handleScroll(topOfCardsRef.current, e);
-                paginate(pageNumber);
-              }}
-              className="page-link"
-            >
+            <button onClick={() => paginate(pageNumber)} className="page-link">
               {pageNumber}
-            </Link>
+            </button>
           </li>
         ))}
       </ul>

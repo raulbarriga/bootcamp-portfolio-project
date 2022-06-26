@@ -4,7 +4,9 @@ import PropertiesDataContext from "../../contexts/propertiesData";
 import "./FilterSortBtns.css";
 
 const FilterSortBtns = () => {
-  const { setSelectedSort } = useContext(PropertiesDataContext);
+  const { fetchProperties, currentCityNState, saleRentRadio } = useContext(
+    PropertiesDataContext
+  );
   // as per the api parameters https://rapidapi.com/apidojo/api/realty-in-us/
   const sortOptions = [
     "Relevance",
@@ -46,11 +48,26 @@ const FilterSortBtns = () => {
                 onClick={(e) => {
                   let selection = e.target.value;
                   if (selection === "Relevance") {
-                    setSelectedSort("relevance");
+                    fetchProperties(
+                      currentCityNState[0],
+                      currentCityNState[1],
+                      "relevance",
+                      saleRentRadio
+                    );
                   } else if (selection === "Price (High to Low)") {
-                    setSelectedSort("price_high");
+                    fetchProperties(
+                      currentCityNState[0],
+                      currentCityNState[1],
+                      "price_high",
+                      saleRentRadio
+                    );
                   } else {
-                    setSelectedSort("price_low");
+                    fetchProperties(
+                      currentCityNState[0],
+                      currentCityNState[1],
+                      "price_low",
+                      saleRentRadio
+                    );
                   }
                 }}
               >

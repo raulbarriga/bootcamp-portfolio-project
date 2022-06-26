@@ -30,9 +30,6 @@ export const PropertiesDataProvider = ({ children }) => {
     "forSaleORent",
     JSON.stringify("For Sale")
   );
-  // to pass to fetchProperties
-  // options: price_low, price_high, relevance
-  const [selectedSort, setSelectedSort] = useState("relevance");
 
   // for sort button fetch data (need current city & state)
   const [currentCityNState, setCurrentCityNState] = useLocalStorage(
@@ -46,7 +43,10 @@ export const PropertiesDataProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // searchBox states
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useLocalStorage(
+    "localSearchText",
+    JSON.stringify()
+  );
   // for autocomplete search data results
   const [autocompResults, setAutocompResults] = useState([]);
   const [autocompleteLimit, setAutocompleteLimit] = useState(10);
@@ -79,44 +79,63 @@ export const PropertiesDataProvider = ({ children }) => {
     if (localCityNState) {
       setCurrentCityNState(localCityNState);
     }
+    const localSearchText = JSON.parse(localStorage.getItem("localSearchText"));
+    if (localSearchText) {
+      setSearchText(localSearchText);
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // setCurrentCityNState, setSelectedProp, setListingsData
 
-  const fetchProperties = async (city, state, sort, radioClicked) => {
-    // todo: add functionality to change endpoint based on radio selected(for sale/rent)
-    // change names to all affected files (fetchForSale function & also the one in the api index file)
-    // change the function's parameters too
-    console.log(
-      "city: " +
-        city +
-        ", state: " +
-        state +
-        ", sort: " +
-        sort +
-        ", radioClicked: " +
-        radioClicked
-    );
-    try {
-      // city, state, sort, radioClicked
-      const data = await getProperties(city, state, sort, radioClicked);
+  const fetchProperties = useCallback(
+    async (city, state, selectedSort = "relevance", saleRentRadio) => {
+      // change the function's parameters too
+      console.log(
+        "Context file, city: " +
+          city +
+          ", state: " +
+          state +
+          ", sort: " +
+          selectedSort +
+          ", radioClicked: " +
+          saleRentRadio
+      );
+      try {
+        // city, state, sort, radioClicked
+        const data = await getProperties(
+          city,
+          state,
+          selectedSort,
+          saleRentRadio
+        );
 
-      setListingsData(data.listings);
-      setDataLength(data.listings.length);
-      setCurrentPage(1);
-      if (data) {
-        setCurrentCityNState([
-          data.listings[5].address_new.city,
-          data.listings[5].address_new.state_code,
-        ]);
-        console.log("currentCityNState ran: ", currentCityNState);
+        setListingsData(data.listings);
+        setDataLength(data.listings.length);
+        setCurrentPage(1);
+        if (data) {
+          setCurrentCityNState([
+            data.listings[5].address_new.city,
+            data.listings[5].address_new.state_code,
+          ]);
+          console.log("currentCityNState ran: ", currentCityNState);
+        }
+      } catch (error) {
+        console.log(error.message);
       }
-    } catch (error) {
-      console.log(error.message);
-    }
-    if (location.pathname !== "/listings") {
-      navigate("/listings");
-    }
-  };
+      if (location.pathname !== "/listings") {
+        navigate("/listings");
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    },
+    [
+      currentCityNState,
+      setCurrentCityNState,
+      setListingsData,
+      location.pathname,
+      navigate,
+    ]
+  );
 
   const fetchPropDetails = async (listing_id, property_id, prop_status) => {
     try {
@@ -142,8 +161,6 @@ export const PropertiesDataProvider = ({ children }) => {
     }
   }, []);
 
-  const topOfCardsRef = useRef(null);
-
   // get current properties
   // these are the actual properties that are shown (done like this for pagination)
   const indexOfLastProperty = currentPage * propertiesPerPage;
@@ -152,6 +169,7 @@ export const PropertiesDataProvider = ({ children }) => {
     indexOfFirstProperty,
     indexOfLastProperty
   );
+
   // change pagination page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -164,8 +182,6 @@ export const PropertiesDataProvider = ({ children }) => {
         setListingsData,
         saleRentRadio,
         setSaleRentRadio,
-        selectedSort,
-        setSelectedSort,
         currentCityNState,
         setCurrentCityNState,
         propertiesPerPage,
@@ -176,7 +192,6 @@ export const PropertiesDataProvider = ({ children }) => {
         setDataLength,
         paginate,
         currentProperties,
-        topOfCardsRef,
         fetchProperties,
         searchText,
         setSearchText,

@@ -2,13 +2,17 @@ import axios from "axios";
 // api found at https://rapidapi.com/apidojo/api/realty-in-us/
 const BASE_URL = "https://realty-in-us.p.rapidapi.com/";
 
-export const getProperties = async (
-  city,
-  state,
-  sort,
-  radioClicked
-) => {
-  console.log("api index file, radioClicked: ", radioClicked);
+export const getProperties = async (city, state, sort, radioClicked) => {
+  console.log(
+    "api index file, city: " +
+      city +
+      ", state: " +
+      state +
+      ", sort: " +
+      sort +
+      ", radioClicked: " +
+      radioClicked
+  );
   const options = {
     params: {
       state_code: state,
@@ -22,15 +26,15 @@ export const getProperties = async (
       "X-RapidAPI-Key": process.env.REACT_APP_REALTY_API_KEY_DEFAULT_TWO,
     },
   };
-  const url = ` BASE_URL + ${
+  const url = `${BASE_URL}${
     radioClicked === "For Rent"
       ? "properties/list-for-rent"
       : "properties/list-for-sale"
   }`;
-  console.log("testing conditional url in api index file: ", url);
+  // console.log("testing conditional url in api index file: ", url);
   try {
     const { data } = await axios.get(url, options);
-    console.log("testing conditional for rent/sale fetch: ", data);
+    // console.log("testing conditional for rent/sale fetch: ", data);
     return data;
   } catch (error) {
     console.log(error.message);

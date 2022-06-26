@@ -2,7 +2,7 @@
   "name": "react-real-estate",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://raulbarriga.github.io/bootcamp-portfolio-project",
+  "homepage": "https://raulbarriga.github.io/bootcamp-portfolio-project/home",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",

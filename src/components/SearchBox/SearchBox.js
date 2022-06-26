@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 
 // import AutoCompleteMenu from "./AutoCompleteMenu/AutoCompleteMenu";
 import ForSaleRentDropdown from "./ForSaleRentDropdown/ForSaleRentDropdown";
-import PropertiesDataContext from "../contexts/propertiesData";
+import PropertiesDataContext from "../../contexts/propertiesData";
 
 const SearchBox = () => {
   const {
@@ -22,6 +22,7 @@ const SearchBox = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    if (!searchText || /\d/.test(searchText)) return;
 
     const str = searchText.split(",");
     const city = str[0];
@@ -58,7 +59,7 @@ const SearchBox = () => {
                 name="search"
                 value={searchText}
                 className="form-control border-0"
-                placeholder="Enter City or Zip Code"
+                placeholder="San Francisco, CA"
                 onChange={(e) => setSearchText(e.target.value)}
               />
               <div

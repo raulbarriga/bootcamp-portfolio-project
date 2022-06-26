@@ -17,4 +17,9 @@ import "swiper/modules/thumbs/thumbs.min.css"; // Pagination module
 import "./App.css";
 import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
