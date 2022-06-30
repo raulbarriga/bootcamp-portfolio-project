@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 // import AutoCompleteMenu from "./AutoCompleteMenu/AutoCompleteMenu";
 import ForSaleRentDropdown from "./ForSaleRentDropdown/ForSaleRentDropdown";
 import PropertiesDataContext from "../../contexts/propertiesData";
+import "./SearchBox.css";
 
 const SearchBox = () => {
   const {
@@ -86,7 +87,10 @@ const SearchBox = () => {
                     type="submit"
                     className="btn bg-white position-relative"
                   >
-                    <FontAwesomeIcon className="fas" icon={faSearch} /> Search
+                    <div className="d-flex align-items-center">
+                      <FontAwesomeIcon className="fas" icon={faSearch} />{" "}
+                      <span>Search</span>
+                    </div>
                   </button>
                 </div>
               </div>

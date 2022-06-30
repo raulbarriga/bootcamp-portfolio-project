@@ -33,23 +33,8 @@ input[type="search"i]::-webkit-search-cancel-button {
   position: absolute;
   z-index: 2;
   top: 50%;
+  left: 0;
 }
-
-/* #home-banner
-  .row
-  .col-md-12.align-items-end
-  .form-group
-  .form-field.search-box
-  form
-  button {
-  position: absolute;
-  right: 0px;
-  cursor: pointer;
-  border-top: 1px solid #ced4da;
-  border-bottom: 1px solid #ced4da;
-  border-right: 1px solid #ced4da;
-  border-radius: 0.25rem;
-} */
 
 /* Home Page End */
 
@@ -1511,7 +1496,7 @@ input[type="search"i]::-webkit-search-cancel-button {
 -------------------------------------------------------------------*/
 /* Swiper Modification */
 .swiper-button-next {
-  left: 0;
+  left: inherit;
 }
 
 .swiper-button-next,
@@ -1565,85 +1550,6 @@ input[type="search"i]::-webkit-search-cancel-button {
 .gallery-thumbs .swiper-slide.swiper-slide-active {
   opacity: 1;
 }
-
-/* new react swiper */
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-body {
-  background: #000;
-  color: #000;
-}
-
-.swiper {
-  width: 100%;
-  height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.swiper-slide {
-  background-size: cover;
-  background-position: center;
-}
-
-.mySwiper2 {
-  height: 80%;
-  width: 100%;
-}
-
-.mySwiper {
-  height: 20%;
-  box-sizing: border-box;
-  padding: 10px 0;
-}
-
-.mySwiper .swiper-slide {
-  width: 25%;
-  height: 100%;
-  opacity: 0.4;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 
 /*	13.	Utilities
 -------------------------------------------------------------------*/
@@ -1785,9 +1691,9 @@ body {
   min-height: 100vh;
 }
 
-.content-wrap {
+/* .content-wrap {
   padding-bottom: 428px;
-}
+} */
 
 tbody.scrollContent {
   width: 300px;

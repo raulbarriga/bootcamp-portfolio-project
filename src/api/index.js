@@ -34,7 +34,7 @@ export const getProperties = async (city, state, sort, radioClicked) => {
   // console.log("testing conditional url in api index file: ", url);
   try {
     const { data } = await axios.get(url, options);
-    // console.log("testing conditional for rent/sale fetch: ", data);
+    console.log("testing conditional for rent/sale fetch: ", data.listings);
     return data;
   } catch (error) {
     console.log(error.message);
@@ -91,6 +91,28 @@ export const getPropertyDetails = async (
     const { data } = await axios.get(url, options);
     console.log("api index file property details data: ", data);
     // console.log(response.data);
+
+    return data;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+export const getPropertyDetailsv2 = async (property_id) => {
+  console.log("index file, getPropertyDetailsv2, property_id: ", property_id);
+  const url = BASE_URL + "properties/v2/detail";
+  const options = {
+    params: {
+      property_id: property_id,
+    },
+    headers: {
+      "X-RapidAPI-Host": "realty-in-us.p.rapidapi.com",
+      "X-RapidAPI-Key": process.env.REACT_APP_REALTY_API_KEY_DEFAULT_TWO,
+    },
+  };
+
+  try {
+    const { data } = await axios.get(url, options);
+    console.log("api index file property v2 details data: ", data);
 
     return data;
   } catch (error) {

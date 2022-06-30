@@ -4,7 +4,22 @@
 #radioDropdown.dropdown .dropdown-toggle {
   height: 2.5rem;
 }
+#radioDropdown .dropdown-menu li {
+  width: 25%;
+}
 #radioDropdown.dropdown ul.dropdown-menu button input,
 #radioDropdown.dropdown ul.dropdown-menu button label {
   cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  #radioDropdown .dropdown-menu.show {
+    transform: translate3d(-49.5px, 40px, 0px) !important;
+  }
+}
+
+@media (max-width: 500px) {
+  #radioDropdown .dropdown-menu.show {
+    transform: translate3d(-49.5px, -100px, 0px) !important;
+  }
 }

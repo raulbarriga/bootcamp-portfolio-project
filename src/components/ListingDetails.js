@@ -1,57 +1,40 @@
-import React, { useState } from "react";
+/* eslint-disable jsx-a11y/img-redundant-alt */
+import React, { useContext } from "react";
 //import * as theiaStickySidebar from "theia-sticky-sidebar";
 import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
-import { FreeMode, Navigation, Thumbs } from "swiper";
 
-const ListingDetails = ({ selectedProp }) => {
+import SimpleImageSlider from "react-simple-image-slider";
+import PropertiesDataContext from "../contexts/propertiesData";
+
+const ListingDetails = () => {
+  const { selectedProp } = useContext(PropertiesDataContext);
+
   console.log("selectedProp: ", selectedProp);
-
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   const Sliders = () => {
-    console.log("thumbsSwiper: ", thumbsSwiper);
+    const handleClick = () => {
+
+    }
+
     return (
       <>
         {/* // main slider */}
-        <Swiper
-          style={{
-            "--swiper-navigation-color": "#fff",
-            "--swiper-pagination-color": "#fff",
-          }}
-          loop={true}
-          spaceBetween={10}
-          navigation={true}
-          thumbs={{
-            swiper:
-              thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
-          }}
-          modules={[FreeMode, Navigation, Thumbs]}
-          className="mySwiper2"
-        >
+        <div>
           {selectedProp.photos.map((obj, index) => (
-            <SwiperSlide key={index}>
-              <img src={obj.href} alt={obj.type} />
-            </SwiperSlide>
+            // <div key={index}>
+            //   <img src={obj.href} alt={`image ${index + 1}`} />
+            // </div>
+            <SimpleImageSlider
+              key={index}
+              width={896}
+              height={504}
+              images={obj.href}
+              showBullets={true}
+              showNavs={true}
+              onClick={handleClick}
+              alt={`image ${index + 1}`}
+            />
           ))}
-        </Swiper>
-        {/* // thumbnail slider */}
-        <Swiper
-          onSwiper={setThumbsSwiper}
-          loop={true}
-          spaceBetween={10}
-          slidesPerView={4}
-          freeMode={true}
-          watchSlidesProgress={true}
-          modules={[FreeMode, Navigation, Thumbs]}
-          className="mySwiper"
-        >
-          {selectedProp.photos.map((obj, index) => (
-            <SwiperSlide key={index}>
-              <img src={obj.href} alt={obj.type} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        </div>
       </>
     );
   };
@@ -70,7 +53,7 @@ const ListingDetails = ({ selectedProp }) => {
                       <i className="fa fa-angle-left"></i>
                     </Link>
                     <h1>
-                      {selectedProp.raw_prop_type}{" "}
+                      {/* {selectedProp.raw_prop_type}{" "} */}
                       <span
                         className="label label-bordered"
                         style={{
@@ -135,7 +118,10 @@ const ListingDetails = ({ selectedProp }) => {
                     >
                       <div>
                         {/* item-gallery goes here */}
-                        {selectedProp && thumbsSwiper && <Sliders />}
+                        {/* && thumbsSwiper */}
+                        {/* && selectedProp.photos.length > 0 */}
+                        {/*  */}
+                        {selectedProp && <Sliders />}
                         {/* Property Description */}
                         <div>
                           <ul
@@ -174,7 +160,7 @@ const ListingDetails = ({ selectedProp }) => {
                               </li>
                             )}
 
-                            {selectedProp.lot_sqft && (
+                            {selectedProp.lot_sqft !== 0 && (
                               <li
                                 style={{
                                   fontSize: "18px",
@@ -285,13 +271,14 @@ const ListingDetails = ({ selectedProp }) => {
                                 {selectedProp.year_built}
                               </p>
                             )}
-                            {selectedProp.hoa_fee !== 0 && (
-                              <p>
-                                <strong>HOA fee: </strong>
-                                &nbsp; ${" "}
-                                {selectedProp.hoa_fee.toLocaleString("en-US")}
-                              </p>
-                            )}
+                            {selectedProp.hoa_fee &&
+                              selectedProp.hoa_fee !== 0 && (
+                                <p>
+                                  <strong>HOA fee: </strong>
+                                  &nbsp; ${" "}
+                                  {selectedProp.hoa_fee.toLocaleString("en-US")}
+                                </p>
+                              )}
                           </div>
                           <h3 className="headline">Property Features</h3>
                           {selectedProp &&

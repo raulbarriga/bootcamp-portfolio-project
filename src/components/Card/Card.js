@@ -7,14 +7,21 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import "./Card.css"
-
+import "./Card.css";
+const linkPath = (listing) => {
+  if (listing.listing_id && listing.property_id) {
+    return `:${listing.listing_id}/:${listing.property_id}/:${listing.prop_status}`;
+  } else {
+    return `:${listing.plan_id}`;
+  }
+};
 const Card = ({ listing, handleClick }) => {
   return (
     <>
       <div id="card" className="card" onClick={handleClick}>
         <Link
-          to={`:${listing.listing_id}/:${listing.property_id}/:${listing.prop_status}`}
+        // `:${listing.listing_id}/:${listing.property_id}/:${listing.prop_status}`
+          to={() => linkPath(listing)}
           className="router-link"
         >
           <img

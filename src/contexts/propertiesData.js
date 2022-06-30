@@ -1,16 +1,11 @@
-import React, {
-  createContext,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { createContext, useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import useLocalStorage from "../hooks/useLocalStorage";
 import {
   getProperties,
   getPropertyDetails,
+  getPropertyDetailsv2,
   inputAutoComplete,
 } from "../api/index";
 
@@ -39,7 +34,7 @@ export const PropertiesDataProvider = ({ children }) => {
 
   // 3 states for pagination
   const [dataLength, setDataLength] = useState(0);
-  const [propertiesPerPage, setPropertiesPerPage] = useState(10);
+  const [propertiesPerPage, setPropertiesPerPage] = useState(12);
   const [currentPage, setCurrentPage] = useState(1);
 
   // searchBox states
@@ -58,6 +53,8 @@ export const PropertiesDataProvider = ({ children }) => {
     "localSelectedProperty",
     JSON.stringify([])
   );
+  // to change between 2 path versions for the selected property details page
+  const [has2Ids, setHas2Ids] = useState(true);
 
   useEffect(() => {
     const allProperties = JSON.parse(
@@ -82,6 +79,14 @@ export const PropertiesDataProvider = ({ children }) => {
     const localSearchText = JSON.parse(localStorage.getItem("localSearchText"));
     if (localSearchText) {
       setSearchText(localSearchText);
+    }
+
+    const radioBtn = JSON.parse(localStorage.getItem("forSaleORent"));
+    if (radioBtn) {
+      setSaleRentRadio(radioBtn);
+    } else {
+      // if you clear the local storage set the default
+      setSaleRentRadio("For Sale");
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -138,14 +143,31 @@ export const PropertiesDataProvider = ({ children }) => {
   );
 
   const fetchPropDetails = async (listing_id, property_id, prop_status) => {
+    console.log(
+      "single property details: ",
+      listing_id + ", " + property_id + ", " + prop_status
+    );
     try {
       const data = await getPropertyDetails(
         listing_id,
         property_id,
         prop_status
       );
-      console.log("single property details: ", data.listing);
+      console.log("single property details: ", data);
       setSelectedProp(data.listing);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const fetchPropDetailsv2 = async (plan_id) => {
+    console.log("fetch prop details v2 ran, plan_id: ", plan_id);
+
+    try {
+      const data = await getPropertyDetailsv2(plan_id);
+      console.log("single property details: ", data.properties);
+
+      setSelectedProp(data.properties);
     } catch (error) {
       console.log(error.message);
     }
@@ -176,6 +198,9 @@ export const PropertiesDataProvider = ({ children }) => {
   return (
     <PropertiesDataContext.Provider
       value={{
+        has2Ids,
+        setHas2Ids,
+        fetchPropDetailsv2,
         fetchAutoCompleteSearch,
         fetchPropDetails,
         listingsData,

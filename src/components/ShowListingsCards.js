@@ -4,12 +4,13 @@ import PropertiesDataContext from "../contexts/propertiesData";
 import Card from "./Card/Card";
 
 const ShowListingsCards = () => {
-  const { currentProperties, fetchPropDetails } = useContext(
+  const { currentProperties, fetchPropDetails, fetchPropDetailsv2, setHas2Ids } = useContext(
     PropertiesDataContext
   );
   // if (currentProperties === undefined || currentProperties.length === 0) {
   //   return "Sorry did not match any listing.";
-  // }
+  // }\
+  
   return (
     <div id="card-columns" className="col-md">
       <div className="row justify-content-center">
@@ -17,13 +18,20 @@ const ShowListingsCards = () => {
           return (
             <Card
               key={index}
-              handleClick={() =>
-                fetchPropDetails(
-                  listing.listing_id,
-                  listing.property_id,
-                  listing.prop_status
-                )
-              }
+              handleClick={() => {
+                if (listing.listing_id && listing.property_id) {
+                  fetchPropDetails(
+                    listing.listing_id,
+                    listing.property_id,
+                    listing.prop_status
+                  );
+                } else if (listing.plan_id) {
+                  setHas2Ids(false);
+                  fetchPropDetailsv2(
+                    listing.plan_id
+                  );
+                }
+              }}
               listing={listing}
             />
           );

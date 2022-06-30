@@ -5,6 +5,7 @@
 #searchBox.row .col-md-12.align-items-end .form-group {
   margin-bottom: 0;
   width: 50%;
+  min-width: 286px;
 }
 
 #searchBox.row .form-field.search-box {
@@ -52,4 +53,71 @@
 #searchBox.row form .btn:active {
   outline: none !important;
   box-shadow: none;
+}
+
+#searchBox.row .fa-search {
+  margin-right: 5px;
+}
+
+/* to remove x inside search input tag */
+/* from https://blog.maximerouiller.com/post/remove-the-x-from-internet-explorer-and-chrome-input-type-search/ */
+/* clears the 'X' from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  /* #searchBox.row .col-md-12.align-items-end:nth-child(1) {
+    justify-content: space-between;
+  } */
+  /* #searchBox.row .col-md-12.align-items-end .form-group {
+    width: auto;
+  } */
+}
+/* and (min-width: ) */
+@media (max-width: 830px) {
+  /* #searchBox.row .col-md-12.align-items-end .form-group {
+    width: 400px;
+  } */
+}
+@media (max-width: 650px) {
+  #searchBox.row .col-md-12 {
+    justify-content: space-between !important;
+    /* transform: translate3d(-46px, 40px, 0px); */
+  }
+
+  #searchBox.row .col-md-12.align-items-end .form-group {
+    width: auto;
+  }
+}
+
+
+/* 
+#searchBox.row .col-md-12 {
+  flex-direction: column-reverse;
+}
+*/
+#searchBox.row .col-md-12.align-items-end:nth-child(1) {
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 320px) {
+  #btn-group-parent button[type="submit"] span {
+    display: none;
+  }
 }

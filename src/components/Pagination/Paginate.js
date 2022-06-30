@@ -1,4 +1,6 @@
 import React, { useContext, useEffect } from "react";
+import Pagination from "react-responsive-pagination";
+
 import PropertiesDataContext from "../../contexts/propertiesData";
 
 import "./Pagination.css";
@@ -15,6 +17,7 @@ const Paginate = () => {
     pageNumbers.push(i);
   }
 
+  //scroll to top on pagination change
   useEffect(() => {
     // idea from https://v5.reactrouter.com/web/guides/scroll-restoration/scroll-to-top
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -23,7 +26,21 @@ const Paginate = () => {
   return (
     <nav id="pagination">
       <ul className="pagination justify-content-center">
-        {pageNumbers.map((pageNumber) => (
+        <Pagination
+          pageLinkClassName="page-link"
+          current={currentPage}
+          total={pageNumbers.length}
+          onPageChange={(pageNumber) => paginate(pageNumber)}
+        />
+      </ul>
+    </nav>
+  );
+};
+
+export default Paginate;
+
+/*
+{pageNumbers.map((pageNumber) => (
           <li
             key={pageNumber}
             className={`page-item
@@ -34,9 +51,5 @@ const Paginate = () => {
             </button>
           </li>
         ))}
-      </ul>
-    </nav>
-  );
-};
 
-export default Paginate;
+*/
