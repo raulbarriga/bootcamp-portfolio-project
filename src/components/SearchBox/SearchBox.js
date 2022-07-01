@@ -4,7 +4,7 @@ import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
 
 // import AutoCompleteMenu from "./AutoCompleteMenu/AutoCompleteMenu";
-import ForSaleRentDropdown from "./ForSaleRentDropdown/ForSaleRentDropdown";
+import ForSaleRentDropdown from "./ForSaleRentBtns/ForSaleRentBtns";
 import PropertiesDataContext from "../../contexts/propertiesData";
 import "./SearchBox.css";
 

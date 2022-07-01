@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 import PropertiesDataContext from "../../../contexts/propertiesData";
 
-import "./ForSaleRentDropdown.css";
+import "./ForSaleRentBtns.css";
 
 const ForSaleRentDropdown = () => {
   const location = useLocation();

@@ -1,37 +1,16 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useContext } from "react";
 //import * as theiaStickySidebar from "theia-sticky-sidebar";
 import { Link } from "react-router-dom";
 
-import SimpleImageSlider from "react-simple-image-slider";
+import Carousel from "./Carousel/Carousel";
 import PropertiesDataContext from "../contexts/propertiesData";
 
 const ListingDetails = () => {
   const { selectedProp } = useContext(PropertiesDataContext);
 
   console.log("selectedProp: ", selectedProp);
-  const Sliders = () => (
-    // const handleClick = () => {
-    //   return;
-    // }
-    <div>
-      {selectedProp.photos.map((obj, index) => (
-        // <div key={index}>
-        //   <img src={obj.href} alt={`image ${index + 1}`} />
-        // </div>
-        <SimpleImageSlider
-          key={index}
-          width={896}
-          height={504}
-          images={obj.href}
-          showBullets={true}
-          showNavs={true}
-          // onClick={handleClick}
-          alt={`image ${index + 1}`}
-        />
-      ))}
-    </div>
-  );
+
+  const Slider = () => <Carousel selectedProp={selectedProp} />;
 
   return (
     <>
@@ -43,7 +22,7 @@ const ListingDetails = () => {
                 <div className="row">
                   <div className="col-md-8">
                     {" "}
-                    <Link to={".."} className="btn-return" title="Back">
+                    <Link to={"/listings"} className="btn-return" title="Back">
                       <i className="fa fa-angle-left"></i>
                     </Link>
                     <h1>
@@ -117,7 +96,7 @@ const ListingDetails = () => {
                         {/* && thumbsSwiper */}
                         {/* && selectedProp.photos.length > 0 */}
                         {/*  */}
-                        {selectedProp && <Sliders />}
+                        {selectedProp && <Slider />}
                         {/* Property Description */}
                         <div>
                           <ul
@@ -127,6 +106,7 @@ const ListingDetails = () => {
                               margin: "0",
                               listStyle: "none",
                               marginBottom: "30px",
+                              marginTop: "30px",
                               backgroundColor: "rgba(134, 158, 158, 0.1)",
                               borderRadius: "3px",
                             }}

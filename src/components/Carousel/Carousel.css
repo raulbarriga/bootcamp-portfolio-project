@@ -1,0 +1,12 @@
+#carouselExampleIndicators .carousel-dot {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+#carouselExampleIndicators .carousel-dot:hover {
+  opacity: 1;
+}
+#carouselExampleIndicators .carousel-item {
+  cursor: pointer;
+}
