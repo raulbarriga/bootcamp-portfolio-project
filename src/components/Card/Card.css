@@ -3,15 +3,16 @@
   border-radius: 5px;
   max-width: 360px;
   margin: 1rem;
+  min-height: 374.8px;
 }
 
-#card.card {
+/* #card.card {
   border: none;
   padding: 15px;
   border-radius: 3px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-}
+} */
 
 /* #card.card.shadow {
     padding: 15px !important;
@@ -41,6 +42,11 @@
   font-size: 24;
 }
 
+#card-body span.text-dark {
+  display: inline-block;
+  height: 43px;
+}
+
 #card.card #card-body .card-title.details,
 #card.card #card-body .card-text {
   font-size: 14px;
@@ -51,4 +57,8 @@
   background-color: white;
   padding: 0;
   border-top: none;
+  position: absolute;
+  bottom: 5px;
+  bottom: 0;
+  background: transparent;
 }

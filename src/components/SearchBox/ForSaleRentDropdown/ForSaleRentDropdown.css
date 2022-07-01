@@ -1,25 +1,58 @@
-#radioDropdown.dropdown {
-  padding-left: 12px;
+/* new neumorphism buttons css starts here */
+#radioBtns {
+  position: absolute;
+  bottom: 75%;
+  background: #ededed;
+  background: #fff;
+  border-radius: 0.25rem;
+  padding: 0 !important;
 }
-#radioDropdown.dropdown .dropdown-toggle {
-  height: 2.5rem;
+#radioBtns.listingsPage {
+  position: initial;
+  margin-left: 15px;
 }
-#radioDropdown .dropdown-menu li {
-  width: 25%;
+#radioBtns .form-check-input {
+  display: none;
 }
-#radioDropdown.dropdown ul.dropdown-menu button input,
-#radioDropdown.dropdown ul.dropdown-menu button label {
-  cursor: pointer;
+#radioBtns .btn-group-container {
+  border-radius: 6px;
+  background: #ededed;
+  box-shadow: inset 5px 5px 10px #c9c9c9, inset -5px -5px 10px #ffffff;
+}
+#radioBtns .btn-primary {
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 40px 10px 40px;
+}
+#radioBtns .btn-primary:not(:disabled):not(.disabled):active,
+#radioBtns .btn-primary:not(:disabled):not(.disabled).active,
+#radioBtns .show > .btn-primary.dropdown-toggle {
+  border-radius: 6px;
+  background: linear-gradient(0deg, #e5e5e5, #ededed);
+  box-shadow: 5px 5px 10px #c9c9c9, -5px -5px 10px #ffffff;
+  color: black;
 }
 
-@media (max-width: 650px) {
-  #radioDropdown .dropdown-menu.show {
-    transform: translate3d(-49.5px, 40px, 0px) !important;
+#radioBtns .btn-primary:hover {
+  border-radius: 6px;
+  background: linear-gradient(90deg, #f2f2f2, #ededed);
+  box-shadow: 5px 5px 10px #c9c9c9, -5px -5px 10px #ffffff;
+  color: black;
+}
+/*  */
+
+@media (max-width: 651px) {
+  #radioBtns.listingsPage {
+    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50%;
+    margin-left: 0px;
   }
-}
-
-@media (max-width: 500px) {
-  #radioDropdown .dropdown-menu.show {
-    transform: translate3d(-49.5px, -100px, 0px) !important;
+  #radioBtns.listingsPage div {
+    width: 290px;
   }
 }

@@ -53,8 +53,6 @@ export const PropertiesDataProvider = ({ children }) => {
     "localSelectedProperty",
     JSON.stringify([])
   );
-  // to change between 2 path versions for the selected property details page
-  const [has2Ids, setHas2Ids] = useState(true);
 
   useEffect(() => {
     const allProperties = JSON.parse(
@@ -144,7 +142,7 @@ export const PropertiesDataProvider = ({ children }) => {
 
   const fetchPropDetails = async (listing_id, property_id, prop_status) => {
     console.log(
-      "single property details: ",
+      "single property details from v1 function: ",
       listing_id + ", " + property_id + ", " + prop_status
     );
     try {
@@ -161,7 +159,7 @@ export const PropertiesDataProvider = ({ children }) => {
   };
 
   const fetchPropDetailsv2 = async (plan_id) => {
-    console.log("fetch prop details v2 ran, plan_id: ", plan_id);
+    console.log("fetch prop details v2 function, plan_id: ", plan_id);
 
     try {
       const data = await getPropertyDetailsv2(plan_id);
@@ -198,8 +196,6 @@ export const PropertiesDataProvider = ({ children }) => {
   return (
     <PropertiesDataContext.Provider
       value={{
-        has2Ids,
-        setHas2Ids,
         fetchPropDetailsv2,
         fetchAutoCompleteSearch,
         fetchPropDetails,

@@ -1,52 +1,56 @@
 import React, { useContext } from "react";
+import { useLocation } from "react-router-dom";
+
 import PropertiesDataContext from "../../../contexts/propertiesData";
 
 import "./ForSaleRentDropdown.css";
 
 const ForSaleRentDropdown = () => {
+  const location = useLocation();
   const { setSaleRentRadio, saleRentRadio } = useContext(PropertiesDataContext);
 
   return (
-    // inspired from https://stackoverflow.com/questions/34666973/radio-button-inside-dropdown-bootstrap
-    <div id="radioDropdown" className="dropdown">
-      <button
-        className="btn btn-primary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        {saleRentRadio === "For Sale" ? "For Sale" : "For Rent"}
-      </button>
-      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li>
-          <button className="btn dropdown-item">
-            <input
-              value={saleRentRadio}
-              id="radioSale"
-              name="saleRentRadio"
-              type="radio"
-              onChange={() => setSaleRentRadio("For Sale")}
-              checked={saleRentRadio === "For Sale"}
-            />{" "}
-            <label htmlFor="radioSale">For Sale</label>
-          </button>
-        </li>
-        <li>
-          <button className="btn dropdown-item">
-            <input
-              value={saleRentRadio}
-              id="radioRent"
-              name="saleRentRadio"
-              type="radio"
-              onChange={() => setSaleRentRadio("For Rent")}
-              checked={saleRentRadio === "For Rent"}
-            />{" "}
-            <label htmlFor="radioRent">For Rent</label>
-          </button>
-        </li>
-      </ul>
+    // from https://codepen.io/raulbarriga/pen/wvmBGBY?editors=1100
+    <div
+      id="radioBtns"
+      className={`btn-group-container d-inline-flex p-3 ${
+        location.pathname === "/listings" ? "listingsPage" : ""
+      }`}
+    >
+      <div>
+        <label
+          className={`btn btn-primary form-check-label ${
+            saleRentRadio === "For Sale" ? "active" : ""
+          }`}
+        >
+          <input
+            className="form-check-input"
+            type="radio"
+            id="radioSale"
+            name="saleRentRadio"
+            autoComplete="off"
+            onChange={() => setSaleRentRadio("For Sale")}
+            checked={saleRentRadio === "For Sale"}
+          />
+          For Sale
+        </label>
+        <label
+          className={`btn btn-primary form-check-label ${
+            saleRentRadio === "For Rent" ? "active" : ""
+          }`}
+        >
+          <input
+            className="form-check-input"
+            type="radio"
+            id="radioRent"
+            name="saleRentRadio"
+            autoComplete="off"
+            checked={saleRentRadio === "For Rent"}
+            onChange={() => setSaleRentRadio("For Rent")}
+          />{" "}
+          For Rent
+        </label>
+      </div>
     </div>
   );
 };

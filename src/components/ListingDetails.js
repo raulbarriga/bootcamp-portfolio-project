@@ -10,34 +10,28 @@ const ListingDetails = () => {
   const { selectedProp } = useContext(PropertiesDataContext);
 
   console.log("selectedProp: ", selectedProp);
-  const Sliders = () => {
-    const handleClick = () => {
-
-    }
-
-    return (
-      <>
-        {/* // main slider */}
-        <div>
-          {selectedProp.photos.map((obj, index) => (
-            // <div key={index}>
-            //   <img src={obj.href} alt={`image ${index + 1}`} />
-            // </div>
-            <SimpleImageSlider
-              key={index}
-              width={896}
-              height={504}
-              images={obj.href}
-              showBullets={true}
-              showNavs={true}
-              onClick={handleClick}
-              alt={`image ${index + 1}`}
-            />
-          ))}
-        </div>
-      </>
-    );
-  };
+  const Sliders = () => (
+    // const handleClick = () => {
+    //   return;
+    // }
+    <div>
+      {selectedProp.photos.map((obj, index) => (
+        // <div key={index}>
+        //   <img src={obj.href} alt={`image ${index + 1}`} />
+        // </div>
+        <SimpleImageSlider
+          key={index}
+          width={896}
+          height={504}
+          images={obj.href}
+          showBullets={true}
+          showNavs={true}
+          // onClick={handleClick}
+          alt={`image ${index + 1}`}
+        />
+      ))}
+    </div>
+  );
 
   return (
     <>
@@ -74,7 +68,9 @@ const ListingDetails = () => {
                   <div className="col-md-4">
                     <div className="price">
                       {/* $250,000 <small>$900/sq ft</small> */}$
-                      {selectedProp.price.toLocaleString("en-US")}
+                      {selectedProp &&
+                        selectedProp.price &&
+                        selectedProp.price.toLocaleString("en-US")}
                       {/* <small>${selectedProp.price.toLocaleString("en-US")}/sq ft</small> */}
                     </div>
                   </div>
@@ -154,7 +150,9 @@ const ListingDetails = () => {
                                     fontSize: "18px",
                                   }}
                                 >
-                                  {selectedProp.sqft.toLocaleString("en-US")}
+                                  {selectedProp &&
+                                    selectedProp.sqft &&
+                                    selectedProp.sqft.toLocaleString("en-US")}
                                 </span>{" "}
                                 sqft{" "}
                               </li>
@@ -179,9 +177,11 @@ const ListingDetails = () => {
                                     fontSize: "18px",
                                   }}
                                 >
-                                  {selectedProp.lot_sqft.toLocaleString(
-                                    "en-US"
-                                  )}
+                                  {selectedProp &&
+                                    selectedProp.lot_sqft &&
+                                    selectedProp.lot_sqft.toLocaleString(
+                                      "en-US"
+                                    )}
                                 </span>{" "}
                                 sqft lot{" "}
                               </li>
@@ -276,7 +276,11 @@ const ListingDetails = () => {
                                 <p>
                                   <strong>HOA fee: </strong>
                                   &nbsp; ${" "}
-                                  {selectedProp.hoa_fee.toLocaleString("en-US")}
+                                  {selectedProp &&
+                                    selectedProp.hoa_fee &&
+                                    selectedProp.hoa_fee.toLocaleString(
+                                      "en-US"
+                                    )}
                                 </p>
                               )}
                           </div>

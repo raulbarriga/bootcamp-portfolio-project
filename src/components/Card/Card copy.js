@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   faBed,
@@ -10,16 +10,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Card.css";
 
 const Card = ({ listing, handleClick }) => {
+  const [linkpath, setLinkpath] = useState(`:${listing.listing_id}/:${listing.property_id}/:${listing.prop_status}`);
+  // let linkPath;
+  useEffect(() => {
+    //  linkPath = (listing) => {
+    if (listing.listing_id && listing.property_id) {
+      console.log(
+        "both ids found: ",
+        listing.listing_id + ", " + listing.property_id
+      );
+      setLinkpath(
+        `:${listing.listing_id}/:${listing.property_id}/:${listing.prop_status}`
+      );
+    } else {
+      console.log("Plan ID: ", listing.plan_id);
+      setLinkpath(`:${listing.plan_id}`);
+    }
+    // };
+  }, [listing]);
+
   return (
     <>
       <div id="card" className="card" onClick={handleClick}>
         <Link
-          // Link doesn't need the colons on the path (just the Routes & the backend endpoints), you still need the forward slashes here though
-          to={
-            listing.listing_id && listing.property_id
-              ? `${listing.listing_id}/${listing.property_id}/${listing.prop_status}`
-              : `${listing.plan_id}`
-          }
+          // `:${listing.listing_id}/:${listing.property_id}/:${listing.prop_status}`
+          // to={() => linkPath(listing)}
+          to={linkpath}
           className="router-link"
         >
           <img
