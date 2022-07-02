@@ -38,7 +38,7 @@ function Footer() {
           <div className="col-sm-4 footer-links">
             <ul className="list-unstyled">
               <li>
-                <Link to="/home">Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/listings">Listings</Link>

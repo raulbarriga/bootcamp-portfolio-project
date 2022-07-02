@@ -1433,6 +1433,7 @@ input[type="search"i]::-webkit-search-cancel-button {
   width: 52px;
   height: 52px;
   position: fixed;
+  z-index: 999999;
   right: 50px;
   bottom: 50px;
   visibility: hidden;

@@ -10,3 +10,13 @@
 #carouselExampleIndicators .carousel-item {
   cursor: pointer;
 }
+
+.carousel-control-next,
+.carousel-control-prev {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+}

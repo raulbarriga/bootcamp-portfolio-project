@@ -12,7 +12,7 @@ const Header = () => {
           role="navigation"
         >
           <div id="container-fluid-nav" className="container-fluid">
-            <NavLink to="/home" className="navbar-brand">
+            <NavLink to="/" className="navbar-brand">
               LOGO
             </NavLink>
 
@@ -30,7 +30,7 @@ const Header = () => {
             <div id="toggle-btn" className="collapse navbar-collapse">
               <ul id="nav-css" className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <NavLink className="nav-link text-white" to="/home">
+                  <NavLink className="nav-link text-white" to="/">
                     Home
                   </NavLink>
                 </li>

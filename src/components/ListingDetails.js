@@ -3,6 +3,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Carousel from "./Carousel/Carousel";
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
+
 import PropertiesDataContext from "../contexts/propertiesData";
 
 const ListingDetails = () => {
@@ -11,6 +13,8 @@ const ListingDetails = () => {
   console.log("selectedProp: ", selectedProp);
 
   const Slider = () => <Carousel selectedProp={selectedProp} />;
+  // for Google Embed Maps API
+  let replaced = selectedProp.address.line.replace(/ /g, "+");
 
   return (
     <>
@@ -48,7 +52,7 @@ const ListingDetails = () => {
                     <div className="price">
                       {/* $250,000 <small>$900/sq ft</small> */}$
                       {selectedProp &&
-                        selectedProp.price &&
+                        Boolean(selectedProp.price) &&
                         selectedProp.price.toLocaleString("en-US")}
                       {/* <small>${selectedProp.price.toLocaleString("en-US")}/sq ft</small> */}
                     </div>
@@ -111,7 +115,7 @@ const ListingDetails = () => {
                               borderRadius: "3px",
                             }}
                           >
-                            {selectedProp.sqft && (
+                            {Boolean(selectedProp.sqft) && (
                               <li
                                 style={{
                                   fontSize: "18px",
@@ -130,15 +134,13 @@ const ListingDetails = () => {
                                     fontSize: "18px",
                                   }}
                                 >
-                                  {selectedProp &&
-                                    selectedProp.sqft &&
-                                    selectedProp.sqft.toLocaleString("en-US")}
+                                  {selectedProp.sqft.toLocaleString("en-US")}
                                 </span>{" "}
                                 sqft{" "}
                               </li>
                             )}
 
-                            {selectedProp.lot_sqft !== 0 && (
+                            {selectedProp.lot_sqft !== null && (
                               <li
                                 style={{
                                   fontSize: "18px",
@@ -157,17 +159,15 @@ const ListingDetails = () => {
                                     fontSize: "18px",
                                   }}
                                 >
-                                  {selectedProp &&
-                                    selectedProp.lot_sqft &&
-                                    selectedProp.lot_sqft.toLocaleString(
-                                      "en-US"
-                                    )}
+                                  {selectedProp.lot_sqft.toLocaleString(
+                                    "en-US"
+                                  )}
                                 </span>{" "}
                                 sqft lot{" "}
                               </li>
                             )}
 
-                            {selectedProp.garage && (
+                            {Boolean(selectedProp.garage) && (
                               <li
                                 style={{
                                   fontSize: "18px",
@@ -191,7 +191,7 @@ const ListingDetails = () => {
                                 Garage{" "}
                               </li>
                             )}
-                            {selectedProp.beds && (
+                            {Boolean(selectedProp.beds) && (
                               <li
                                 style={{
                                   fontSize: "18px",
@@ -216,7 +216,7 @@ const ListingDetails = () => {
                               </li>
                             )}
 
-                            {selectedProp.baths && (
+                            {Boolean(selectedProp.baths) && (
                               <li
                                 style={{
                                   fontSize: "18px",
@@ -244,23 +244,19 @@ const ListingDetails = () => {
                           <div className="item-description">
                             <h3 className="headline">Property description</h3>
                             <p>{selectedProp.description}</p>
-                            {selectedProp.year_built && (
+                            {Boolean(selectedProp.year_built) && (
                               <p>
                                 <strong>Year Built: </strong>
                                 &nbsp;
                                 {selectedProp.year_built}
                               </p>
                             )}
-                            {selectedProp.hoa_fee &&
+                            {Boolean(selectedProp.hoa_fee) &&
                               selectedProp.hoa_fee !== 0 && (
                                 <p>
                                   <strong>HOA fee: </strong>
                                   &nbsp; ${" "}
-                                  {selectedProp &&
-                                    selectedProp.hoa_fee &&
-                                    selectedProp.hoa_fee.toLocaleString(
-                                      "en-US"
-                                    )}
+                                  {selectedProp.hoa_fee.toLocaleString("en-US")}
                                 </p>
                               )}
                           </div>
@@ -301,11 +297,12 @@ const ListingDetails = () => {
                               </ul>
                             ))}
 
+                          {/* Google Maps */}
                           <div className="item-navigation">
                             <ul className="nav nav-tabs v2" role="tablist">
                               <li role="presentation">
                                 <a
-                                  href="/map"
+                                  href="#map"
                                   aria-controls="map"
                                   role="tab"
                                   data-toggle="tab"
@@ -319,7 +316,7 @@ const ListingDetails = () => {
                               </li>
                               <li role="presentation">
                                 <a
-                                  href="/streetview"
+                                  href="#streetview"
                                   aria-controls="streetview"
                                   role="tab"
                                   data-toggle="tab"
@@ -336,13 +333,14 @@ const ListingDetails = () => {
                                 id="map"
                               >
                                 <iframe
-                                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1215.7401235613713!2d1.4497354260471211!3d52.45232942952154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9f169c5a088db%3A0x75a6abde48cc5adc!2sKents+Ln%2C+Bungay+NR35+1JF%2C+UK!5e0!3m2!1sen!2sin!4v1489862715790"
+                                  src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${replaced},${selectedProp.address.city}+${selectedProp.address.state_code}`}
                                   width="600"
                                   height="450"
                                   style={{
                                     border: "0",
                                   }}
                                   allowFullScreen=""
+                                  title="1"
                                 ></iframe>
                               </div>
                               <div
@@ -351,13 +349,20 @@ const ListingDetails = () => {
                                 id="streetview"
                               >
                                 <iframe
-                                  src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2s!4v1489861898447!6m8!1m7!1sGz9bS-GXSJE28jHD19m7KQ!2m2!1d52.45191646727986!2d1.451480542718656!3f0!4f0!5f0.8160813932612223"
+                                  src={`https://www.google.com/maps/embed/v1/streetview?key=${
+                                    process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+                                  }&location=${
+                                    selectedProp.address.lat +
+                                    ", " +
+                                    selectedProp.address.long
+                                  }`}
                                   width="600"
                                   height="450"
                                   style={{
                                     border: "0",
                                   }}
                                   allowFullScreen=""
+                                  title="2"
                                 ></iframe>
                               </div>
                             </div>
@@ -373,14 +378,9 @@ const ListingDetails = () => {
           </div>
         </div>
       </div>
-      <button
-        className="btn btn-primary btn-circle"
-        id="to-top"
-        style={{ visibility: "visible", opacity: "1" }}
-      >
-        <i className="fa fa-angle-up"></i>
-      </button>
 
+      {/* scroll to top component goes here */}
+      <ScrollToTop />
       {/* PhotoSwipe (the last stuff goes here) */}
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Home from "./Home";
@@ -15,13 +15,13 @@ const Main = () => {
         <div className="content-wrap">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="home" element={<Home />} />
             <Route path="listings" element={<Listings />} />
             <Route path="listings/:plan_id" element={<ListingDetails />} />
             <Route
               path="listings/:listing_id/:property_id/:prop_status"
               element={<ListingDetails />}
             />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
         <Footer />
