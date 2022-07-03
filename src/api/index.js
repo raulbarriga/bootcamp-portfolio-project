@@ -3,16 +3,6 @@ import axios from "axios";
 const BASE_URL = "https://realty-in-us.p.rapidapi.com/";
 
 export const getProperties = async (city, state, sort, radioClicked) => {
-  console.log(
-    "api index file, city: " +
-      city +
-      ", state: " +
-      state +
-      ", sort: " +
-      sort +
-      ", radioClicked: " +
-      radioClicked
-  );
   const options = {
     params: {
       state_code: state,
@@ -31,10 +21,10 @@ export const getProperties = async (city, state, sort, radioClicked) => {
       ? "properties/list-for-rent"
       : "properties/list-for-sale"
   }`;
-  // console.log("testing conditional url in api index file: ", url);
+
   try {
     const { data } = await axios.get(url, options);
-    console.log("testing conditional for rent/sale fetch: ", data.listings);
+
     return data;
   } catch (error) {
     console.log(error.message);
@@ -56,8 +46,6 @@ export const inputAutoComplete = async (input) => {
 
   try {
     const { data } = await axios.get(url, options);
-    // console.log("input: ", data.autocomplete);
-    // console.log(response.data);
 
     return data;
   } catch (error) {
@@ -70,10 +58,6 @@ export const getPropertyDetails = async (
   property_id,
   prop_status
 ) => {
-  console.log(
-    "index file: ",
-    listing_id + ", " + property_id + ", " + prop_status
-  );
   const url = BASE_URL + "properties/detail";
   const options = {
     params: {
@@ -89,16 +73,14 @@ export const getPropertyDetails = async (
 
   try {
     const { data } = await axios.get(url, options);
-    console.log("api index file property details data: ", data);
-    // console.log(response.data);
 
     return data;
   } catch (error) {
     console.log(error.message);
   }
 };
+
 export const getPropertyDetailsv2 = async (property_id) => {
-  console.log("index file, getPropertyDetailsv2, property_id: ", property_id);
   const url = BASE_URL + "properties/v2/detail";
   const options = {
     params: {
@@ -112,7 +94,6 @@ export const getPropertyDetailsv2 = async (property_id) => {
 
   try {
     const { data } = await axios.get(url, options);
-    console.log("api index file property v2 details data: ", data);
 
     return data;
   } catch (error) {
