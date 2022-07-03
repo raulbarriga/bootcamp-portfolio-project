@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import PropertiesDataContext from "../../contexts/propertiesData";
+import PropertiesDataContext from "../../contexts/propertiesContext";
 
 import "./FilterSortBtns.css";
 

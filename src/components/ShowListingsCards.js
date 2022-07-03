@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
+
 import ScrollToTop from "./ScrollToTop/ScrollToTop";
-import PropertiesDataContext from "../contexts/propertiesData";
+import PropertiesDataContext from "../contexts/propertiesContext";
+import PaginationContext from "../contexts/paginateContext";
 
 import Card from "./Card/Card";
-
+// PaginationProvider
 const ShowListingsCards = () => {
-  const { currentProperties, fetchPropDetails, fetchPropDetailsv2 } =
-    useContext(PropertiesDataContext);
+  const { fetchPropDetails, fetchPropDetailsv2 } = useContext(
+    PropertiesDataContext
+  );
+  const { currentProperties } = useContext(PaginationContext);
 
   // if (currentProperties === undefined || currentProperties.length === 0) {
   //   return "Sorry did not match any listing.";

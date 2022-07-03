@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 
 // import AutoCompleteMenu from "./AutoCompleteMenu/AutoCompleteMenu";
 import ForSaleRentDropdown from "./ForSaleRentBtns/ForSaleRentBtns";
-import PropertiesDataContext from "../../contexts/propertiesData";
+import PropertiesDataContext from "../../contexts/propertiesContext";
 import "./SearchBox.css";
 
 const SearchBox = () => {

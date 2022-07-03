@@ -34,7 +34,6 @@ export const PropertiesDataProvider = ({ children }) => {
 
   // 3 states for pagination
   const [dataLength, setDataLength] = useState(0);
-  const [propertiesPerPage, setPropertiesPerPage] = useState(12);
   const [currentPage, setCurrentPage] = useState(1);
 
   // searchBox states
@@ -181,18 +180,6 @@ export const PropertiesDataProvider = ({ children }) => {
     }
   }, []);
 
-  // get current properties
-  // these are the actual properties that are shown (done like this for pagination)
-  const indexOfLastProperty = currentPage * propertiesPerPage;
-  const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
-  const currentProperties = listingsData.slice(
-    indexOfFirstProperty,
-    indexOfLastProperty
-  );
-
-  // change pagination page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   return (
     <PropertiesDataContext.Provider
       value={{
@@ -205,14 +192,12 @@ export const PropertiesDataProvider = ({ children }) => {
         setSaleRentRadio,
         currentCityNState,
         setCurrentCityNState,
-        propertiesPerPage,
-        setPropertiesPerPage,
         currentPage,
         setCurrentPage,
         dataLength,
         setDataLength,
-        paginate,
-        currentProperties,
+        // paginate,
+        // currentProperties,
         fetchProperties,
         searchText,
         setSearchText,

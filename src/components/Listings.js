@@ -5,10 +5,10 @@ import Pagination from "./Pagination/Paginate";
 import FilterSortBtns from "./FilterSortButtons/FilterSortBtns";
 import SearchBox from "./SearchBox/SearchBox";
 import ShowListingsCards from "./ShowListingsCards";
-import PropertiesDataContext from "../contexts/propertiesData";
+import PaginationContext from "../contexts/paginateContext";
 
 const Listings = () => {
-  const { currentProperties } = useContext(PropertiesDataContext);
+  const { currentProperties } = useContext(PaginationContext);
 
   return (
     <div className="container-fluid">

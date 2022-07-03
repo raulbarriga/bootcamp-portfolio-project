@@ -5,7 +5,8 @@ import Footer from "./Footer/Footer";
 import Home from "./Home";
 import Listings from "./Listings";
 import ListingDetails from "./ListingDetails";
-import { PropertiesDataProvider } from "../contexts/propertiesData";
+import { PropertiesDataProvider } from "../contexts/propertiesContext";
+import { PaginationProvider } from "../contexts/paginateContext";
 
 const Main = () => {
   return (
@@ -15,7 +16,14 @@ const Main = () => {
         <div className="content-wrap">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="listings" element={<Listings />} />
+            <Route
+              path="listings"
+              element={
+                <PaginationProvider>
+                  <Listings />
+                </PaginationProvider>
+              }
+            />
             <Route path="listings/:plan_id" element={<ListingDetails />} />
             <Route
               path="listings/:listing_id/:property_id/:prop_status"

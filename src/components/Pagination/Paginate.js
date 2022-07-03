@@ -1,21 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import Pagination from "react-responsive-pagination";
 
-import PropertiesDataContext from "../../contexts/propertiesData";
+import PaginationContext from "../../contexts/paginateContext";
+import PropertiesDataContext from "../../contexts/propertiesContext";
 
 import "./Pagination.css";
 
 const Paginate = () => {
-  const { dataLength, currentPage, paginate, propertiesPerPage } = useContext(
-    PropertiesDataContext
-  );
-  let pageNumbers = [];
-  let totalPages = Math.ceil(dataLength / propertiesPerPage);
-
-  for (let i = 1; i <= totalPages; i++) {
-    // this'll give the correct amount of page #'s
-    pageNumbers.push(i);
-  }
+  const { paginate, pageNumbers } = useContext(PaginationContext);
+  const { currentPage } = useContext(PropertiesDataContext);
 
   //scroll to top on pagination change
   useEffect(() => {
@@ -38,18 +31,3 @@ const Paginate = () => {
 };
 
 export default Paginate;
-
-/*
-{pageNumbers.map((pageNumber) => (
-          <li
-            key={pageNumber}
-            className={`page-item
-            ${currentPage === pageNumber ? "active" : ""}`}
-          >
-            <button onClick={() => paginate(pageNumber)} className="page-link">
-              {pageNumber}
-            </button>
-          </li>
-        ))}
-
-*/

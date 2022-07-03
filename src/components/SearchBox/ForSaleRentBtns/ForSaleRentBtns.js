@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
 
-import PropertiesDataContext from "../../../contexts/propertiesData";
+import PropertiesDataContext from "../../../contexts/propertiesContext";
 
 import "./ForSaleRentBtns.css";
 

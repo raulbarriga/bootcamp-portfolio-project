@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Carousel from "./Carousel/Carousel";
 import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
-import PropertiesDataContext from "../contexts/propertiesData";
+import PropertiesDataContext from "../contexts/propertiesContext";
 
 const ListingDetails = () => {
   const { selectedProp } = useContext(PropertiesDataContext);
@@ -13,7 +13,7 @@ const ListingDetails = () => {
   console.log("selectedProp: ", selectedProp);
 
   const Slider = () => <Carousel selectedProp={selectedProp} />;
-  // for Google Embed Maps API
+  // for Google Embed Maps API (replaces spaces with +)
   let replaced = selectedProp.address.line.replace(/ /g, "+");
 
   return (
@@ -140,32 +140,33 @@ const ListingDetails = () => {
                               </li>
                             )}
 
-                            {selectedProp.lot_sqft !== null && (
-                              <li
-                                style={{
-                                  fontSize: "18px",
-                                  color: "#888",
-                                  display: "inline-block",
-                                  marginRight: "44px",
-                                  padding: "0",
-                                  lineHeight: "30px",
-                                }}
-                              >
-                                <span
+                            {selectedProp.lot_sqft !== null &&
+                              selectedProp.lot_sqft !== 0 && (
+                                <li
                                   style={{
-                                    color: "#333",
-                                    fontWeight: "bold",
-                                    display: "block",
                                     fontSize: "18px",
+                                    color: "#888",
+                                    display: "inline-block",
+                                    marginRight: "44px",
+                                    padding: "0",
+                                    lineHeight: "30px",
                                   }}
                                 >
-                                  {selectedProp.lot_sqft.toLocaleString(
-                                    "en-US"
-                                  )}
-                                </span>{" "}
-                                sqft lot{" "}
-                              </li>
-                            )}
+                                  <span
+                                    style={{
+                                      color: "#333",
+                                      fontWeight: "bold",
+                                      display: "block",
+                                      fontSize: "18px",
+                                    }}
+                                  >
+                                    {selectedProp.lot_sqft.toLocaleString(
+                                      "en-US"
+                                    )}
+                                  </span>{" "}
+                                  sqft lot{" "}
+                                </li>
+                              )}
 
                             {Boolean(selectedProp.garage) && (
                               <li
@@ -191,30 +192,31 @@ const ListingDetails = () => {
                                 Garage{" "}
                               </li>
                             )}
-                            {Boolean(selectedProp.beds) && (
-                              <li
-                                style={{
-                                  fontSize: "18px",
-                                  color: "#888",
-                                  display: "inline-block",
-                                  marginRight: "44px",
-                                  padding: "0",
-                                  lineHeight: "30px",
-                                }}
-                              >
-                                <span
+                            {Boolean(selectedProp.beds) &&
+                              selectedProp.beds !== 0 && (
+                                <li
                                   style={{
-                                    color: "#333",
-                                    fontWeight: "bold",
-                                    display: "block",
                                     fontSize: "18px",
+                                    color: "#888",
+                                    display: "inline-block",
+                                    marginRight: "44px",
+                                    padding: "0",
+                                    lineHeight: "30px",
                                   }}
                                 >
-                                  {selectedProp.beds}
-                                </span>{" "}
-                                Bedrooms{" "}
-                              </li>
-                            )}
+                                  <span
+                                    style={{
+                                      color: "#333",
+                                      fontWeight: "bold",
+                                      display: "block",
+                                      fontSize: "18px",
+                                    }}
+                                  >
+                                    {selectedProp.beds}
+                                  </span>{" "}
+                                  Bedrooms{" "}
+                                </li>
+                              )}
 
                             {Boolean(selectedProp.baths) && (
                               <li

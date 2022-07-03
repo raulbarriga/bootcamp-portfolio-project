@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import PropertiesDataContext from "../../../contexts/propertiesData";
+import PropertiesDataContext from "../../../contexts/propertiesContext";
 
 import useClickOutside from "../../../hooks/useClickOutside";
 import "./AutoCompleteMenu.css";
