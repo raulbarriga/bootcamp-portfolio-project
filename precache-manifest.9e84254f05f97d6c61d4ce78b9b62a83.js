@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "34e3570fd2d3b2b40eeae61556581e61",
+    "revision": "d3583815d97c60de10133001df6eaa6f",
     "url": "/bootcamp-portfolio-project/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bootcamp-portfolio-project/static/css/2.244b2281.chunk.css"
   },
   {
-    "revision": "aeefc4990b075d6ec5fd",
-    "url": "/bootcamp-portfolio-project/static/css/main.db6efa82.chunk.css"
+    "revision": "5bb0862432b3794e2b6d",
+    "url": "/bootcamp-portfolio-project/static/css/main.9ef76723.chunk.css"
   },
   {
     "revision": "7bea236a430a358a0777",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bootcamp-portfolio-project/static/js/2.c00c96cd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aeefc4990b075d6ec5fd",
+    "revision": "5bb0862432b3794e2b6d",
     "url": "/bootcamp-portfolio-project/static/js/main.a88ba90f.chunk.js"
   },
   {

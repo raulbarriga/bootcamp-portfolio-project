@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bootcamp-portfolio-project/static/css/main.db6efa82.chunk.css",
+    "main.css": "/bootcamp-portfolio-project/static/css/main.9ef76723.chunk.css",
     "main.js": "/bootcamp-portfolio-project/static/js/main.a88ba90f.chunk.js",
     "main.js.map": "/bootcamp-portfolio-project/static/js/main.a88ba90f.chunk.js.map",
     "runtime-main.js": "/bootcamp-portfolio-project/static/js/runtime-main.48463009.js",
@@ -9,10 +9,10 @@
     "static/js/2.c00c96cd.chunk.js": "/bootcamp-portfolio-project/static/js/2.c00c96cd.chunk.js",
     "static/js/2.c00c96cd.chunk.js.map": "/bootcamp-portfolio-project/static/js/2.c00c96cd.chunk.js.map",
     "index.html": "/bootcamp-portfolio-project/index.html",
-    "precache-manifest.a9967570ff2bacf88c5f7b00341572b6.js": "/bootcamp-portfolio-project/precache-manifest.a9967570ff2bacf88c5f7b00341572b6.js",
+    "precache-manifest.9e84254f05f97d6c61d4ce78b9b62a83.js": "/bootcamp-portfolio-project/precache-manifest.9e84254f05f97d6c61d4ce78b9b62a83.js",
     "service-worker.js": "/bootcamp-portfolio-project/service-worker.js",
     "static/css/2.244b2281.chunk.css.map": "/bootcamp-portfolio-project/static/css/2.244b2281.chunk.css.map",
-    "static/css/main.db6efa82.chunk.css.map": "/bootcamp-portfolio-project/static/css/main.db6efa82.chunk.css.map",
+    "static/css/main.9ef76723.chunk.css.map": "/bootcamp-portfolio-project/static/css/main.9ef76723.chunk.css.map",
     "static/js/2.c00c96cd.chunk.js.LICENSE.txt": "/bootcamp-portfolio-project/static/js/2.c00c96cd.chunk.js.LICENSE.txt",
     "static/js/main.a88ba90f.chunk.js.LICENSE.txt": "/bootcamp-portfolio-project/static/js/main.a88ba90f.chunk.js.LICENSE.txt",
     "static/media/app-store-logo.png": "/bootcamp-portfolio-project/static/media/app-store-logo.436fa48e.png",
@@ -24,7 +24,7 @@
     "static/js/runtime-main.48463009.js",
     "static/css/2.244b2281.chunk.css",
     "static/js/2.c00c96cd.chunk.js",
-    "static/css/main.db6efa82.chunk.css",
+    "static/css/main.9ef76723.chunk.css",
     "static/js/main.a88ba90f.chunk.js"
   ]
 }
