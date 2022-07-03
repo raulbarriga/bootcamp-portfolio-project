@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "908c18c6d36da8e4b51b25f3188e9d87",
+    "revision": "f4b02460cac51cb4c9c81e23e0b33cff",
     "url": "/bootcamp-portfolio-project/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bootcamp-portfolio-project/static/css/2.244b2281.chunk.css"
   },
   {
-    "revision": "e0f8d4379f3625eb7425",
+    "revision": "123216f2c365b70f29ae",
     "url": "/bootcamp-portfolio-project/static/css/main.db6efa82.chunk.css"
   },
   {
@@ -20,12 +20,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bootcamp-portfolio-project/static/js/2.f16de306.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e0f8d4379f3625eb7425",
-    "url": "/bootcamp-portfolio-project/static/js/main.526959e2.chunk.js"
+    "revision": "123216f2c365b70f29ae",
+    "url": "/bootcamp-portfolio-project/static/js/main.c42e0cd6.chunk.js"
   },
   {
     "revision": "4e0e34f265fae8f33b01b27ae29d9d6f",
-    "url": "/bootcamp-portfolio-project/static/js/main.526959e2.chunk.js.LICENSE.txt"
+    "url": "/bootcamp-portfolio-project/static/js/main.c42e0cd6.chunk.js.LICENSE.txt"
   },
   {
     "revision": "a8e601b472cc79ebe0f0",
