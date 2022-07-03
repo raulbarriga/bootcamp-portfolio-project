@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/bootcamp-portfolio-project/static/css/main.db6efa82.chunk.css",
-    "main.js": "/bootcamp-portfolio-project/static/js/main.10206ffc.chunk.js",
-    "main.js.map": "/bootcamp-portfolio-project/static/js/main.10206ffc.chunk.js.map",
+    "main.js": "/bootcamp-portfolio-project/static/js/main.526959e2.chunk.js",
+    "main.js.map": "/bootcamp-portfolio-project/static/js/main.526959e2.chunk.js.map",
     "runtime-main.js": "/bootcamp-portfolio-project/static/js/runtime-main.48463009.js",
     "runtime-main.js.map": "/bootcamp-portfolio-project/static/js/runtime-main.48463009.js.map",
     "static/css/2.244b2281.chunk.css": "/bootcamp-portfolio-project/static/css/2.244b2281.chunk.css",
     "static/js/2.f16de306.chunk.js": "/bootcamp-portfolio-project/static/js/2.f16de306.chunk.js",
     "static/js/2.f16de306.chunk.js.map": "/bootcamp-portfolio-project/static/js/2.f16de306.chunk.js.map",
     "index.html": "/bootcamp-portfolio-project/index.html",
-    "precache-manifest.c1911d32c8e9f520cdc48a34930f8bb0.js": "/bootcamp-portfolio-project/precache-manifest.c1911d32c8e9f520cdc48a34930f8bb0.js",
+    "precache-manifest.3954a2a9f5f3cd7208bfa77492d58d3c.js": "/bootcamp-portfolio-project/precache-manifest.3954a2a9f5f3cd7208bfa77492d58d3c.js",
     "service-worker.js": "/bootcamp-portfolio-project/service-worker.js",
     "static/css/2.244b2281.chunk.css.map": "/bootcamp-portfolio-project/static/css/2.244b2281.chunk.css.map",
     "static/css/main.db6efa82.chunk.css.map": "/bootcamp-portfolio-project/static/css/main.db6efa82.chunk.css.map",
     "static/js/2.f16de306.chunk.js.LICENSE.txt": "/bootcamp-portfolio-project/static/js/2.f16de306.chunk.js.LICENSE.txt",
-    "static/js/main.10206ffc.chunk.js.LICENSE.txt": "/bootcamp-portfolio-project/static/js/main.10206ffc.chunk.js.LICENSE.txt",
+    "static/js/main.526959e2.chunk.js.LICENSE.txt": "/bootcamp-portfolio-project/static/js/main.526959e2.chunk.js.LICENSE.txt",
     "static/media/app-store-logo.png": "/bootcamp-portfolio-project/static/media/app-store-logo.436fa48e.png",
     "static/media/default-skin.css": "/bootcamp-portfolio-project/static/media/default-skin.b257fa9c.svg",
     "static/media/font-awesome.css": "/bootcamp-portfolio-project/static/media/fontawesome-webfont.fee66e71.woff",
@@ -25,6 +25,6 @@
     "static/css/2.244b2281.chunk.css",
     "static/js/2.f16de306.chunk.js",
     "static/css/main.db6efa82.chunk.css",
-    "static/js/main.10206ffc.chunk.js"
+    "static/js/main.526959e2.chunk.js"
   ]
 }
