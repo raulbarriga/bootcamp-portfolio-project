@@ -5,7 +5,9 @@ import Main from "./components/Main";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter 
+    // basename={process.env.REACT_APP_PUBLIC_URL}
+    >
       <div id="App" className="App">
         <Main />
       </div>
