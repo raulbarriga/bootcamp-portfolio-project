@@ -988,8 +988,6 @@ input[type="search"i]::-webkit-search-cancel-button {
   color: rgba(134, 158, 158, 0.7);
 }
 
-/* pagination was here */
-
 /* Tooltip*/
 #mainPropertyDetals .tooltip-inner {
   border-radius: 0;
@@ -1010,22 +1008,6 @@ input[type="search"i]::-webkit-search-cancel-button {
 
 #mainPropertyDetals .tooltip.right .tooltip-arrow {
   border-right-color: #666;
-}
-
-/* Card was here */
-
-
-/* Login */
-#mainPropertyDetals .sign-in-or {
-  position: relative;
-}
-
-#mainPropertyDetals .sign-in-or span {
-  font-size: 24px;
-  font-weight: lighter;
-  position: absolute;
-  left: 20px;
-  top: 54px;
 }
 
 /* Pricing Table */
