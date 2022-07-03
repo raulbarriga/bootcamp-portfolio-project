@@ -1332,6 +1332,7 @@ input[type="search"i]::-webkit-search-cancel-button {
   border-radius: 2px;
 }
 
+/* input-group-addon found not in use */
 #mainPropertyDetals .input-group-addon {
   background-color: rgba(134, 158, 158, 0.1);
   border-color: rgba(134, 158, 158, 0.4);
@@ -1353,11 +1354,13 @@ input[type="search"i]::-webkit-search-cancel-button {
   transition: all 0.25s;
 }
 
+/* `.btn-xlg` not found in use */
 #mainPropertyDetals .btn-xlg {
   padding: 20px 40px;
   font-size: 20px;
 }
 
+/* `.btn-link` not found in use */
 #mainPropertyDetals .btn-link,
 #mainPropertyDetals .btn-link:focus,
 #mainPropertyDetals .btn-link:hover,
@@ -1389,12 +1392,14 @@ input[type="search"i]::-webkit-search-cancel-button {
   color: #563d7c;
 }
 
+/* `.btn-light` not found in use */
 #mainPropertyDetals .btn-light {
   background-color: #eff3f6;
   background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
   background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
 }
 
+/* btn-return is for the ListingsDetails component */
 #mainPropertyDetals .btn-return {
   display: inline-block;
   margin-right: 15px;
@@ -1418,6 +1423,7 @@ input[type="search"i]::-webkit-search-cancel-button {
   background: rgba(134, 158, 158, 0.3);
 }
 
+/* for scroll to top btn */
 .btn-circle,
 .btn-circle:hover,
 .btn-circle:active,
@@ -1623,8 +1629,6 @@ input[type="search"i]::-webkit-search-cancel-button {
     border-left: 1px solid #eee;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
 
 /* Property Details CSS End */
 
